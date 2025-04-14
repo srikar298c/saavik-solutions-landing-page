@@ -1,37 +1,64 @@
+'use client'
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 
+import { motion } from "framer-motion"
+
 export default function CareersHero() {
   return (
-    <section className="w-full bg-black py-16 text-white">
-      <div className="container mx-auto px-4 md:px-6">
+    <section className="relative w-full min-h-[500px] py-20 bg-black text-white">
+      {/* Background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-black/50"></div>
+
+      <div className="container relative z-10 mx-auto px-4 md:px-6">
         <div className="flex flex-col items-center gap-8 md:flex-row md:items-start">
           {/* Left Column - Text Content */}
           <div className="w-full md:w-1/2">
-            <h1 className="mb-4 text-3xl font-bold md:text-4xl lg:text-5xl">
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="mb-6 text-4xl font-bold md:text-5xl lg:text-6xl"
+            >
               Join the Future of <br />
-              <span className="text-red-600">Innovation</span>
-            </h1>
-            <p className="mb-8 text-sm leading-relaxed text-gray-300 md:text-base">
+              <span className="bg-gradient-to-r from-red-600 to-red-600 bg-clip-text text-transparent">Innovation</span>
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="mb-8 text-lg leading-relaxed text-gray-300"
+            >
               At Saavik Solutions, we don't just build solutions—we create success. As a team of passionate innovators,
               problem-solvers, and tech enthusiasts, we push the boundaries of cutting-edge IT support and software
               development to help businesses thrive.
-            </p>
-            <Button className="rounded-md bg-red-600 px-6 py-2 text-sm font-medium hover:bg-red-700">
-              View Job Openings
-            </Button>
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              <Button className="rounded-full bg-gradient-to-r from-red-600 to-red-600 px-8 py-3 text-sm font-medium uppercase hover:shadow-xl transition-all duration-300 hover:scale-105">
+                View Job Openings
+              </Button>
+            </motion.div>
           </div>
 
           {/* Right Column - Image */}
           <div className="w-full md:w-1/2">
-            <div className="relative h-[300px] w-full overflow-hidden rounded-lg">
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              className="relative h-[400px] w-full overflow-hidden rounded-2xl"
+            >
               <Image
-                src="https://images.unsplash.com/photo-1557682250-33bd709cbe85?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                src="https://placehold.co/800x400"
                 alt="Abstract red fluid design"
                 fill
-                className="object-cover"
+                className="object-cover transition-transform duration-500 hover:scale-105"
               />
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
