@@ -1,10 +1,58 @@
+"use client"
+
+import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Globe, Code, Users, Database, UserCheck, BarChart3 } from "lucide-react"
+
+const services = [
+  {
+    icon: <Globe className="h-6 w-6 text-indigo-600" />,
+    title: "Web Development",
+    description:
+      "Craft responsive, SEO-friendly websites and SPAs tailored for performance, scalability, and business conversion.",
+    bg: "bg-indigo-100",
+  },
+  {
+    icon: <Code className="h-6 w-6 text-indigo-600" />,
+    title: "Software Development",
+    description:
+      "From ideation to deployment, build powerful desktop and cloud-native apps that automate your workflow.",
+    bg: "bg-indigo-100",
+  },
+  {
+    icon: <Users className="h-6 w-6 text-purple-600" />,
+    title: "Staffing Solutions",
+    description:
+      "Bridge talent gaps with our expert staffing solutions—contractual, permanent, and project-based hiring.",
+    bg: "bg-purple-100",
+  },
+  {
+    icon: <Database className="h-6 w-6 text-blue-600" />,
+    title: "ERP Solutions",
+    description:
+      "Optimize core business processes with custom ERP systems built to scale with your enterprise operations.",
+    bg: "bg-blue-100",
+  },
+  {
+    icon: <UserCheck className="h-6 w-6 text-pink-600" />,
+    title: "CRM Solutions",
+    description:
+      "Enhance customer relationships and sales pipelines with smart, intuitive CRM platforms tailored to your team.",
+    bg: "bg-pink-100",
+  },
+  {
+    icon: <BarChart3 className="h-6 w-6 text-green-600" />,
+    title: "Digital Marketing",
+    description:
+      "Drive ROI through data-driven SEO, PPC, content, and social strategies backed by real-time analytics.",
+    bg: "bg-green-100",
+  },
+]
 
 export default function Services() {
   return (
     <section className="relative w-full bg-black">
-      {/* Background overlay with bokeh effect */}
+      {/* Background */}
       <div className="absolute inset-0 z-0">
         <div
           className="h-full w-full bg-cover bg-center bg-no-repeat"
@@ -16,6 +64,7 @@ export default function Services() {
       </div>
 
       <div className="container relative z-10 mx-auto">
+        {/* Header */}
         <div className="flex flex-col md:flex-row md:items-start md:justify-between">
           <div className="max-w-2xl">
             <h2 className="text-3xl font-bold tracking-tight text-white md:text-4xl lg:text-5xl">
@@ -36,85 +85,35 @@ export default function Services() {
           </div>
         </div>
 
-        <div className="mt-16 grid grid-cols-2 gap-6 lg:grid-cols-3">
-          {/* Web Development */}
-          <div className="rounded-lg bg-white p-8 shadow-md transition-transform duration-300 hover:shadow-lg hover:-translate-y-1">
-            <div className="mb-4 flex items-start">
-              <div className="flex h-12 w-12 items-center justify-center rounded bg-indigo-100">
-                <Globe className="h-6 w-6 text-indigo-600" />
+        {/* Cards */}
+        <div className="mt-16 grid grid-cols-2 gap-6 lg:grid-cols-3 group-hover:visible">
+          {services.map((service, i) => (
+            <motion.div
+              key={i}
+              whileHover={{ scale: 1.05, rotate: -1 }}
+              transition={{ type: "spring", stiffness: 300 }}
+              className="group rounded-lg bg-white p-8 shadow-md hover:shadow-xl"
+            >
+              <div className="mb-4 flex items-start">
+                <div className={`flex h-12 w-12 items-center justify-center rounded ${service.bg}`}>
+                  {service.icon}
+                </div>
+                <h3 className="ml-4 text-lg font-semibold text-black group-hover:text-red-600 transition-colors duration-300">
+                  {service.title}
+                </h3>
               </div>
-              <h3 className="ml-4 text-lg font-semibold text-black">
-                Web
-                <br />
-                Development
-              </h3>
-            </div>
-          </div>
-
-          {/* Software Development */}
-          <div className="rounded-lg bg-white p-8 shadow-md transition-transform duration-300 hover:shadow-lg hover:-translate-y-1">
-            <div className="mb-4 flex items-start">
-              <div className="flex h-12 w-12 items-center justify-center rounded bg-indigo-100">
-                <Code className="h-6 w-6 text-indigo-600" />
-              </div>
-              <h3 className="ml-4 text-lg font-semibold text-black">
-                Software
-                <br />
-                Development
-              </h3>
-            </div>
-          </div>
-
-          {/* Staffing Solutions */}
-          <div className="rounded-lg bg-white p-8 shadow-md transition-transform duration-300 hover:shadow-lg hover:-translate-y-1">
-            <div className="mb-4 flex items-start">
-              <div className="flex h-12 w-12 items-center justify-center rounded bg-purple-100">
-                <Users className="h-6 w-6 text-purple-600" />
-              </div>
-              <h3 className="ml-4 text-lg font-semibold text-black">
-                Staffing
-                <br />
-                Solutions
-              </h3>
-            </div>
-          </div>
-
-          {/* ERP Solutions */}
-          <div className="rounded-lg bg-white p-8 shadow-md transition-transform duration-300 hover:shadow-lg hover:-translate-y-1">
-            <div className="mb-4 flex items-start">
-              <div className="flex h-12 w-12 items-center justify-center rounded bg-blue-100">
-                <Database className="h-6 w-6 text-blue-600" />
-              </div>
-              <h3 className="ml-4 text-lg font-semibold text-black">ERP Solutions</h3>
-            </div>
-          </div>
-
-          {/* CRM Solutions */}
-          <div className="rounded-lg bg-white p-8 shadow-md transition-transform duration-300 hover:shadow-lg hover:-translate-y-1">
-            <div className="mb-4 flex items-start">
-              <div className="flex h-12 w-12 items-center justify-center rounded bg-pink-100">
-                <UserCheck className="h-6 w-6 text-pink-600" />
-              </div>
-              <h3 className="ml-4 text-lg font-semibold text-black">CRM Solutions</h3>
-            </div>
-          </div>
-
-          {/* Digital Marketing */}
-          <div className="rounded-lg bg-white p-8 shadow-md transition-transform duration-300 hover:shadow-lg hover:-translate-y-1">
-            <div className="mb-4 flex items-start">
-              <div className="flex h-12 w-12 items-center justify-center rounded bg-green-100">
-                <BarChart3 className="h-6 w-6 text-green-600" />
-              </div>
-              <h3 className="ml-4 text-lg font-semibold text-black">
-                Digital
-                <br />
-                Marketing
-              </h3>
-            </div>
-          </div>
+              <motion.p
+                initial={{ opacity: 0, y: 10 }}
+                whileHover={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3 }}
+                className="mt-2 text-sm text-gray-600"
+              >
+                {service.description}
+              </motion.p>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
   )
 }
-
