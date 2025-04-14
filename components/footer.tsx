@@ -3,7 +3,7 @@ import { Linkedin, Youtube, Instagram, Facebook, Twitter } from "lucide-react"
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-red-600 py-16 text-center text-white">
+    <footer className="w-full  bg-gradient-to-r from-[#FF0000] to-[#FF0000dc] py-16 text-center text-white">
       <div className="container mx-auto">
         <div className="mb-10">
           <p className="text-sm uppercase tracking-wide opacity-90 md:text-base">IN SEARCH FOR SOME ACTION</p>

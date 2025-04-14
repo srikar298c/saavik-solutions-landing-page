@@ -1,3 +1,6 @@
+
+'use client'
+import { motion } from "framer-motion"
 import Image from "next/image"
 
 const enterpriseSolutions = [
@@ -26,25 +29,29 @@ const enterpriseSolutions = [
 export default function EnterpriseSolutionsGrid() {
   return (
     <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-      {enterpriseSolutions.map((solution) => (
-        <div
+      {enterpriseSolutions.map((solution, index) => (
+        <motion.div
           key={solution.id}
-          className="group overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: index * 0.1 }}
+          whileHover={{ scale: 1.02 }}
+          className="group overflow-hidden rounded-2xl shadow-lg"
         >
           <div className="relative h-64 w-full overflow-hidden">
             <Image
               src={solution.image || "/placeholder.svg"}
               alt={solution.title}
               fill
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
+              className="object-cover transition-transform duration-500 group-hover:scale-110"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-70"></div>
           </div>
-          <div className="relative -mt-20 bg-gradient-to-t from-black to-transparent p-6 pt-10 text-white">
+          <div className="relative -mt-20 bg-gradient-to-t from-black/80 to-transparent p-6 pt-10 text-white">
             <h3 className="mb-2 text-xl font-bold">{solution.title}</h3>
             <p className="text-sm text-gray-200">{solution.description}</p>
           </div>
-        </div>
+        </motion.div>
       ))}
     </div>
   )

@@ -65,48 +65,75 @@ export default function Services() {
 
       <div className="container relative z-10 mx-auto">
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-start md:justify-between">
+        <motion.div
+          className="flex flex-col md:flex-row md:items-start md:justify-between"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
           <div className="max-w-2xl">
-            <h2 className="text-3xl font-bold tracking-tight text-white md:text-4xl lg:text-5xl">
+            <motion.h2
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-3xl font-bold tracking-tight text-white md:text-4xl lg:text-5xl"
+            >
               Our IT Solutions Drive Your
               <br />
-              Business <span className="text-red-600">Forward</span>
-            </h2>
-            <p className="mt-6 max-w-md text-sm text-gray-300 md:text-base lg:text-lg">
+              Business <span className="bg-gradient-to-r from-[#FF0000] to-[#FF0000] bg-clip-text text-transparent">Forward</span>
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="mt-6 max-w-md text-sm text-gray-300 md:text-base lg:text-lg"
+            >
               Our expert-driven, technology-focused services help businesses streamline operations, enhance digital
               presence, and achieve long-term success.
-            </p>
+            </motion.p>
           </div>
 
-          <div className="mt-8 md:mt-0">
-            <Button className="rounded-full bg-red-600 px-10 py-2.5 text-sm font-medium uppercase hover:bg-red-700">
+          <motion.div
+            className="mt-8 md:mt-0"
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <Button className="rounded-full bg-gradient-to-r from-[#FF0000] to-[#FF0000] px-10 py-2.5 text-sm font-medium uppercase hover:shadow-xl transition-all duration-300 hover:scale-105">
               EXPLORE MORE
             </Button>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
         {/* Cards */}
-        <div className="mt-16 grid grid-cols-2 gap-6 lg:grid-cols-3 group-hover:visible">
+        <div className="mt-16 grid grid-cols-2 gap-6 lg:grid-cols-3">
           {services.map((service, i) => (
             <motion.div
               key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: i * 0.1 }}
               whileHover={{ scale: 1.05, rotate: -1 }}
-              transition={{ type: "spring", stiffness: 300 }}
-              className="group rounded-lg bg-white p-8 shadow-md hover:shadow-xl"
+             
+              className="group rounded-2xl bg-white/10 backdrop-blur-sm p-8 shadow-lg hover:shadow-2xl border border-white/10"
             >
               <div className="mb-4 flex items-start">
-                <div className={`flex h-12 w-12 items-center justify-center rounded ${service.bg}`}>
+                <motion.div
+                  whileHover={{ rotate: 15, scale: 1.1 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                  className={`flex h-12 w-12 items-center justify-center rounded-lg ${service.bg}`}
+                >
                   {service.icon}
-                </div>
-                <h3 className="ml-4 text-lg font-semibold text-black group-hover:text-red-600 transition-colors duration-300">
+                </motion.div>
+                <h3 className="ml-4 text-lg font-semibold text-white group-hover:text-red-600 transition-colors duration-300">
                   {service.title}
                 </h3>
               </div>
               <motion.p
                 initial={{ opacity: 0, y: 10 }}
-                whileHover={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3 }}
-                className="mt-2 text-sm text-gray-600"
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="mt-2 text-sm text-gray-300"
               >
                 {service.description}
               </motion.p>

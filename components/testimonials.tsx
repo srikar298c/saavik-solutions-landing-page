@@ -91,14 +91,14 @@ export default function Testimonials() {
             transition={{ duration: 0.6 }}
           >
             Empowered by Our
-            <br className="sm:hidden" /> Client's <span className="bg-gradient-to-r from-red-600 to-orange-500 bg-clip-text text-transparent">Stories</span>
+            <br className="sm:hidden" /> Client's <span className="bg-gradient-to-r from-[#FF0000] to-[#FF0000dc] bg-clip-text text-transparent">Stories</span>
           </motion.h2>
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <Button className="rounded-full bg-gradient-to-r from-red-600 to-orange-500 px-8 py-3 text-sm font-medium uppercase text-white shadow-lg hover:shadow-xl transition-all duration-300">
+            <Button className="rounded-full bg-gradient-to-r from-[#FF0000] to-[#FF0000dc] px-8 py-3 text-sm font-medium uppercase text-white shadow-lg hover:shadow-xl transition-all duration-300">
               VIEW ALL REVIEWS
             </Button>
           </motion.div>
@@ -108,7 +108,7 @@ export default function Testimonials() {
           {/* Navigation Buttons */}
           <button
             onClick={handlePrev}
-            className="absolute left-1/2 top-1/2 z-10 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-gradient-to-r from-red-600 to-orange-500 text-white shadow-lg transition-all hover:scale-110 hover:shadow-xl focus:outline-none md:-left-6"
+            className="absolute left-1/2 top-1/2 z-10 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-gradient-to-r from-[#FF0000] to-[#FF0000dc] text-white shadow-lg transition-all hover:scale-110 hover:shadow-xl focus:outline-none md:-left-6"
             aria-label="Previous testimonial"
           >
             <ChevronLeft className="h-6 w-6" />
@@ -116,7 +116,7 @@ export default function Testimonials() {
 
           <button
             onClick={handleNext}
-            className="absolute right-1/2 top-1/2 z-10 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-gradient-to-r from-red-600 to-orange-500 text-white shadow-lg transition-all hover:scale-110 hover:shadow-xl focus:outline-none md:-right-6"
+            className="absolute right-1/2 top-1/2 z-10 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-gradient-to-r from-[#FF0000] to-[#FF0000dc] text-white shadow-lg transition-all hover:scale-110 hover:shadow-xl focus:outline-none md:-right-6"
             aria-label="Next testimonial"
           >
             <ChevronRight className="h-6 w-6" />
@@ -160,7 +160,7 @@ export default function Testimonials() {
                           ))}
                         </div>
                       </div>
-                      <h3 className="mb-6 text-2xl font-bold bg-gradient-to-r from-red-600 to-orange-500 bg-clip-text text-transparent">
+                      <h3 className="mb-6 text-2xl font-bold bg-gradient-to-r from-[#FF0000] to-[#FF0000dc] bg-clip-text text-transparent">
                         {testimonial.review}
                       </h3>
                       <p className="mb-8 text-lg text-gray-600 leading-relaxed">

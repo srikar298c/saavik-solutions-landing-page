@@ -76,18 +76,33 @@ export default function EnterpriseSolutions() {
   }
 
   return (
-    <section className="w-full bg-white py-16">
+    <section className="w-full bg-gradient-to-b from-gray-50 to-white py-20">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="mb-12">
-          <h2 className="mb-6 text-3xl font-bold tracking-tight text-black md:text-4xl lg:text-5xl">
-            Our Unique, Trendy & <span className="text-[#FF0000]">Profitable</span> Enterprise
+        <motion.div
+          className="mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <motion.h2
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mb-6 text-4xl font-bold tracking-tight text-black md:text-5xl lg:text-6xl"
+          >
+            Our Unique, Trendy & <span className="bg-gradient-to-r from-[#FF0000] to-[#FF0000] bg-clip-text text-transparent">Profitable</span> Enterprise
             <br className="hidden md:block" />
-            <span className="text-[#FF0000]">Solutions</span>
-          </h2>
-          <p className="max-w-3xl text-base text-gray-700 md:text-lg">
+            <span className="bg-gradient-to-r from-[#FF0000] to-[#FF0000] bg-clip-text text-transparent">Solutions</span>
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="max-w-3xl text-lg text-gray-700"
+          >
             We empower businesses with cutting-edge IT solutions, revolutionizing the way they operate, innovate, and grow.
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
         <div className="relative">
           <div
@@ -101,17 +116,20 @@ export default function EnterpriseSolutions() {
               className="flex transition-transform duration-500 ease-in-out"
               style={{ transform: `translateX(-${currentIndex * (100 / visibleItems)}%)` }}
             >
-              {solutions.map((solution) => (
+              {solutions.map((solution, index) => (
                 <div
                   key={solution.id}
                   className="px-2 flex-shrink-0"
                   style={{ width: `${100 / visibleItems}%` }}
                 >
                   <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
                     whileHover={{ scale: 1.03 }}
-                    className="group flex h-full flex-col overflow-hidden rounded-xl shadow-md bg-white border"
+                    className="group flex h-full flex-col overflow-hidden rounded-2xl shadow-lg bg-white/90 backdrop-blur-sm border border-white/20"
                   >
-                    <div className="relative h-64 w-full overflow-hidden">
+                    <div className="relative h-72 w-full overflow-hidden">
                       <Image
                         src={solution.image}
                         alt={solution.title}
@@ -119,13 +137,13 @@ export default function EnterpriseSolutions() {
                         className="object-cover transition-transform duration-500 group-hover:scale-110"
                       />
                     </div>
-                    <div className="relative bg-gray-100 p-4 flex-1 flex flex-col justify-between">
-                      <h3 className="text-lg font-semibold text-black mb-2">{solution.title}</h3>
+                    <div className="p-6 flex-1 flex flex-col justify-between">
+                      <h3 className="text-xl font-semibold text-black mb-3">{solution.title}</h3>
                       <motion.p
                         initial={{ opacity: 0, y: 10 }}
-                        whileHover={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.4, ease: "easeOut", type: "spring", bounce: 0.4 }}
-                        className="text-sm text-gray-700"
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                        className="text-base text-gray-700"
                       >
                         {solution.description}
                       </motion.p>
@@ -136,25 +154,35 @@ export default function EnterpriseSolutions() {
             </div>
           </div>
 
-          <div className="mt-6 flex justify-end space-x-2">
-            <Button
-              onClick={handlePrev}
-              size="icon"
-              className="h-12 w-12 rounded-full bg-[#FF0000] hover:bg-[#ff0000dc] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
-              disabled={currentIndex === 0}
+          <div className="mt-8 flex justify-end space-x-3">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
             >
-              <ChevronLeft className="h-6 w-6 text-white" />
-              <span className="sr-only">Previous</span>
-            </Button>
-            <Button
-              onClick={handleNext}
-              size="icon"
-              className="h-12 w-12 rounded-full bg-[#FF0000] hover:bg-[#ff0000dc] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
-              disabled={currentIndex === maxIndex}
+              <Button
+                onClick={handlePrev}
+                size="icon"
+                className="h-12 w-12 rounded-full bg-gradient-to-r from-[#FF0000] to-[#FF0000] hover:shadow-xl transition-all duration-300 hover:scale-105"
+                disabled={currentIndex === 0}
+              >
+                <ChevronLeft className="h-6 w-6 text-white" />
+              </Button>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
             >
-              <ChevronRight className="h-6 w-6 text-white" />
-              <span className="sr-only">Next</span>
-            </Button>
+              <Button
+                onClick={handleNext}
+                size="icon"
+                className="h-12 w-12 rounded-full bg-gradient-to-r from-[#FF0000] to-[#FF0000] hover:shadow-xl transition-all duration-300 hover:scale-105"
+                disabled={currentIndex === maxIndex}
+              >
+                <ChevronRight className="h-6 w-6 text-white" />
+              </Button>
+            </motion.div>
           </div>
         </div>
       </div>

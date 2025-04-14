@@ -1,23 +1,33 @@
+'use client'
 import Link from "next/link"
+
+import { motion } from "framer-motion"
 
 export default function ServicesGrid() {
   return (
-    <section className="w-full bg-white py-16 md:py-20">
-      <div className="container mx-auto">
-        <div className="mb-16 text-center">
-          <h2 className="text-2xl font-bold text-black md:text-3xl">
+    <section className="w-full bg-gradient-to-b from-gray-50 to-white py-20">
+      <div className="container mx-auto px-4">
+        <motion.div
+          className="mb-16 text-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="text-3xl font-bold text-black md:text-4xl">
             We Provide Prominent <br />
-            <span className="text-red-500">IT Solutions</span>
+            <span className="bg-gradient-to-r from-red-600 to-red-600 bg-clip-text text-transparent">IT Solutions</span>
           </h2>
-        </div>
+        </motion.div>
 
-        {/* Desktop Layout - Exact match to the image with staggered middle column */}
+        {/* Desktop Layout */}
         <div className="mx-auto hidden max-w-4xl md:block">
           <div className="relative grid grid-cols-3 gap-6">
             {/* First Column */}
             <div className="space-y-6">
-              {/* Web Development */}
-              <div className="flex aspect-square flex-col items-center justify-between rounded-2xl bg-red-500 p-8 shadow-md">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="flex aspect-square flex-col items-center justify-between rounded-2xl bg-red-600 p-8 shadow-lg"
+              >
                 <div className="flex h-full flex-col items-center justify-center">
                   <h3 className="text-center text-xl font-medium text-white">
                     Web
@@ -25,238 +35,126 @@ export default function ServicesGrid() {
                     Development
                   </h3>
                 </div>
-                <Link href="#" className="text-xs text-white">
+                <Link href="#" className="text-xs text-white hover:text-gray-200 transition-colors duration-200">
                   Learn More
                 </Link>
-              </div>
+              </motion.div>
 
-              {/* Software Solutions */}
-              <div className="flex aspect-square flex-col items-center justify-between rounded-2xl bg-red-100 p-8 shadow-md">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="flex aspect-square flex-col items-center justify-between rounded-2xl bg-red-100 p-8 shadow-lg"
+              >
                 <div className="flex h-full flex-col items-center justify-center">
-                  <h3 className="text-center text-xl font-medium text-red-500">
+                  <h3 className="text-center text-xl font-medium text-red-600">
                     Software
                     <br />
                     Solutions
                   </h3>
                 </div>
-                <Link href="#" className="text-xs text-red-500">
+                <Link href="#" className="text-xs text-red-600 hover:text-red-700 transition-colors duration-200">
                   Learn More
                 </Link>
-              </div>
+              </motion.div>
             </div>
 
-            {/* Second Column - Staggered down */}
+            {/* Second Column */}
             <div className="mt-12 space-y-6">
-              {/* Staffing */}
-              <div className="flex aspect-square flex-col items-center justify-between rounded-2xl bg-white p-8 shadow-[0_4px_12px_rgba(0,0,0,0.08)]">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="flex aspect-square flex-col items-center justify-between rounded-2xl bg-white p-8 shadow-lg"
+              >
                 <div className="flex h-full flex-col items-center justify-center">
-                  <h3 className="text-center text-xl font-medium text-red-500">Staffing</h3>
+                  <h3 className="text-center text-xl font-medium text-red-600">Staffing</h3>
                 </div>
-                <Link href="#" className="text-xs text-red-500">
+                <Link href="#" className="text-xs text-red-600 hover:text-red-700 transition-colors duration-200">
                   Learn More
                 </Link>
-              </div>
+              </motion.div>
 
-              {/* CRM Solutions */}
-              <div className="flex aspect-square flex-col items-center justify-between rounded-2xl bg-white p-8 shadow-[0_4px_12px_rgba(0,0,0,0.08)]">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="flex aspect-square flex-col items-center justify-between rounded-2xl bg-white p-8 shadow-lg"
+              >
                 <div className="flex h-full flex-col items-center justify-center">
-                  <h3 className="text-center text-xl font-medium text-red-500">
+                  <h3 className="text-center text-xl font-medium text-red-600">
                     CRM
                     <br />
                     Solutions
                   </h3>
                 </div>
-                <Link href="#" className="text-xs text-red-500">
+                <Link href="#" className="text-xs text-red-600 hover:text-red-700 transition-colors duration-200">
                   Learn More
                 </Link>
-              </div>
+              </motion.div>
             </div>
 
             {/* Third Column */}
             <div className="space-y-6">
-              {/* HR Solutions */}
-              <div className="flex aspect-square flex-col items-center justify-between rounded-2xl bg-white p-8 shadow-[0_4px_12px_rgba(0,0,0,0.08)]">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="flex aspect-square flex-col items-center justify-between rounded-2xl bg-white p-8 shadow-lg"
+              >
                 <div className="flex h-full flex-col items-center justify-center">
-                  <h3 className="text-center text-xl font-medium text-red-500">
+                  <h3 className="text-center text-xl font-medium text-red-600">
                     H R<br />
                     Solutions
                   </h3>
                 </div>
-                <Link href="#" className="text-xs text-red-500">
+                <Link href="#" className="text-xs text-red-600 hover:text-red-700 transition-colors duration-200">
                   Learn More
                 </Link>
-              </div>
+              </motion.div>
 
-              {/* Digital Marketing */}
-              <div className="flex aspect-square flex-col items-center justify-between rounded-2xl bg-red-100 p-8 shadow-md">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="flex aspect-square flex-col items-center justify-between rounded-2xl bg-red-100 p-8 shadow-lg"
+              >
                 <div className="flex h-full flex-col items-center justify-center">
-                  <h3 className="text-center text-xl font-medium text-red-500">
+                  <h3 className="text-center text-xl font-medium text-red-600">
                     Digital
                     <br />
                     Marketing
                   </h3>
                 </div>
-                <Link href="#" className="text-xs text-red-500">
+                <Link href="#" className="text-xs text-red-600 hover:text-red-700 transition-colors duration-200">
                   Learn More
                 </Link>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+
+        {/* Mobile and Tablet Layout */}
+        <div className="mx-auto grid max-w-2xl grid-cols-2 gap-6 sm:grid md:hidden">
+          {[
+            // Web Development
+            { bg: "bg-red-600", text: "text-white", title: "Web\nDevelopment" },
+            // HR Solutions
+            { bg: "bg-white", text: "text-red-600", title: "H R\nSolutions" },
+            // Software Solutions
+            { bg: "bg-red-100", text: "text-red-600", title: "Software\nSolutions" },
+            // Staffing
+            { bg: "bg-white", text: "text-red-600", title: "Staffing" },
+            // CRM Solutions
+            { bg: "bg-white", text: "text-red-600", title: "CRM\nSolutions" },
+            // Digital Marketing
+            { bg: "bg-red-100", text: "text-red-600", title: "Digital\nMarketing" },
+          ].map((service, index) => (
+            <motion.div
+              key={index}
+              whileHover={{ scale: 1.05 }}
+              className={`flex aspect-square flex-col items-center justify-between rounded-2xl ${service.bg} p-6 shadow-lg`}
+            >
+              <div className="flex h-full flex-col items-center justify-center">
+                <h3 className={`text-center text-lg font-medium ${service.text}`}>
+                  {service.title}
+                </h3>
               </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Tablet Layout */}
-        <div className="mx-auto hidden max-w-2xl grid-cols-2 gap-6 sm:grid md:hidden">
-          {/* First Row */}
-          <div className="flex aspect-square flex-col items-center justify-between rounded-2xl bg-red-500 p-6 shadow-md">
-            <div className="flex h-full flex-col items-center justify-center">
-              <h3 className="text-center text-lg font-medium text-white">
-                Web
-                <br />
-                Development
-              </h3>
-            </div>
-            <Link href="#" className="text-xs text-white">
-              Learn More
-            </Link>
-          </div>
-
-          <div className="flex aspect-square flex-col items-center justify-between rounded-2xl bg-white p-6 shadow-[0_4px_12px_rgba(0,0,0,0.08)]">
-            <div className="flex h-full flex-col items-center justify-center">
-              <h3 className="text-center text-lg font-medium text-red-500">
-                H R<br />
-                Solutions
-              </h3>
-            </div>
-            <Link href="#" className="text-xs text-red-500">
-              Learn More
-            </Link>
-          </div>
-
-          {/* Second Row */}
-          <div className="flex aspect-square flex-col items-center justify-between rounded-2xl bg-red-100 p-6 shadow-md">
-            <div className="flex h-full flex-col items-center justify-center">
-              <h3 className="text-center text-lg font-medium text-red-500">
-                Software
-                <br />
-                Solutions
-              </h3>
-            </div>
-            <Link href="#" className="text-xs text-red-500">
-              Learn More
-            </Link>
-          </div>
-
-          <div className="flex aspect-square flex-col items-center justify-between rounded-2xl bg-white p-6 shadow-[0_4px_12px_rgba(0,0,0,0.08)]">
-            <div className="flex h-full flex-col items-center justify-center">
-              <h3 className="text-center text-lg font-medium text-red-500">Staffing</h3>
-            </div>
-            <Link href="#" className="text-xs text-red-500">
-              Learn More
-            </Link>
-          </div>
-
-          {/* Third Row */}
-          <div className="flex aspect-square flex-col items-center justify-between rounded-2xl bg-white p-6 shadow-[0_4px_12px_rgba(0,0,0,0.08)]">
-            <div className="flex h-full flex-col items-center justify-center">
-              <h3 className="text-center text-lg font-medium text-red-500">
-                CRM
-                <br />
-                Solutions
-              </h3>
-            </div>
-            <Link href="#" className="text-xs text-red-500">
-              Learn More
-            </Link>
-          </div>
-
-          <div className="flex aspect-square flex-col items-center justify-between rounded-2xl bg-red-100 p-6 shadow-md">
-            <div className="flex h-full flex-col items-center justify-center">
-              <h3 className="text-center text-lg font-medium text-red-500">
-                Digital
-                <br />
-                Marketing
-              </h3>
-            </div>
-            <Link href="#" className="text-xs text-red-500">
-              Learn More
-            </Link>
-          </div>
-        </div>
-
-        {/* Mobile Layout */}
-        <div className="mx-auto grid max-w-xs grid-cols-1 gap-6 sm:hidden">
-          <div className="flex aspect-square flex-col items-center justify-between rounded-2xl bg-red-500 p-6 shadow-md">
-            <div className="flex h-full flex-col items-center justify-center">
-              <h3 className="text-center text-lg font-medium text-white">
-                Web
-                <br />
-                Development
-              </h3>
-            </div>
-            <Link href="#" className="text-xs text-white">
-              Learn More
-            </Link>
-          </div>
-
-          <div className="flex aspect-square flex-col items-center justify-between rounded-2xl bg-white p-6 shadow-[0_4px_12px_rgba(0,0,0,0.08)]">
-            <div className="flex h-full flex-col items-center justify-center">
-              <h3 className="text-center text-lg font-medium text-red-500">Staffing</h3>
-            </div>
-            <Link href="#" className="text-xs text-red-500">
-              Learn More
-            </Link>
-          </div>
-
-          <div className="flex aspect-square flex-col items-center justify-between rounded-2xl bg-white p-6 shadow-[0_4px_12px_rgba(0,0,0,0.08)]">
-            <div className="flex h-full flex-col items-center justify-center">
-              <h3 className="text-center text-lg font-medium text-red-500">
-                H R<br />
-                Solutions
-              </h3>
-            </div>
-            <Link href="#" className="text-xs text-red-500">
-              Learn More
-            </Link>
-          </div>
-
-          <div className="flex aspect-square flex-col items-center justify-between rounded-2xl bg-red-100 p-6 shadow-md">
-            <div className="flex h-full flex-col items-center justify-center">
-              <h3 className="text-center text-lg font-medium text-red-500">
-                Software
-                <br />
-                Solutions
-              </h3>
-            </div>
-            <Link href="#" className="text-xs text-red-500">
-              Learn More
-            </Link>
-          </div>
-
-          <div className="flex aspect-square flex-col items-center justify-between rounded-2xl bg-white p-6 shadow-[0_4px_12px_rgba(0,0,0,0.08)]">
-            <div className="flex h-full flex-col items-center justify-center">
-              <h3 className="text-center text-lg font-medium text-red-500">
-                CRM
-                <br />
-                Solutions
-              </h3>
-            </div>
-            <Link href="#" className="text-xs text-red-500">
-              Learn More
-            </Link>
-          </div>
-
-          <div className="flex aspect-square flex-col items-center justify-between rounded-2xl bg-red-100 p-6 shadow-md">
-            <div className="flex h-full flex-col items-center justify-center">
-              <h3 className="text-center text-lg font-medium text-red-500">
-                Digital
-                <br />
-                Marketing
-              </h3>
-            </div>
-            <Link href="#" className="text-xs text-red-500">
-              Learn More
-            </Link>
-          </div>
+              <Link href="#" className={`text-xs ${service.text} hover:opacity-80 transition-opacity duration-200`}>
+                Learn More
+              </Link>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

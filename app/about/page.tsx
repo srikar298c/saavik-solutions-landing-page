@@ -1,3 +1,4 @@
+'use client'
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import AboutHero from "@/components/about/about-hero"
@@ -8,11 +9,11 @@ import JourneyTimeline from "@/components/about/journey-timeline"
 export default function AboutPage() {
   return (
     <main className="min-h-screen">
-      <div className="bg-black text-white">
+      <div className=" text-black">
         <Navbar />
         <AboutHero />
       </div>
-      <MissionVision />
+      
       <TeamSection />
       <JourneyTimeline />
       <Footer />

@@ -1,59 +1,70 @@
+'use client'
 import Image from "next/image"
+import { Linkedin } from "lucide-react"
 
 const teamMembers = [
   {
     id: 1,
-    name: "John Smith",
+    name: "Bhargava Raj",
     position: "CEO & Founder",
-    image: "/images/team/team-1.jpg",
+    image: "https://placehold.co/300x400",
+    linkedin: "https://linkedin.com/in/johnsmith"
   },
   {
     id: 2,
-    name: "Sarah Johnson",
-    position: "CTO",
-    image: "/images/team/team-2.jpg",
+    name: "Laya Sri",
+    position: "Co-Founder",
+    image: "https://placehold.co/300x400",
+    linkedin: "https://linkedin.com/in/johnsmith"
   },
   {
     id: 3,
-    name: "Michael Chen",
-    position: "Design Director",
-    image: "/images/team/team-3.jpg",
+    name: "Ravi",
+    position: "CTO",
+    image: "https://placehold.co/300x400",
+    linkedin: "https://linkedin.com/in/johnsmith"
   },
   {
     id: 4,
-    name: "David Wilson",
+    name: "Mohan Nellapalle",
     position: "Lead Developer",
-    image: "/images/team/team-4.jpg",
+    image: "https://placehold.co/300x400",
+    linkedin: "https://linkedin.com/in/johnsmith"
   },
   {
     id: 5,
-    name: "Emily Rodriguez",
-    position: "Marketing Head",
-    image: "/images/team/team-5.jpg",
+    name: "Srikar",
+    position: "Software Engineer",
+    image: "https://placehold.co/300x400",
+    linkedin: "https://linkedin.com/in/johnsmith"
   },
   {
     id: 6,
-    name: "Robert Taylor",
-    position: "Project Manager",
-    image: "/images/team/team-6.jpg",
+    name: "Sampad",
+    position: "Cheif Design",
+    image: "https://placehold.co/300x400",
+    linkedin: "https://linkedin.com/in/johnsmith"
   },
   {
     id: 7,
-    name: "Lisa Wang",
-    position: "UX Specialist",
-    image: "/images/team/team-7.jpg",
+    name: "Soumyadeep",
+    position: "Marketing Head",
+    image: "https://placehold.co/300x400",
+    linkedin: "https://linkedin.com/in/johnsmith"
   },
   {
     id: 8,
-    name: "James Brown",
-    position: "Backend Engineer",
-    image: "/images/team/team-8.jpg",
+    name: "Lohita",
+    position: "Full-Stack Developer",
+    image: "https://placehold.co/300x400",
+    linkedin: "https://linkedin.com/in/johnsmith"
   },
   {
     id: 9,
-    name: "Sophia Martinez",
-    position: "Content Strategist",
-    image: "/images/team/team-9.jpg",
+    name: "Sushmitha",
+    position: "Front-End Developer",
+    image: "https://placehold.co/300x400",
+    linkedin: "https://linkedin.com/in/johnsmith"
   },
 ]
 
@@ -70,7 +81,7 @@ export default function TeamSection() {
 
           {/* Crown emblem */}
           <div className="absolute left-1/2 top-0 z-10 -translate-x-1/2">
-            <Image src="/images/crown-3d.png" alt="Crown Emblem" width={60} height={60} className="h-auto w-auto" />
+            <Image src="https://placehold.co/60" alt="Crown Emblem" width={60} height={60} className="h-auto w-auto" />
           </div>
         </div>
       </div>
@@ -85,12 +96,27 @@ export default function TeamSection() {
         <div className="mx-auto max-w-5xl">
           <div className="grid grid-cols-3 gap-6 sm:gap-8 md:gap-10">
             {teamMembers.map((member) => (
-              <div key={member.id} className="overflow-hidden">
+              <div key={member.id} className="overflow-hidden group">
                 <div className="relative aspect-[3/4] w-full overflow-hidden rounded-lg">
-                  <Image src={member.image || "/placeholder.svg"} alt={member.name} fill className="object-cover" />
-                  <div className="absolute bottom-0 w-full bg-black bg-opacity-70 p-2 text-center">
-                    <h3 className="text-xs font-bold text-white sm:text-sm">{member.name}</h3>
-                    <p className="text-xs text-gray-300">{member.position}</p>
+                  <Image 
+                    src={member.image || "/placeholder.svg"} 
+                    alt={member.name} 
+                    fill 
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                  <div className="absolute bottom-0 w-full bg-black/80 p-3 text-center">
+                    <h3 className="text-sm font-bold text-white sm:text-base">{member.name}</h3>
+                    <p className="text-xs text-gray-300 mb-1">{member.position}</p>
+                    {member.linkedin && (
+                      <a 
+                        href={member.linkedin} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="inline-block p-1 text-white hover:text-yellow-500 transition-colors duration-200"
+                      >
+                        <Linkedin className="h-5 w-5" />
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>
