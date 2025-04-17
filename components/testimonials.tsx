@@ -2,7 +2,7 @@
 
 import type React from "react"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Image from "next/image"
 import { ChevronLeft, ChevronRight, Star } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -16,7 +16,7 @@ const testimonials = [
     feedback: "Feedback Summary",
     name: "Founder, Saavik Pvt. Ltd.",
     position: "Raj",
-    image: "https:dummyjson.com/image/300x400",
+    image: "https://dummyjson.com/image/300x400",
   },
   {
     id: 2,
@@ -25,7 +25,7 @@ const testimonials = [
     feedback: "Their team delivered beyond our expectations",
     name: "CTO, TechVision Inc.",
     position: "Sarah",
-    image: "https:dummyjson.com/image/300x400",
+    image: "https://dummyjson.com/image/300x400",
   },
   {
     id: 3,
@@ -34,7 +34,7 @@ const testimonials = [
     feedback: "The solutions provided transformed our business",
     name: "Director, Global Innovations",
     position: "Michael",
-    image: "https:dummyjson.com/image/300x400",
+    image: "https://dummyjson.com/image/300x400",
   },
 ]
 
@@ -42,7 +42,21 @@ export default function Testimonials() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [touchStart, setTouchStart] = useState<number | null>(null)
   const [touchEnd, setTouchEnd] = useState<number | null>(null)
+  const [isMobile, setIsMobile] = useState(false)
   const maxIndex = testimonials.length - 1
+
+  useEffect(() => {
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+    
+    checkIsMobile()
+    window.addEventListener('resize', checkIsMobile)
+    
+    return () => {
+      window.removeEventListener('resize', checkIsMobile)
+    }
+  }, [])
 
   const handlePrev = () => {
     setCurrentIndex((prevIndex) => (prevIndex === 0 ? maxIndex : prevIndex - 1))
@@ -81,50 +95,67 @@ export default function Testimonials() {
   }
 
   return (
-    <section className="w-full bg-gradient-to-b from-gray-50 to-white py-20">
+    <section className="w-full bg-white py-12 sm:py-16 md:py-20">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="mb-16 flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
+        <div className="mb-8 flex flex-col justify-between gap-6 text-center sm:mb-12 md:mb-16 md:flex-row md:items-center md:text-left">
           <motion.h2 
-            className="text-4xl font-bold text-black md:text-5xl lg:text-6xl"
+            className="text-3xl font-bold text-black sm:text-4xl md:text-5xl lg:text-6xl"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
           >
             Empowered by Our
-            <br className="sm:hidden" /> Client's <span className="bg-gradient-to-r from-[#FF0000] to-[#FF0000dc] bg-clip-text text-transparent">Stories</span>
+            <br className="hidden xs:inline sm:hidden" /> Client's <span className="bg-gradient-to-r from-[#FF0000] to-[#FF0000dc] bg-clip-text text-transparent">Stories</span>
           </motion.h2>
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="flex justify-center md:justify-end"
           >
-            <Button className="rounded-full bg-gradient-to-r from-[#FF0000] to-[#FF0000dc] px-8 py-3 text-sm font-medium uppercase text-white shadow-lg hover:shadow-xl transition-all duration-300">
+            <Button className="rounded-full bg-gradient-to-r from-[#FF0000] to-[#FF0000dc] px-6 py-2.5 text-sm font-medium uppercase text-white shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl sm:px-8 sm:py-3">
               VIEW ALL REVIEWS
             </Button>
           </motion.div>
         </div>
 
-        <div className="relative">
+        {/* Indicators for Mobile */}
+        <div className="mb-4 flex justify-center space-x-2 md:hidden">
+          {testimonials.map((_, i) => (
+            <button
+              key={i}
+              className={`h-2 w-2 rounded-full transition-all ${
+                i === currentIndex ? "bg-[#FF0000] w-6" : "bg-gray-300"
+              }`}
+              onClick={() => setCurrentIndex(i)}
+              aria-label={`Go to testimonial ${i + 1}`}
+            />
+          ))}
+        </div>
+
+        <div className="relative mx-auto max-w-6xl">
           {/* Navigation Buttons */}
           <button
             onClick={handlePrev}
-            className="absolute left-1/2 top-1/2 z-10 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-gradient-to-r from-[#FF0000] to-[#FF0000dc] text-white shadow-lg transition-all hover:scale-110 hover:shadow-xl focus:outline-none md:-left-6"
+            className="absolute left-0 top-1/2 z-10 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-gradient-to-r from-[#FF0000] to-[#FF0000dc] text-white shadow-lg transition-all hover:scale-110 hover:shadow-xl focus:outline-none md:flex md:h-12 md:w-12 md:-left-6 lg:-left-10"
             aria-label="Previous testimonial"
           >
-            <ChevronLeft className="h-6 w-6" />
+            <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
           </button>
 
           <button
             onClick={handleNext}
-            className="absolute right-1/2 top-1/2 z-10 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-gradient-to-r from-[#FF0000] to-[#FF0000dc] text-white shadow-lg transition-all hover:scale-110 hover:shadow-xl focus:outline-none md:-right-6"
+            className="absolute right-0 top-1/2 z-10 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-gradient-to-r from-[#FF0000] to-[#FF0000dc] text-white shadow-lg transition-all hover:scale-110 hover:shadow-xl focus:outline-none md:flex md:h-12 md:w-12 md:-right-6 lg:-right-10"
             aria-label="Next testimonial"
           >
-            <ChevronRight className="h-6 w-6" />
+            <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
           </button>
 
           {/* Testimonial Slider */}
           <div
-            className="overflow-hidden"
+            className="overflow-hidden rounded-xl"
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
@@ -136,39 +167,53 @@ export default function Testimonials() {
               {testimonials.map((testimonial) => (
                 <motion.div 
                   key={testimonial.id} 
-                  className="w-full flex-shrink-0"
-                  initial={{ opacity: 0, scale: 0.9 }}
+                  className="w-full flex-shrink-0 px-0 sm:px-4"
+                  initial={{ opacity: 0, scale: 0.95 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.6 }}
+                  viewport={{ once: true }}
                 >
-                  <div className="mx-auto flex max-w-4xl flex-col overflow-hidden rounded-2xl bg-white shadow-2xl sm:flex-row">
-                    <div className="relative h-96 w-full sm:h-auto sm:w-2/5">
-                      <Image
-                        src={testimonial.image || "/placeholder.svg"}
-                        alt={`Testimonial by ${testimonial.name}`}
-                        fill
-                        className="object-cover"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
-                    </div>
-                    <div className="flex flex-1 flex-col justify-center p-8">
-                      <div className="mb-4 flex items-center">
-                        <span className="mr-2 text-2xl font-bold text-black">{testimonial.rating}</span>
-                        <div className="flex text-yellow-400">
-                          {[...Array(5)].map((_, i) => (
-                            <Star key={i} className="h-6 w-6 fill-current" />
-                          ))}
+                  <div className="overflow-hidden rounded-xl shadow-2xl">
+                    <div className="flex flex-col sm:flex-row">
+                      {/* Image Container */}
+                      <div className="relative h-64 w-full sm:h-auto sm:w-2/5">
+                        <Image
+                          src={testimonial.image || "/placeholder.svg"}
+                          alt={`Testimonial by ${testimonial.position}`}
+                          fill
+                          className="object-cover"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <div className="absolute bottom-4 left-4 flex items-center sm:hidden">
+                          <span className="mr-1 text-lg font-bold text-white">{testimonial.rating}</span>
+                          <div className="flex text-yellow-400">
+                            {[...Array(5)].map((_, i) => (
+                              <Star key={i} className="h-4 w-4 fill-current" />
+                            ))}
+                          </div>
                         </div>
                       </div>
-                      <h3 className="mb-6 text-2xl font-bold bg-gradient-to-r from-[#FF0000] to-[#FF0000dc] bg-clip-text text-transparent">
-                        {testimonial.review}
-                      </h3>
-                      <p className="mb-8 text-lg text-gray-600 leading-relaxed">
-                        {testimonial.feedback}
-                      </p>
-                      <div>
-                        <p className="text-xl font-semibold text-black">{testimonial.name}</p>
-                        <p className="text-sm text-gray-500">{testimonial.position}</p>
+                      
+                      {/* Content Container */}
+                      <div className="flex flex-1 flex-col justify-center bg-gradient-to-br from-[#FF0000]/10 to-white p-6 sm:p-8">
+                        <div className="mb-4 hidden items-center sm:flex">
+                          <span className="mr-2 text-xl font-bold text-black sm:text-2xl">{testimonial.rating}</span>
+                          <div className="flex text-yellow-400">
+                            {[...Array(5)].map((_, i) => (
+                              <Star key={i} className="h-5 w-5 fill-current sm:h-6 sm:w-6" />
+                            ))}
+                          </div>
+                        </div>
+                        <h3 className="mb-4 text-xl font-bold bg-gradient-to-r from-[#FF0000] to-[#FF0000dc] bg-clip-text text-transparent sm:mb-6 sm:text-2xl">
+                          {testimonial.review}
+                        </h3>
+                        <p className="mb-6 text-base text-gray-600 leading-relaxed sm:mb-8 sm:text-lg">
+                          {testimonial.feedback}
+                        </p>
+                        <div>
+                          <p className="text-lg font-semibold text-black sm:text-xl">{testimonial.position}</p>
+                          <p className="text-sm text-gray-500">{testimonial.name}</p>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -177,8 +222,25 @@ export default function Testimonials() {
             </div>
           </div>
         </div>
+        
+        {/* Mobile Navigation Buttons */}
+        <div className="mt-6 flex justify-center space-x-4 md:hidden">
+          <button
+            onClick={handlePrev}
+            className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-[#FF0000] to-[#FF0000dc] text-white shadow-md transition-all hover:scale-105"
+            aria-label="Previous testimonial"
+          >
+            <ChevronLeft className="h-5 w-5" />
+          </button>
+          <button
+            onClick={handleNext}
+            className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-[#FF0000] to-[#FF0000dc] text-white shadow-md transition-all hover:scale-105"
+            aria-label="Next testimonial"
+          >
+            <ChevronRight className="h-5 w-5" />
+          </button>
+        </div>
       </div>
     </section>
   )
 }
-

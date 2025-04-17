@@ -7,20 +7,28 @@ const timelineEvents = [
     date: "Mar 2, 2025",
     title: "Our Launch",
     description: "Launched our site",
-    image: "https://placehold.co/600x400"
+    images: {
+      large: "https://placehold.co/600x400",
+      medium: "https://placehold.co/400x300",
+      small: "https://placehold.co/300x200"
+    }
   },
   {
     id: 2,
     date: "Mar 2, 2025",
     title: "Our Launch",
     description: "Launched our site",
-    image: "https://placehold.co/600x400"
+    images: {
+      large: "https://placehold.co/600x400",
+      medium: "https://placehold.co/400x300",
+      small: "https://placehold.co/300x200"
+    }
   },
 ]
 
 export default function JourneyTimeline() {
   return (
-    <section className="w-full bg-gradient-to-b from-gray-50 to-white py-20">
+    <section className="w-full bg-gradient-to-b from-gray-50 to-white py-12 md:py-20">
       <div className="container mx-auto px-4">
         <motion.div
           className="mb-20 text-center"
@@ -35,10 +43,10 @@ export default function JourneyTimeline() {
 
         <div className="relative mx-auto max-w-4xl">
           {/* Timeline Line */}
-          <div className="absolute left-[157px] top-0 h-full w-1 bg-gradient-to-b from-red-600 to-red-600 sm:left-[157px]"></div>
+          <div className="absolute left-4 sm:left-[157px] top-0 h-full w-0.5 bg-gradient-to-b from-red-600 to-red-600"></div>
 
           {/* Timeline Items */}
-          <div className="space-y-20">
+          <div className="space-y-12 md:space-y-20">
             {timelineEvents.map((event, index) => (
               <motion.div
                 key={event.id}
@@ -53,25 +61,35 @@ export default function JourneyTimeline() {
                 </div>
 
                 {/* Timeline Dot */}
-                <div className="absolute left-[157px] top-0 z-20 hidden sm:flex sm:-translate-x-1/2 sm:transform sm:items-center sm:justify-center">
-                  <div className="h-5 w-5 rounded-full bg-red-600 ring-4 ring-red-100"></div>
+                <div className="absolute left-4 sm:left-[157px] top-0 z-20 hidden h-4 w-4 -translate-x-1/2 transform items-center justify-center sm:flex">
+                  <div className="h-3 w-3 rounded-full bg-red-600 ring-2 ring-red-100 sm:h-4 sm:w-4 sm:ring-4"></div>
                 </div>
 
                 {/* Mobile Timeline Dot */}
-                <div className="absolute left-0 top-0 z-20 flex h-5 w-5 items-center justify-center sm:hidden">
-                  <div className="h-5 w-5 rounded-full bg-red-600 ring-4 ring-red-100"></div>
+                <div className="absolute left-0 top-0 z-20 flex h-4 w-4 items-center justify-center sm:hidden">
+                  <div className="h-3 w-3 rounded-full bg-red-600 ring-2 ring-red-100"></div>
                 </div>
 
                 {/* Content (Right Side) */}
-                <div className="z-10 pl-6 sm:flex-1 sm:pl-8">
-                  <h3 className="text-xl font-bold text-gray-900">{event.title}</h3>
-                  <p className="mb-4 text-gray-600">{event.description}</p>
-                  <div className="overflow-hidden rounded-xl shadow-lg">
-                    <img
-                      src={event.image}
-                      alt={event.title}
-                      className="h-48 w-full object-cover md:h-56 lg:h-64"
-                    />
+                <div className="z-10 pl-8 sm:flex-1 sm:pl-8">
+                  <h3 className="text-lg font-bold text-gray-900 md:text-xl">{event.title}</h3>
+                  <p className="mb-4 text-sm text-gray-600 md:text-base">{event.description}</p>
+                  <div className="overflow-hidden rounded-lg md:rounded-xl">
+                    <picture>
+                      <source
+                        media="(min-width: 1024px)"
+                        srcSet={event.images.large}
+                      />
+                      <source
+                        media="(min-width: 768px)"
+                        srcSet={event.images.medium}
+                      />
+                      <img
+                        src={event.images.small}
+                        alt={event.title}
+                        className="h-40 w-full object-cover md:h-48 lg:h-56"
+                      />
+                    </picture>
                   </div>
                 </div>
               </motion.div>
