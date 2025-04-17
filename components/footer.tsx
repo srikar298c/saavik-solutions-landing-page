@@ -55,14 +55,17 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Company Info */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUpItem} className="space-y-6">
-            <Link href="/" className="inline-block">
-              <div className="flex items-center">
-                <div className="w-10 h-10 bg-[#FF0000] rounded-lg flex items-center justify-center mr-3">
-                  <span className="font-bold text-xl">S</span>
-                </div>
-                <span className="text-xl font-bold">Saavik</span>
-              </div>
-            </Link>
+          <Link href="/" className="inline-block">
+    <div className="flex items-center">
+      {/* Footer Logo */}
+      <Image
+        src="/saavik-logo-lg.png"        // your footer‑optimized logo
+        alt="Saavik Solutions Logo"
+        width={120} height={48}
+        className="mr-3"
+      />
+        </div>
+  </Link>
             <p className="text-gray-400">
               Transforming businesses through innovative technology solutions that drive growth and efficiency.
             </p>

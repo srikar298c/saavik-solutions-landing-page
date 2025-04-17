@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     siteName: "Saavik Solutions",
     images: [
       {
-        url: "/images/saavik-og-image.jpg",
+        url: "/saavik-og-img.png",
         width: 1200,
         height: 630,
         alt: "Saavik Solutions - IT Services Company",

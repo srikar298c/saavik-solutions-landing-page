@@ -54,7 +54,7 @@ export default function Navbar() {
             {/* Mobile */}
             <div className="block md:hidden relative overflow-hidden rounded-full">
               <Image
-                src="https://placehold.co/40x40"
+                src="/saavik-logo-sm.png"
                 alt="Logo"
                 width={40}
                 height={40}
@@ -66,7 +66,7 @@ export default function Navbar() {
             {/* Desktop */}
             <div className="hidden md:block relative overflow-hidden">
               <Image
-                src="https://placehold.co/120x40"
+                src="/saavik-logo-lg.png"
                 alt="Logo"
                 width={120}
                 height={40}
@@ -189,7 +189,7 @@ export default function Navbar() {
                     {/* Mobile Logo */}
                     <div className="mt-4 flex justify-center">
                       <Image
-                        src="https://placehold.co/120x40"
+                        src="/saavik-logo-lg.png"
                         alt="Logo"
                         width={120}
                         height={40}
