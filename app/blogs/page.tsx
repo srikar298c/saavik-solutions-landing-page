@@ -15,8 +15,8 @@ export default function BlogsPage() {
       <div className="bg-white py-8">
         <div className="container mx-auto px-4">
           <FeaturedBlogs />
-          <TrendingNews />
-          <BlogCategories />
+          <TrendingNews trendingPosts={[]} />
+          <BlogCategories categories={[]} blogPosts={[]} />
         </div>
       </div>
       <LetsDiscuss />

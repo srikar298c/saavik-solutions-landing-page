@@ -1,59 +1,75 @@
 import Image from "next/image"
 import Link from "next/link"
+import { fetchFeaturedPosts } from "@/lib/api"
 
-const featuredPost = {
-  id: 1,
-  title: "Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem",
-  slug: "featured-post",
-  image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+// This is for static generation with data
+export async function getStaticProps() {
+  const { featuredPost, sidebarPosts } = await fetchFeaturedPosts();
+  
+  return {
+    props: {
+      featuredPost,
+      sidebarPosts,
+    },
+    // Revalidate every hour
+    revalidate: 3600,
+  };
 }
 
-const sidebarPosts = [
-  {
-    id: 1,
-    title: "Lorem ipsum is simply dummy text of the printing and typesetting industry",
-    slug: "sidebar-post-1",
-    image:
-      "https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-  },
-  {
-    id: 2,
-    title: "Lorem ipsum is simply dummy text of the printing and typesetting industry",
-    slug: "sidebar-post-2",
-    image:
-      "https://images.unsplash.com/photo-1581092335878-2d9ff86ca2bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-  },
-  {
-    id: 3,
-    title: "Lorem ipsum is simply dummy text of the printing and typesetting industry",
-    slug: "sidebar-post-3",
-    image:
-      "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-  },
-]
+export default function FeaturedBlogs({ 
+  featuredPost, 
+  sidebarPosts 
+}: { 
+  featuredPost?: { 
+    id: number;
+    title: string;
+    slug: string;
+    image: string;
+  };
+  sidebarPosts?: Array<{
+    id: number;
+    title: string;
+    slug: string;
+    image: string;
+  }>;
+}) {
+  // Fallback content if no featured post is available
+  const defaultPost = {
+    id: 0,
+    title: "No featured post available",
+    slug: "#",
+    image: "/placeholder.svg",
+  };
 
-export default function FeaturedBlogs() {
+  // Use featuredPost from API or fallback to default
+  const mainPost = featuredPost || defaultPost;
+  
+  // Use sidebarPosts from API or empty array
+  const sidePosts = sidebarPosts && sidebarPosts.length > 0 
+    ? sidebarPosts 
+    : [];
+
   return (
     <div className="mb-12">
       <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
         {/* Main Featured Post */}
         <div className="md:col-span-2">
-          <Link href={`/blogs/${featuredPost.slug}`} className="block">
+          <Link href={`/blogs/${mainPost.slug}`} className="block">
             <div className="relative h-[300px] w-full overflow-hidden rounded-md bg-gray-200 md:h-[400px]">
               <Image
-                src={featuredPost.image || "/placeholder.svg"}
-                alt={featuredPost.title}
+                src={mainPost.image || "/placeholder.svg"}
+                alt={mainPost.title}
                 fill
                 className="object-cover"
               />
             </div>
-            <h2 className="mt-3 text-xl font-semibold text-black md:text-2xl">{featuredPost.title}</h2>
+            <h2 className="mt-3 text-xl font-semibold text-black md:text-2xl">{mainPost.title}</h2>
           </Link>
         </div>
 
         {/* Sidebar Posts */}
         <div className="space-y-4">
-          {sidebarPosts.map((post) => (
+          {sidePosts.map((post) => (
             <Link key={post.id} href={`/blogs/${post.slug}`} className="block">
               <div className="grid grid-cols-3 gap-3">
                 <div className="relative h-20 w-full overflow-hidden rounded-md bg-gray-200">
@@ -65,9 +81,23 @@ export default function FeaturedBlogs() {
               </div>
             </Link>
           ))}
+          
+          {/* Show placeholder items if fewer than 3 sidebar posts */}
+          {sidePosts.length < 3 && Array.from({ length: 3 - sidePosts.length }).map((_, index) => (
+            <div key={`placeholder-${index}`} className="grid grid-cols-3 gap-3">
+              <div className="relative h-20 w-full overflow-hidden rounded-md bg-gray-100">
+                <div className="absolute inset-0 flex items-center justify-center text-gray-400">
+                  <span>No image</span>
+                </div>
+              </div>
+              <div className="col-span-2">
+                <div className="h-4 w-full rounded bg-gray-100"></div>
+                <div className="mt-2 h-4 w-2/3 rounded bg-gray-100"></div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
   )
 }
-
