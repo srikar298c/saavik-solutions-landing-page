@@ -1,3 +1,5 @@
+// app/layout.tsx
+
 import type React from "react"
 import { Inter } from "next/font/google"
 import "./globals.css"
@@ -8,8 +10,10 @@ const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "Saavik Solutions | Premier IT Services & Software Development",
-  description: "Empowering businesses with cutting-edge IT solutions, software development, staffing, CRM, ERP, and digital marketing services. Transform your business with Saavik Solutions.",
-  keywords: "IT solutions, software development, web development, staffing solutions, CRM, ERP, digital marketing, Saavik Solutions",
+  description:
+    "Empowering businesses with cutting-edge IT solutions, software development, staffing, CRM, ERP, and digital marketing services. Transform your business with Saavik Solutions.",
+  keywords:
+    "IT solutions, software development, web development, staffing solutions, CRM, ERP, digital marketing, Saavik Solutions",
   authors: [{ name: "Saavik Solutions" }],
   creator: "Saavik Solutions",
   publisher: "Saavik Solutions",
@@ -27,22 +31,26 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://saaviksolutions.com",
     title: "Saavik Solutions | Premier IT Services & Software Development",
-    description: "Empowering businesses with cutting-edge IT solutions, software development, staffing, CRM, ERP, and digital marketing services.",
+    description:
+      "Empowering businesses with cutting-edge IT solutions, software development, staffing, CRM, ERP, and digital marketing services.",
     siteName: "Saavik Solutions",
     images: [
       {
-        url: "/saavik-og-img.png",
+        url: "https://saavik-solutions-assets.s3.ap-south-1.amazonaws.com/saavik-og-img.jpg",
         width: 1200,
         height: 630,
-        alt: "Saavik Solutions - IT Services Company",
+        alt: "Saavik Solutions – Premier IT Services & Software Development",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Saavik Solutions | Premier IT Services & Software Development",
-    description: "Empowering businesses with cutting-edge IT solutions and services.",
-    images: ["/images/saavik-twitter-image.jpg"],
+    description:
+      "Empowering businesses with cutting-edge IT solutions and services.",
+    images: [
+      "https://saavik-solutions-assets.s3.ap-south-1.amazonaws.com/saavik-og-img.jpg",
+    ],
     creator: "@saaviksolutions",
   },
   robots: {
@@ -62,7 +70,11 @@ export const metadata: Metadata = {
       { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
     ],
     apple: [
-      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+      {
+        url: "/apple-touch-icon.png",
+        sizes: "180x180",
+        type: "image/png",
+      },
     ],
     other: [
       {
@@ -80,9 +92,9 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode
-}>) {
+}) {
   return (
     <html lang="en">
       <head>
@@ -90,14 +102,15 @@ export default function RootLayout({
         <link rel="canonical" href="https://saaviksolutions.com" />
       </head>
       <body className={`${inter.className} overflow-x-hidden`}>
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
           {children}
         </ThemeProvider>
       </body>
     </html>
   )
 }
-
-
-
-import './globals.css'

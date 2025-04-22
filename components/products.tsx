@@ -10,19 +10,19 @@ export const products = [
   {
     title: "DigiZinc",
     description: "Expert marketing and branding company transforming businesses through innovative digital strategies.",
-    image: "https://placehold.co/300x400", // Placeholder image path
+    image: "/digizinc-300x400.png", // Placeholder image path
     details: "Specializing in brand identity, digital marketing, and creative campaigns that drive engagement and conversions."
   },
   {
     title: "BookMySports",
     description: "Comprehensive sports platform for venue booking, player connections, and score tracking.",
-    image: "https://placehold.co/300x400", // Placeholder image path
+    image: "/bms-300x400.png", // Placeholder image path
     details: "Revolutionizing sports experiences with seamless booking, community building, and performance analytics."
   },
   {
     title: "EAOverseas",
     description: "Consultancy and CRM platform for study abroad students across the globe.",
-    image: "https://placehold.co/300x400", // Placeholder image path
+    image: "/eaoverseas-300x400.png", // Placeholder image path
     details: "Empowering students with personalized guidance, university matching, and visa assistance services."
   }
 ]

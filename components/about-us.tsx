@@ -91,12 +91,12 @@ export default function AboutUs() {
                 </Button>
               </Link>
               
-              <div className="flex items-center gap-3 text-gray-700 hover:text-gray-900 transition-colors">
+              {/* <div className="flex items-center gap-3 text-gray-700 hover:text-gray-900 transition-colors">
                 <div className="h-10 w-10 rounded-full bg-gray-100 flex items-center justify-center border border-gray-200">
                   <span className="text-xl font-bold text-[#FF0000]">15+</span>
                 </div>
                 <span className="text-sm uppercase tracking-wider">Years of Excellence</span>
-              </div>
+              </div> */}
             </motion.div>
           </motion.div>
 

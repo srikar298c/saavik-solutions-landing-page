@@ -56,9 +56,9 @@ export default function Hero() {
       // Desktop - use the office image (first image)
       return "/home-hero-bg-lg.png"; // Replace with actual path to the first image
     } else if (windowWidth >= 768) {
-      return "https://placehold.co/1280x720";
+      return "/home-hero-bg-md.png"; // Replace with actual path to the second image
     } else {
-      return "https://placehold.co/640x960";
+      return "/home-hero-bg-sm.png";
     }
   };
 
@@ -277,3 +277,4 @@ export default function Hero() {
     </>
   );
 }
+
