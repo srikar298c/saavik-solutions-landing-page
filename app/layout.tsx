@@ -93,10 +93,10 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark" style={{ colorScheme: "dark" }}>
       <head>
         <meta name="theme-color" content="#FF0000" />
         <link rel="canonical" href="https://saaviksolutions.com" />
@@ -112,5 +112,5 @@ export default function RootLayout({
         </ThemeProvider>
       </body>
     </html>
-  )
+  );
 }
