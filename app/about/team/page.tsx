@@ -39,82 +39,95 @@ export default function TeamPage() {
   const teamMembers = {
     leadership: [
       {
-        name: "Alex Morgan",
-        position: "Chief Executive Officer",
+        name: "Bhargavarai",
+        position: "CEO and Founder",
         images: {
         large: "https://placehold.co/400x400",
         medium: "https://placehold.co/300x300",
         small: "https://placehold.co/200x200"
       },
-        bio: "With over 20 years of experience in technology and business leadership, Alex drives Saavik's vision and strategic direction.",
+        bio: "As the visionary founder and CEO of Saavik Solutions, Bhargavarai leads the company's strategic direction and innovation initiatives, driving our mission to deliver cutting-edge technology solutions.",
         social: { linkedin: "#", twitter: "#" }
       },
       {
-        name: "Sarah Chen",
-        position: "Chief Technology Officer",
+        name: "Ravi",
+        position: "Chief Technical Officer",
         images: {
         large: "https://placehold.co/400x400",
         medium: "https://placehold.co/300x300",
         small: "https://placehold.co/200x200"
       },
-        bio: "Sarah leads our technical strategy and innovation, ensuring we remain at the cutting edge of technology solutions.",
+        bio: "Ravi spearheads our technical strategy and innovation, ensuring Saavik Solutions remains at the forefront of technological advancement and delivers exceptional solutions to our clients.",
         social: { linkedin: "#", twitter: "#" }
       },
       {
-        name: "Michael Okonkwo",
-        position: "Chief Operations Officer",
+        name: "Laya Sri",
+        position: "Co-Founder and Head of Operations",
         images: {
         large: "https://placehold.co/400x400",
         medium: "https://placehold.co/300x300",
         small: "https://placehold.co/200x200"
       },
-        bio: "Michael oversees our global operations, focusing on optimizing processes and delivering exceptional service.",
+        bio: "As Co-Founder and Head of Operations, Laya Sri orchestrates our operational excellence, ensuring seamless delivery of services while maintaining the highest standards of quality and efficiency.",
+        social: { linkedin: "#", twitter: "#" }
+      }
+    ],
+    management: [
+      {
+        name: "Sonali",
+        position: "Human Resources Manager",
+        images: {
+        large: "https://placehold.co/400x400",
+        medium: "https://placehold.co/300x300",
+        small: "https://placehold.co/200x200"
+      },
+        bio: "As our HR Manager, Sonali leads our talent acquisition and employee development initiatives, fostering a positive work culture and ensuring the growth and well-being of our team members.",
         social: { linkedin: "#", twitter: "#" }
       }
     ],
     development: [
       {
-        name: "David Rodriguez",
-        position: "Lead Software Architect",
+        name: "Sampath",
+        position: "Senior UI/UX Designer",
         images: {
         large: "https://placehold.co/400x400",
         medium: "https://placehold.co/300x300",
         small: "https://placehold.co/200x200"
       },
-        bio: "David designs robust, scalable software architecture for our most complex client challenges.",
+        bio: "As our Senior UI/UX Designer, Sampath brings creative excellence to every project, crafting intuitive and engaging user experiences that perfectly blend aesthetics with functionality.",
         social: { linkedin: "#", github: "#" }
       },
       {
-        name: "Priya Sharma",
-        position: "Frontend Development Lead",
+        name: "Mohan",
+        position: "Lead Full Stack Developer",
         images: {
-        large: "https://placehold.co/400x400",
-        medium: "https://placehold.co/300x300",
-        small: "https://placehold.co/200x200"
+        large: "/images/team/mohan.png",
+        medium: "/images/team/mohan.png",
+        small: "/images/team/mohan.png"
       },
-        bio: "Priya specializes in creating intuitive, responsive user interfaces that enhance user experience.",
+        bio: "Mohan leads our development team with expertise in both frontend and backend technologies, architecting robust solutions and mentoring team members to deliver exceptional results.",
         social: { linkedin: "#", github: "#" }
       },
       {
-        name: "James Wilson",
-        position: "Backend Development Lead",
+        name: "Srikar",
+        position: "Full Stack Developer",
         images: {
         large: "https://placehold.co/400x400",
         medium: "https://placehold.co/300x300",
         small: "https://placehold.co/200x200"
       },
-        bio: "James focuses on building powerful, efficient backend systems that power our clients' applications.",
+        bio: "Srikar excels in developing end-to-end solutions, leveraging his comprehensive knowledge of modern web technologies to build scalable and efficient applications.",
         social: { linkedin: "#", github: "#" }
       },
       {
-        name: "Sophia Park",
-        position: "Mobile Development Specialist",
+        name: "Lohita Elizabeth",
+        position: "Frontend Developer",
         images: {
-        large: "https://placehold.co/400x400",
-        medium: "https://placehold.co/300x300",
-        small: "https://placehold.co/200x200"
-      },
-        bio: "Sophia creates native mobile applications that deliver seamless experiences across iOS and Android platforms.",
+        large: "/images/team/lohita.png",
+        medium: "/images/team/lohita.png",
+        small: "/images/team/lohita.png"
+        },
+        bio: "Lohita Elizabeth specializes in creating responsive and dynamic user interfaces, ensuring seamless user experiences across all platforms with modern frontend technologies.",
         social: { linkedin: "#", github: "#" }
       }
     ],
@@ -251,14 +264,14 @@ export default function TeamPage() {
                   <picture>
                     <source
                       media="(min-width: 1024px)"
-                      srcSet="https://placehold.co/400x400"
+                      srcSet={member.images.large}
                     />
                     <source
                       media="(min-width: 768px)"
-                      srcSet="https://placehold.co/300x300"
+                      srcSet={member.images.medium}
                     />
                     <Image
-                      src="https://placehold.co/200x200"
+                      src={member.images.small}
                       alt={member.name}
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
