@@ -7,6 +7,7 @@ import { motion } from "framer-motion"
 import { ArrowRight, Briefcase, Calendar, Globe, Mail, MapPin } from "lucide-react"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
+import { FaGithub, FaLinkedin, FaXTwitter, FaInstagram } from "react-icons/fa6"
 
 export default function TeamPage() {
   const [isVisible, setIsVisible] = useState(false)
@@ -39,120 +40,117 @@ export default function TeamPage() {
   const teamMembers = {
     leadership: [
       {
-        name: "Bhargavarai",
+        name: "Bhargava Raj",
         position: "CEO and Founder",
-        images: {
-        large: "https://placehold.co/400x400",
-        medium: "https://placehold.co/300x300",
-        small: "https://placehold.co/200x200"
-      },
+        image: "/images/team/bhargavaraj.png",
         bio: "As the visionary founder and CEO of Saavik Solutions, Bhargavarai leads the company's strategic direction and innovation initiatives, driving our mission to deliver cutting-edge technology solutions.",
-        social: { linkedin: "#", twitter: "#" }
+        social: {
+          linkedin: "https://linkedin.com/in/bhargavarai",
+          twitter: "https://twitter.com/bhargavarai"
+        }
       },
       {
         name: "Ravi",
         position: "Chief Technical Officer",
-        images: {
-        large: "https://placehold.co/400x400",
-        medium: "https://placehold.co/300x300",
-        small: "https://placehold.co/200x200"
-      },
+        image: "/images/team/ravi.png",
         bio: "Ravi spearheads our technical strategy and innovation, ensuring Saavik Solutions remains at the forefront of technological advancement and delivers exceptional solutions to our clients.",
-        social: { linkedin: "#", twitter: "#" }
+        social: {
+          linkedin: "https://linkedin.com/in/ravi",
+          twitter: "https://twitter.com/ravi"
+        }
       },
       {
         name: "Laya Sri",
         position: "Co-Founder and Head of Operations",
-        images: {
-        large: "https://placehold.co/400x400",
-        medium: "https://placehold.co/300x300",
-        small: "https://placehold.co/200x200"
-      },
+        image: "/images/team/layasri.png",
         bio: "As Co-Founder and Head of Operations, Laya Sri orchestrates our operational excellence, ensuring seamless delivery of services while maintaining the highest standards of quality and efficiency.",
-        social: { linkedin: "#", twitter: "#" }
+        social: {
+          linkedin: "https://linkedin.com/in/layasri",
+          twitter: "https://twitter.com/layasri"
+        }
       }
     ],
     management: [
       {
         name: "Sonali",
         position: "Human Resources Manager",
-        images: {
-        large: "https://placehold.co/400x400",
-        medium: "https://placehold.co/300x300",
-        small: "https://placehold.co/200x200"
-      },
+        image: "/images/team/sonali.png",
         bio: "As our HR Manager, Sonali leads our talent acquisition and employee development initiatives, fostering a positive work culture and ensuring the growth and well-being of our team members.",
-        social: { linkedin: "#", twitter: "#" }
+        social: {
+          linkedin: "https://linkedin.com/in/sonali"
+        }
       }
     ],
     development: [
       {
-        name: "Sampath",
-        position: "Senior UI/UX Designer",
-        images: {
-        large: "https://placehold.co/400x400",
-        medium: "https://placehold.co/300x300",
-        small: "https://placehold.co/200x200"
+        name: "Sampad Dutta",
+        position: "Senior Creative Designer",
+        image: "/images/team/sampad_dutta.png",
+        bio: "As our Senior Creative Designer, Sampath brings creative excellence to every project, crafting intuitive and engaging user experiences that perfectly blend aesthetics with functionality.",
+        social: {
+          linkedin: "https://linkedin.com/in/sampath",
+          github: "https://github.com/sampath"
+        }
       },
-        bio: "As our Senior UI/UX Designer, Sampath brings creative excellence to every project, crafting intuitive and engaging user experiences that perfectly blend aesthetics with functionality.",
-        social: { linkedin: "#", github: "#" }
+      {
+        name: "Soumyadeep Batyacharya",
+        position: "Video Editor",
+        image: "/images/team/soumyadeep_batyacharya.png",
+        bio: "As our Video Editor, Soumyadeep brings creative excellence to every project, crafting intuitive and engaging user experiences that perfectly blend aesthetics with functionality.",
+        social: {
+          linkedin: "https://linkedin.com/in/sampath",
+          github: "https://github.com/sampath"
+        }
       },
       {
         name: "Mohan",
         position: "Lead Full Stack Developer",
-        images: {
-        large: "/images/team/mohan.png",
-        medium: "/images/team/mohan.png",
-        small: "/images/team/mohan.png"
-      },
+        image: "/images/team/mohan.png",
         bio: "Mohan leads our development team with expertise in both frontend and backend technologies, architecting robust solutions and mentoring team members to deliver exceptional results.",
-        social: { linkedin: "#", github: "#" }
+        social: {
+          linkedin: "https://linkedin.com/in/mohan",
+          github: "https://github.com/mohan"
+        }
       },
       {
         name: "Srikar",
         position: "Full Stack Developer",
-        images: {
-        large: "https://placehold.co/400x400",
-        medium: "https://placehold.co/300x300",
-        small: "https://placehold.co/200x200"
-      },
+        image: "/images/team/srikar.jpg",
         bio: "Srikar excels in developing end-to-end solutions, leveraging his comprehensive knowledge of modern web technologies to build scalable and efficient applications.",
-        social: { linkedin: "#", github: "#" }
+        social: {
+          linkedin: "https://linkedin.com/in/srikar",
+          github: "https://github.com/srikar"
+        }
       },
       {
         name: "Lohita Elizabeth",
         position: "Frontend Developer",
-        images: {
-        large: "/images/team/lohita.png",
-        medium: "/images/team/lohita.png",
-        small: "/images/team/lohita.png"
-        },
+        image: "/images/team/lohita.png",
         bio: "Lohita Elizabeth specializes in creating responsive and dynamic user interfaces, ensuring seamless user experiences across all platforms with modern frontend technologies.",
-        social: { linkedin: "#", github: "#" }
+        social: {
+          linkedin: "https://linkedin.com/in/lohita",
+          github: "https://github.com/lohita"
+        }
       }
     ],
     marketing: [
       {
-        name: "Emma Johnson",
+        name: "Sridhar Goud",
         position: "Marketing Director",
-        images: {
-        large: "https://placehold.co/400x400",
-        medium: "https://placehold.co/300x300",
-        small: "https://placehold.co/200x200"
-      },
-        bio: "Emma leads our marketing strategy, focusing on brand development and client acquisition.",
+        image: '/images/team/sridhar_goud.png',
+        bio: "Sridhar Goud leads our marketing efforts, driving brand awareness and driving traffic to our website.",
         social: { linkedin: "#", twitter: "#" }
       },
       {
-        name: "Carlos Mendez",
+        name: "Santhosh Kattaa",
         position: "Digital Marketing Specialist",
-        images: {
-        large: "https://placehold.co/400x400",
-        medium: "https://placehold.co/300x300",
-        small: "https://placehold.co/200x200"
-      },
-        bio: "Carlos implements data-driven marketing campaigns that deliver measurable results for our clients.",
-        social: { linkedin: "#", twitter: "#" }
+        image: '/images/team/santhosh_kattaa.png',
+        bio: "Santhosh Kattaa specializes in digital marketing strategies, focusing on social media management and content creation to enhance our brand presence.",
+        social: { 
+          linkedin: "#",
+          twitter: "#",
+          instagram: "#"
+        }
       }
     ]
   }
@@ -261,22 +259,15 @@ export default function TeamPage() {
                 className="bg-gradient-to-br from-gray-900 to-black rounded-xl overflow-hidden border border-gray-800 hover:border-[#FF0000]/30 transition-all duration-300 group"
               >
                 <div className="relative h-80">
-                  <picture>
-                    <source
-                      media="(min-width: 1024px)"
-                      srcSet={member.images.large}
-                    />
-                    <source
-                      media="(min-width: 768px)"
-                      srcSet={member.images.medium}
-                    />
-                    <Image
-                      src={member.images.small}
-                      alt={member.name}
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                  </picture>
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    priority={index < 3}
+                    quality={90}
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent" />
                 </div>
                 <div className="p-6">
@@ -286,18 +277,38 @@ export default function TeamPage() {
                   <p className="text-[#FF0000] mb-4">{member.position}</p>
                   <p className="text-gray-400 mb-6">{member.bio}</p>
                   <div className="flex gap-3">
-                    {Object.keys(member.social).map((platform) => (
-                      <a
-                        key={platform}
-                        href={member.social[platform as keyof typeof member.social]}
-                        className="p-2 bg-gray-800 hover:bg-[#FF0000] rounded-full transition-colors"
-                        aria-label={`${platform} profile`}
-                      >
-                        <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
-                          <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0z" />
-                        </svg>
-                      </a>
-                    ))}
+                    {Object.entries(member.social).map(([platform, url]) => {
+                      const getSocialIcon = (platform: string) => {
+                        switch (platform.toLowerCase()) {
+                          case 'github':
+                            return <FaGithub className="h-5 w-5" />;
+                          case 'linkedin':
+                            return <FaLinkedin className="h-5 w-5" />;
+                          case 'twitter':
+                            return <FaXTwitter className="h-5 w-5" />;
+                          case 'instagram':
+                            return <FaInstagram className="h-5 w-5" />;
+                          default:
+                            return null;
+                        }
+                      };
+
+                      const icon = getSocialIcon(platform);
+                      if (!icon) return null;
+
+                      return (
+                        <a
+                          key={platform}
+                          href={url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="p-2 bg-gray-800 hover:bg-[#FF0000] rounded-full transition-colors"
+                          aria-label={`${platform} profile`}
+                        >
+                          {icon}
+                        </a>
+                      );
+                    })}
                   </div>
                 </div>
               </motion.div>
@@ -307,7 +318,7 @@ export default function TeamPage() {
       </section>
       
       {/* Locations */}
-      <section className="py-16 bg-black">
+      {/* <section className="py-16 bg-black">
         <div className="container mx-auto px-6">
           <motion.div 
             initial="hidden"
@@ -349,7 +360,7 @@ export default function TeamPage() {
             ))}
           </motion.div>
         </div>
-      </section>
+      </section> */}
       
       {/* Join Our Team */}
       <section className="py-16 bg-gradient-to-b from-gray-900 to-black">
