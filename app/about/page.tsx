@@ -39,17 +39,7 @@ export default function AboutPage() {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative pt-24 pb-16 lg:pt-32 lg:pb-24 overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full">
-          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-red-900/20 z-10" />
-          <Image 
-            src="https://placehold.co/1920x500" 
-            alt="Background" 
-            fill 
-            className="object-cover object-center opacity-30"
-          />
-        </div>
-        
+      <section className="relative pt-24 pb-16 lg:pt-32 lg:pb-24 overflow-hidden bg-gradient-to-br from-black via-black to-gray-900">
         <div className="container mx-auto px-6 relative z-20">
           <motion.div 
             initial="hidden"
@@ -65,17 +55,17 @@ export default function AboutPage() {
             </p>
             <div className="flex flex-wrap gap-4">
               <Link href="/about/team">
-                <button className="px-6 py-3 bg-[#FF0000] hover:bg-[#ff0000bb] transition-colors rounded-lg flex items-center">
-                  Meet Our Team <Users className="ml-2 h-5 w-5" />
+                <button className="px-6 py-3 border border-white/20 hover:bg-[#FF0000] transition-colors rounded-lg flex items-center group">
+                  Meet Our Team <Users className="ml-2 h-5 w-5 group-hover:text-white" />
                 </button>
               </Link>
               <Link href="/about/history">
-                <button className="px-6 py-3 border border-white/20 hover:bg-white/10 transition-colors rounded-lg flex items-center">
+                <button className="px-6 py-3 border border-white/20 hover:bg-[#FF0000] transition-colors rounded-lg flex items-center group">
                   Our History <Layers className="ml-2 h-5 w-5" />
                 </button>
               </Link>
               <Link href="/about/mission">
-                <button className="px-6 py-3 border border-white/20 hover:bg-white/10 transition-colors rounded-lg flex items-center">
+                <button className="px-6 py-3 border border-white/20 hover:bg-[#FF0000] transition-colors rounded-lg flex items-center group">
                   Mission & Vision <Award className="ml-2 h-5 w-5" />
                 </button>
               </Link>
