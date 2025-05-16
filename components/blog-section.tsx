@@ -13,7 +13,7 @@ const blogPosts = [
       "Discover how artificial intelligence is revolutionizing the way businesses develop and implement enterprise software solutions.",
     category: "Technology",
     date: "Apr 15, 2025",
-    image: "https:dummyjson.com/image/600x400",
+    image: "/images/home-blog-1.jpeg",
     slug: "ai-enterprise-software",
   },
   {
@@ -23,7 +23,7 @@ const blogPosts = [
       "Learn how companies are leveraging digital transformation strategies to create exceptional customer experiences.",
     category: "Digital Strategy",
     date: "Apr 10, 2025",
-    image: "https:dummyjson.com/image/600x400",
+    image: "/images/home-blog-2.jpeg",
     slug: "digital-transformation-cx",
   },
   {
@@ -33,7 +33,7 @@ const blogPosts = [
       "Explore the best practices and technologies for developing web applications that can scale with your business needs.",
     category: "Web Development",
     date: "Apr 5, 2025",
-    image: "https:dummyjson.com/image/600x400",
+    image: "/images/home-blog-3.jpeg",
     slug: "scalable-web-applications",
   },
 ];

@@ -135,6 +135,7 @@ export default function EnterpriseSolutions() {
                         alt={solution.title}
                         fill
                         className="object-cover transition-transform duration-500 group-hover:scale-110"
+                        priority={index < visibleItems} // Prioritize loading visible images
                       />
                     </div>
                     <div className="p-6 flex-1 flex flex-col justify-between">
