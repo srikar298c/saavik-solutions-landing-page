@@ -53,15 +53,7 @@ export default function MissionPage() {
     }
   }
 
-  const getImage = () => {
-    if (windowWidth >= 1024) {
-      return "https://placehold.co/1920x500"
-    } else if (windowWidth >= 768) {
-      return "https://placehold.co/1200x400"
-    } else {
-      return "https://placehold.co/600x300"
-    }
-  }
+  
 
   const values = [
     {
@@ -117,12 +109,22 @@ export default function MissionPage() {
       <section className="relative pt-24 pb-16 lg:pt-32 lg:pb-24 overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full">
           <div className="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-[#FF0000]/20 z-10" />
-          <Image
-            src={getImage()}
-            alt="Mission Background"
-            fill
-            className="object-cover object-center opacity-30"
-          />
+        
+          <motion.div variants={fadeIn} className="relative h-96 rounded-xl overflow-hidden">
+           
+            <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent" />
+          </motion.div>
+        
+          <motion.div variants={fadeIn} className="relative h-96 order-1 lg:order-2 rounded-xl overflow-hidden">
+            {/* <Image
+              src="/images/vision-image.jpg"
+              alt="Our Vision"
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw"
+              className="object-cover rounded-xl"
+            /> */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent" />
+          </motion.div>
         </div>
 
         <div className="container mx-auto px-6 relative z-20">
@@ -209,16 +211,13 @@ export default function MissionPage() {
                 className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
               >
                 <motion.div variants={fadeIn} className="relative h-96 rounded-xl overflow-hidden">
-                  <picture>
-                    <source media="(min-width: 1024px)" srcSet="https://placehold.co/800x600" />
-                    <source media="(min-width: 768px)" srcSet="https://placehold.co/600x400" />
-                    <Image
-                      src="https://placehold.co/400x300"
-                      alt="Our Mission"
-                      fill
-                      className="object-cover rounded-xl"
-                    />
-                  </picture>
+                <Image
+                    src="/images/sustainability.jpg"
+                    alt="Making a Difference"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw"
+                    className="object-cover rounded-xl"
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent" />
                 </motion.div>
 
@@ -280,16 +279,13 @@ export default function MissionPage() {
                 </motion.div>
 
                 <motion.div variants={fadeIn} className="relative h-96 order-1 lg:order-2 rounded-xl overflow-hidden">
-                  <picture>
-                    <source media="(min-width: 1024px)" srcSet="https://placehold.co/800x600" />
-                    <source media="(min-width: 768px)" srcSet="https://placehold.co/600x400" />
-                    <Image
-                      src="https://placehold.co/400x300"
-                      alt="Our Vision"
-                      fill
-                      className="object-cover rounded-xl"
-                    />
-                  </picture>
+                  <Image
+                    src="/images/sustainability.jpg"
+                    alt="Making a Difference"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw"
+                    className="object-cover rounded-xl"
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent" />
                 </motion.div>
               </motion.div>
@@ -443,16 +439,13 @@ export default function MissionPage() {
               variants={fadeIn}
               className="relative h-80 lg:h-full min-h-[400px] rounded-xl overflow-hidden"
             >
-              <picture>
-                <source media="(min-width: 1024px)" srcSet="https://placehold.co/800x600" />
-                <source media="(min-width: 768px)" srcSet="https://placehold.co/600x400" />
-                <Image
-                  src="https://placehold.co/400x300"
-                  alt="Making a Difference"
-                  fill
-                  className="object-cover rounded-xl"
-                />
-              </picture>
+               <Image
+                    src="/images/sustainability.jpg"
+                    alt="Making a Difference"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw"
+                    className="object-cover rounded-xl"
+                  />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent">
                 <div className="absolute bottom-0 left-0 p-6">
                   <p className="text-2xl font-bold">Creating Positive Change</p>

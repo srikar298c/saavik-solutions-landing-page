@@ -49,16 +49,16 @@ export default function TeamPage() {
           twitter: "https://twitter.com/bhargavarai"
         }
       },
-      {
-        name: "Ravi",
-        position: "Chief Technical Officer",
-        image: "/images/team/ravi.png",
-        bio: "Ravi spearheads our technical strategy and innovation, ensuring Saavik Solutions remains at the forefront of technological advancement and delivers exceptional solutions to our clients.",
-        social: {
-          linkedin: "https://linkedin.com/in/ravi",
-          twitter: "https://twitter.com/ravi"
-        }
-      },
+      // {
+      //   name: "Ravi",
+      //   position: "Chief Technical Officer",
+      //   image: "/images/team/ravi.png",
+      //   bio: "Ravi spearheads our technical strategy and innovation, ensuring Saavik Solutions remains at the forefront of technological advancement and delivers exceptional solutions to our clients.",
+      //   social: {
+      //     linkedin: "https://linkedin.com/in/ravi",
+      //     twitter: "https://twitter.com/ravi"
+      //   }
+      // },
       {
         name: "Laya Sri",
         position: "Co-Founder and Head of Operations",
@@ -163,12 +163,7 @@ export default function TeamPage() {
       <section className="relative pt-24 pb-16 lg:pt-32 lg:pb-24 overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full">
           <div className="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-red-900/20 z-10" />
-          <Image 
-            src="https://placehold.co/1920x500" 
-            alt="Team Background" 
-            fill 
-            className="object-cover object-center opacity-30"
-          />
+         
         </div>
         
         <div className="container mx-auto px-6 relative z-20">
@@ -374,7 +369,7 @@ export default function TeamPage() {
               className="relative h-80 lg:h-full min-h-[400px] rounded-xl overflow-hidden"
             >
               <Image 
-                src="https://placehold.co/800x600"
+                src="/images/video-poster.jpg"
                 alt="Join Our Team"
                 fill
                 className="object-cover rounded-xl"
