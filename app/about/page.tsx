@@ -59,11 +59,11 @@ export default function AboutPage() {
                   Meet Our Team <Users className="ml-2 h-5 w-5 group-hover:text-white" />
                 </button>
               </Link>
-              <Link href="/about/history">
+              {/* <Link href="/about/history">
                 <button className="px-6 py-3 border border-white/20 hover:bg-[#FF0000] transition-colors rounded-lg flex items-center group">
                   Our History <Layers className="ml-2 h-5 w-5" />
                 </button>
-              </Link>
+              </Link> */}
               <Link href="/about/mission">
                 <button className="px-6 py-3 border border-white/20 hover:bg-[#FF0000] transition-colors rounded-lg flex items-center group">
                   Mission & Vision <Award className="ml-2 h-5 w-5" />
@@ -102,12 +102,13 @@ export default function AboutPage() {
             </motion.div>
             
             <motion.div variants={fadeIn} className="relative h-96 rounded-xl overflow-hidden">
-              <Image 
-                src="https://placehold.co/600x800" 
-                alt="Saavik Team" 
-                fill 
-                className="object-cover rounded-xl"
-              />
+            <Image
+                    src="/images/we-are.png"
+                    alt="png"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw"
+                    className="object-cover rounded-xl"
+                  />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent">
                 <div className="absolute bottom-6 left-6 right-6">
                   <p className="text-xl font-bold">Innovative Solutions for Complex Challenges</p>
@@ -191,7 +192,7 @@ export default function AboutPage() {
       </section>
       
       {/* Global Presence */}
-      <section className="py-16 bg-gradient-to-b from-gray-900 to-black">
+      {/* <section className="py-16 bg-gradient-to-b from-gray-900 to-black">
         <div className="container mx-auto px-6">
           <motion.div 
             initial="hidden"
@@ -232,7 +233,7 @@ export default function AboutPage() {
             </div>
           </motion.div>
         </div>
-      </section>
+      </section> */}
       
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-red-900/20 to-black relative overflow-hidden">
