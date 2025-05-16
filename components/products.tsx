@@ -1,91 +1,70 @@
 'use client'
 
-import { useEffect, useState } from "react"
+import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
 import Image from "next/image"
 
-// Create a product data array with detailed information
 export const products = [
   {
     title: "DigiZinc",
     description: "Expert marketing and branding company transforming businesses through innovative digital strategies.",
-    image: "/digizinc-300x400.png", // Placeholder image path
+    image: "/digizinc-300x400.png",
     details: "Specializing in brand identity, digital marketing, and creative campaigns that drive engagement and conversions."
   },
   {
     title: "BookMySports",
     description: "Comprehensive sports platform for venue booking, player connections, and score tracking.",
-    image: "/bms-300x400.png", // Placeholder image path
+    image: "/bms-300x400.png",
     details: "Revolutionizing sports experiences with seamless booking, community building, and performance analytics."
   },
   {
     title: "EAOverseas",
     description: "Consultancy and CRM platform for study abroad students across the globe.",
-    image: "/eaoverseas-300x400.png", // Placeholder image path
+    image: "/eaoverseas-300x400.png",
     details: "Empowering students with personalized guidance, university matching, and visa assistance services."
   }
 ]
 
 export default function Products() {
-  // This state array tracks which cards are flipped
   const [flipped, setFlipped] = useState(Array(products.length).fill(false))
   const [deviceType, setDeviceType] = useState("desktop")
   const [isClient, setIsClient] = useState(false)
 
-  // Function to determine device type and set appropriate image dimensions
   useEffect(() => {
     setIsClient(true)
-    
+
     const handleResize = () => {
       const width = window.innerWidth
-      if (width < 640) {
-        setDeviceType("mobile")
-      } else if (width < 1024) {
-        setDeviceType("tablet")
-      } else {
-        setDeviceType("desktop")
-      }
+      if (width < 640) setDeviceType("mobile")
+      else if (width < 1024) setDeviceType("tablet")
+      else setDeviceType("desktop")
     }
 
     handleResize()
     window.addEventListener('resize', handleResize)
-    
-    return () => {
-      window.removeEventListener('resize', handleResize)
-    }
+
+    return () => window.removeEventListener('resize', handleResize)
   }, [])
 
-  // Get image dimensions based on device type
   const getImageDimensions = () => {
     switch (deviceType) {
-      case "mobile":
-        return { width: 280, height: 350 }
-      case "tablet":
-        return { width: 300, height: 380 }
-      default:
-        return { width: 320, height: 400 }
+      case "mobile": return { width: 280, height: 350 }
+      case "tablet": return { width: 300, height: 380 }
+      default: return { width: 320, height: 400 }
     }
   }
 
-  // Function to toggle the flip state of a specific card
   const toggleFlip = (index: number) => {
     const newFlipped = [...flipped]
     newFlipped[index] = !newFlipped[index]
     setFlipped(newFlipped)
   }
 
-  // Generate placeholder image URL with appropriate dimensions
-  const getPlaceholderImage = (baseUrl: string) => {
-    const { width, height } = getImageDimensions()
-    return `${baseUrl.replace(/\d+\/\d+/, `${width}/${height}`)}`
-  }
-
   return (
     <section className="w-full bg-gradient-to-b from-[#111] to-[#1A1A1A] py-10 sm:py-12 md:py-16">
       <div className="container mx-auto px-4 md:px-6">
-        {/* Heading Section */}
-        <motion.div 
+        <motion.div
           className="mb-8 sm:mb-10 md:mb-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -102,7 +81,6 @@ export default function Products() {
           </p>
         </motion.div>
 
-        {/* Product Cards with Framer Motion */}
         <div className="mb-10 grid grid-cols-1 gap-6 sm:grid-cols-2 md:gap-8 lg:grid-cols-3">
           {products.map((product, index) => (
             <motion.div
@@ -114,15 +92,14 @@ export default function Products() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true, margin: "-50px" }}
             >
-              {/* The entire card container */}
               <motion.div
                 className="relative h-full w-full"
                 initial={false}
                 animate={{ rotateY: flipped[index] ? 180 : 0 }}
-                transition={{ 
-                  type: "spring", 
-                  stiffness: 300, 
-                  damping: 20 
+                transition={{
+                  type: "spring",
+                  stiffness: 300,
+                  damping: 20
                 }}
                 style={{ transformStyle: "preserve-3d" }}
               >
@@ -134,13 +111,14 @@ export default function Products() {
                   {isClient && (
                     <div className="relative h-full w-full">
                       <Image
-                        src={getPlaceholderImage(product.image)}
+                        src={product.image}
                         alt={product.title}
                         fill
                         className="object-cover"
-                        sizes={`(max-width: 640px) ${getImageDimensions().width}px, 
-                                (max-width: 1024px) ${getImageDimensions().width}px, 
+                        sizes={`(max-width: 640px) ${getImageDimensions().width}px,
+                                (max-width: 1024px) ${getImageDimensions().width}px,
                                 ${getImageDimensions().width}px`}
+                        priority={index < 3} // Prioritize loading the first 3 images
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-60"></div>
                       <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5">
@@ -148,7 +126,7 @@ export default function Products() {
                         <p className="mt-1 line-clamp-2 text-xs text-gray-300 sm:text-sm">{product.description}</p>
                         <div className="mt-3 flex justify-between items-center">
                           <span className="text-xs text-gray-400">Tap to see details</span>
-                          <motion.div 
+                          <motion.div
                             className="flex h-8 w-8 items-center justify-center rounded-full bg-red-600/30"
                             animate={{ scale: [1, 1.1, 1], opacity: [0.7, 1, 0.7] }}
                             transition={{ repeat: Infinity, duration: 2 }}
@@ -166,9 +144,9 @@ export default function Products() {
                 {/* Back of card */}
                 <motion.div
                   className="absolute inset-0 flex h-full w-full flex-col items-center justify-center rounded-lg border border-red-900/30 bg-gradient-to-br from-black to-[#1A1A1A] p-6 text-center shadow-lg"
-                  style={{ 
+                  style={{
                     backfaceVisibility: "hidden",
-                    transform: "rotateY(180deg)" 
+                    transform: "rotateY(180deg)"
                   }}
                 >
                   <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-red-600 to-transparent"></div>
@@ -187,8 +165,7 @@ export default function Products() {
           ))}
         </div>
 
-        {/* Creative Wing Section */}
-        <motion.div 
+        <motion.div
           className="mb-8 sm:mb-10"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -209,8 +186,7 @@ export default function Products() {
           </p>
         </motion.div>
 
-        {/* DigiZinc Logo with Framer Motion */}
-        <motion.div 
+        <motion.div
           className="mx-auto mb-8 w-[90%] overflow-hidden rounded-lg border border-red-900/30 bg-black bg-opacity-50 backdrop-blur-sm sm:mb-10 sm:w-[80%] md:w-[70%] lg:w-[60%]"
           whileHover={{ scale: 1.02 }}
           transition={{ type: "spring", stiffness: 300, damping: 10 }}
@@ -220,7 +196,7 @@ export default function Products() {
         >
           <div className="relative mx-auto flex h-[120px] w-[200px] items-center justify-center p-4 sm:h-[150px] sm:p-6">
             <div className="text-center">
-              <motion.div 
+              <motion.div
                 className="mb-1 text-4xl font-bold text-white sm:mb-2 sm:text-5xl md:text-6xl"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -228,7 +204,7 @@ export default function Products() {
               >
                 digizinc
               </motion.div>
-              <motion.div 
+              <motion.div
                 className="text-xs font-medium tracking-widest text-white sm:text-sm"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -240,7 +216,6 @@ export default function Products() {
           </div>
         </motion.div>
 
-        {/* CTA Button with Framer Motion */}
         <div className="flex justify-center">
           <motion.div
             whileHover={{ scale: 1.03 }}

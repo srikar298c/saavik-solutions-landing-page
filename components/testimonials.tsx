@@ -16,9 +16,7 @@ const testimonials = [
     feedback: "Feedback Summary",
     name: "Founder, Saavik Pvt. Ltd.",
     position: "Raj",
-    imageLarge: "https://dummyjson.com/image/600x800",
-    imageMedium: "https://dummyjson.com/image/400x600",
-    imageSmall: "https://dummyjson.com/image/300x400",
+    image: "/images/testimonial-1.jpg"
   },
   {
     id: 2,
@@ -27,9 +25,7 @@ const testimonials = [
     feedback: "Their team delivered beyond our expectations",
     name: "CTO, TechVision Inc.",
     position: "Sarah",
-    imageLarge: "https://dummyjson.com/image/600x800",
-    imageMedium: "https://dummyjson.com/image/400x600",
-    imageSmall: "https://dummyjson.com/image/300x400",
+    image: "/images/testimonial-2.jpg"
   },
   {
     id: 3,
@@ -38,10 +34,8 @@ const testimonials = [
     feedback: "The solutions provided transformed our business",
     name: "Director, Global Innovations",
     position: "Michael",
-    imageLarge: "https://dummyjson.com/image/600x800",
-    imageMedium: "https://dummyjson.com/image/400x600",
-    imageSmall: "https://dummyjson.com/image/300x400",
-  },
+    image: "/images/testimonial-3.jpg"
+  }
 ]
 
 export default function Testimonials() {
@@ -183,16 +177,15 @@ export default function Testimonials() {
                     <div className="flex flex-col sm:flex-row">
                       {/* Image Container */}
                       <div className="relative h-64 w-full sm:h-auto sm:w-2/5">
-                        <picture>
-                          <source media="(min-width: 1024px)" srcSet={testimonial.imageLarge} />
-                          <source media="(min-width: 768px)" srcSet={testimonial.imageMedium} />
-                          <Image
-                            src={testimonial.imageSmall}
-                            alt={`Testimonial by ${testimonial.position}`}
-                            fill
-                            className="object-cover"
-                          />
-                        </picture>
+                        <Image
+                          src={testimonial.image}
+                          alt={`Testimonial by ${testimonial.position}`}
+                          fill
+                          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 40vw, 384px"
+                          className="object-cover"
+                          priority={testimonial.id === 1}
+                          quality={85}
+                        />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                         <div className="absolute bottom-4 left-4 flex items-center sm:hidden">
                           <span className="mr-1 text-lg font-bold text-white">{testimonial.rating}</span>

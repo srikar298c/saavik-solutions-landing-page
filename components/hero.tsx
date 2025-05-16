@@ -5,9 +5,13 @@ import Navbar from "./navbar";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
+// Define your image imports
+import heroBgLg from '../public/home-hero-bg-lg.png'; // Import only the largest, Next.js will handle the rest
+
 export default function Hero() {
   const carouselRef = useRef(null);
   const [windowWidth, setWindowWidth] = useState(0);
+  const isDesktop = windowWidth >= 1280;
 
   useEffect(() => {
     // Set initial window width
@@ -17,7 +21,7 @@ export default function Hero() {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
     };
-    
+
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
@@ -33,12 +37,12 @@ export default function Hero() {
 
     const animate = () => {
       position -= speed;
-      
+
       // Reset position when first set of logos has scrolled out of view
       if (Math.abs(position) >= totalWidth) {
         position = 0;
       }
-      
+
       (carousel as HTMLElement).style.transform = `translateX(${position}px)`;
       requestAnimationFrame(animate);
     };
@@ -50,15 +54,22 @@ export default function Hero() {
     };
   }, []);
 
-  // Function to get appropriate hero background based on screen size
-  const getHeroBackground = () => {
-    if (windowWidth >= 1280) {
-      // Desktop - use the office image (first image)
-      return "/home-hero-bg-lg.png"; // Replace with actual path to the first image
-    } else if (windowWidth >= 768) {
-      return "/home-hero-bg-md.png"; // Replace with actual path to the second image
-    } else {
-      return "/home-hero-bg-sm.png";
+  // Animation variants
+  const fadeIn = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.7, ease: "easeOut" }
+    }
+  };
+
+  const slideIn = {
+    hidden: { opacity: 0, x: -30 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.8, ease: "easeOut" }
     }
   };
 
@@ -73,37 +84,15 @@ export default function Hero() {
     }
   };
 
-  // Animation variants
-  const fadeIn = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { 
-      opacity: 1, 
-      y: 0,
-      transition: { duration: 0.7, ease: "easeOut" }
-    }
-  };
-
-  const slideIn = {
-    hidden: { opacity: 0, x: -30 },
-    visible: { 
-      opacity: 1, 
-      x: 0,
-      transition: { duration: 0.8, ease: "easeOut" }
-    }
-  };
-
-  // Check if desktop view to use alternative layout
-  const isDesktop = windowWidth >= 1280;
-
   return (
     <>
       {/* HERO SECTION */}
       <div className="relative w-full min-h-screen bg-cover bg-center overflow-hidden">
-        {/* Background Image - Conditionally rendered based on screen size */}
+        {/* Background Image - Using Next.js Image for responsiveness */}
         <div className="absolute inset-0 z-0">
-          <Image 
-            src={getHeroBackground()}
-            alt="Hero Background" 
+          <Image
+            src={heroBgLg} // Import and use the largest image, Next.js will optimize
+            alt="Hero Background"
             fill
             priority
             className="object-cover"
@@ -181,7 +170,7 @@ export default function Hero() {
         <div className="absolute bottom-0 left-0 w-full bg-gray-950/70 backdrop-blur-md z-20">
           <div className="container mx-auto px-4 sm:px-6 py-6 sm:py-8">
             <div className="flex flex-col md:flex-row items-center justify-between">
-            <motion.div
+              <motion.div
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
@@ -191,77 +180,77 @@ export default function Hero() {
                 <h2 className="text-xl md:text-2xl font-bold text-white">
                   TRUSTED <span className="text-red-500">BY</span>
                 </h2>
-                
+
                 {/* Accent elements */}
                 <div className="absolute -bottom-1 -right-1 w-3 h-3 bg-red-500 rounded-full"></div>
                 <div className="absolute -top-1 -left-1 w-2 h-2 bg-red-500 rounded-full"></div>
               </motion.div>
-              
+
               <div className="overflow-hidden w-full md:w-2/3">
-                <div 
-                  ref={carouselRef} 
+                <div
+                  ref={carouselRef}
                   className="flex items-center space-x-12 md:space-x-16"
                   style={{ width: "fit-content" }}
                 >
                   {/* First set of logos */}
                   <div className="flex items-center space-x-8 sm:space-x-12 mx-6 sm:mx-8">
                     <div className="relative w-20 h-8 md:w-28 md:h-10">
-                      <Image 
-                        src={isDesktop ? "https://placehold.co/200x80?text=Legalipsum" : "https://placehold.co/200x80?text=Logo+1"} 
-                        alt="Client Logo 1" 
+                      <Image
+                        src="/logosipsum-1.png"
+                        alt="Client Logo 1"
                         width={getLogoSize() * 5}
                         height={getLogoSize()}
                         className="object-contain"
                       />
                     </div>
                     <div className="relative w-20 h-8 md:w-28 md:h-10">
-                      <Image 
-                        src={isDesktop ? "https://placehold.co/200x80?text=LOGO" : "https://placehold.co/200x80?text=Logo+2"} 
-                        alt="Client Logo 2" 
+                      <Image
+                        src="/logosipsum-2.png"
+                        alt="Client Logo 2"
                         width={getLogoSize() * 5}
                         height={getLogoSize()}
                         className="object-contain"
                       />
                     </div>
                   </div>
-                  
+
                   {/* Second set of logos */}
                   <div className="flex items-center space-x-8 sm:space-x-12 mx-6 sm:mx-8">
                     <div className="relative w-20 h-8 md:w-28 md:h-10">
-                      <Image 
-                        src={isDesktop ? "https://placehold.co/200x80?text=LOGO+IPSUM" : "https://placehold.co/200x80?text=Logo+3"} 
-                        alt="Client Logo 3" 
+                      <Image
+                        src="/logosipsum-3.png"
+                        alt="Client Logo 3"
                         width={getLogoSize() * 5}
                         height={getLogoSize()}
                         className="object-contain"
                       />
                     </div>
                     <div className="relative w-20 h-8 md:w-28 md:h-10">
-                      <Image 
-                        src={isDesktop ? "https://placehold.co/200x80?text=logorpsum" : "https://placehold.co/200x80?text=Logo+4"} 
-                        alt="Client Logo 4" 
+                      <Image
+                        src="/logosipsum-4.png"
+                        alt="Client Logo 4"
                         width={getLogoSize() * 5}
                         height={getLogoSize()}
                         className="object-contain"
                       />
                     </div>
                   </div>
-                  
+
                   {/* Third set of logos for extra buffer */}
                   <div className="flex items-center space-x-8 sm:space-x-12 mx-6 sm:mx-8">
                     <div className="relative w-20 h-8 md:w-28 md:h-10">
-                      <Image 
-                        src={isDesktop ? "https://placehold.co/200x80?text=Legalipsum" : "https://placehold.co/200x80?text=Logo+5"} 
-                        alt="Client Logo 5" 
+                      <Image
+                        src="/logosipsum-1.png"
+                        alt="Client Logo 5"
                         width={getLogoSize() * 5}
                         height={getLogoSize()}
                         className="object-contain"
                       />
                     </div>
                     <div className="relative w-20 h-8 md:w-28 md:h-10">
-                      <Image 
-                        src={isDesktop ? "https://placehold.co/200x80?text=LOGO" : "https://placehold.co/200x80?text=Logo+6"} 
-                        alt="Client Logo 6" 
+                      <Image
+                        src="/logosipsum-2.png"
+                        alt="Client Logo 6"
                         width={getLogoSize() * 5}
                         height={getLogoSize()}
                         className="object-contain"
@@ -277,4 +266,3 @@ export default function Hero() {
     </>
   );
 }
-
