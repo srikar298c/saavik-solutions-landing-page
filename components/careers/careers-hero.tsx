@@ -52,12 +52,13 @@ export default function CareersHero() {
               transition={{ duration: 0.6 }}
               className="relative h-[400px] w-full overflow-hidden rounded-2xl"
             >
-              <Image
-                src="https://placehold.co/800x400"
-                alt="Abstract red fluid design"
-                fill
-                className="object-cover transition-transform duration-500 hover:scale-105"
-              />
+             <Image
+                    src="/images/video-poster.jpg"
+                    alt="careers-hero"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw"
+                    className="object-cover rounded-xl"
+                  />
             </motion.div>
           </div>
         </div>

@@ -7,25 +7,7 @@ import Link from "next/link"
 
 export default function AboutUs() {
   const [isPlaying, setIsPlaying] = useState(false)
-  const [windowWidth, setWindowWidth] = useState(0)
   const videoRef = useRef<HTMLVideoElement>(null)
-
-  useEffect(() => {
-    setWindowWidth(window.innerWidth)
-    const handleResize = () => setWindowWidth(window.innerWidth)
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
-  }, [])
-
-  const getVideoSource = () => {
-    if (windowWidth >= 1024) {
-      return "/videos/tech-meeting-large.mp4"
-    } else if (windowWidth >= 768) {
-      return "/videos/tech-meeting-medium.mp4"
-    } else {
-      return "/videos/tech-meeting-small.mp4"
-    }
-  }
 
   const togglePlayPause = () => {
     if (videoRef.current) {
@@ -42,7 +24,7 @@ export default function AboutUs() {
     <section className="w-full bg-gradient-to-b from-gray-50 to-white py-24 relative overflow-hidden">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] bg-repeat"></div>
+        <div className="absolute inset-0  "></div>
       </div>
       
       <div className="container mx-auto px-4 md:px-6 relative z-10">
@@ -118,7 +100,7 @@ export default function AboutUs() {
                 muted
                 loop
               >
-                <source src={getVideoSource()} type="video/mp4" />
+                <source src="/videos/tech-meeting-large.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
               
