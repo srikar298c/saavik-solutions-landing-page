@@ -32,7 +32,7 @@ export default function Navbar() {
     { href: "/", text: "HOME" },
     { href: "/about", text: "ABOUT US", hasDropdown: true, dropdownItems: [
       { href: "/about/team", text: "Our Team" },
-      { href: "/about/history", text: "Our History" },
+      // { href: "/about/history", text: "Our History" },
       { href: "/about/mission", text: "Mission & Vision" },
     ]},
     { href: "/services", text: "SERVICES" },
@@ -41,7 +41,7 @@ export default function Navbar() {
   ]
 
   return (
-    <header className={`sticky top-0 z-50 px-4 py-3 transition-all duration-300 ${scrolled ? 'backdrop-blur-md bg-black/80' : 'backdrop-blur-sm bg-black/50'}`}>
+    <header className={`sticky top-0 z-50 px-4 py-6 transition-all duration-300 ${scrolled ? 'backdrop-blur-md bg-black/80' : 'backdrop-blur-sm bg-black/50'}`}>
       <div className={`container mx-auto flex items-center justify-between rounded-full ${scrolled ? 'bg-black/90 py-2' : 'bg-black/80 py-3'} px-6 shadow-2xl border border-white/10 transition-all duration-300`}>
         {/* Logo */}
         <Link href="/" className="flex items-center group">
