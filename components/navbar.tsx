@@ -54,7 +54,7 @@ export default function Navbar() {
             {/* Mobile */}
             <div className="block md:hidden relative overflow-hidden rounded-full">
               <Image
-                src="https://placehold.co/40x40"
+                src="https://placehold.co/45x45"
                 alt="Logo"
                 width={40}
                 height={40}
