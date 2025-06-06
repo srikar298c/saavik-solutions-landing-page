@@ -15,7 +15,7 @@ export default function ServicesGrid() {
         >
           <h2 className="text-3xl font-bold text-black md:text-4xl">
             We Provide Prominent <br />
-            <span className="bg-gradient-to-r from-red-600 to-red-600 bg-clip-text text-transparent">IT Solutions</span>
+            <span className="bg-gradient-to-r from-purple-600 to-purple-600 bg-clip-text text-transparent">IT Solutions</span>
           </h2>
         </motion.div>
 
@@ -26,7 +26,7 @@ export default function ServicesGrid() {
             <div className="space-y-6">
               <motion.div
                 whileHover={{ scale: 1.05 }}
-                className="flex aspect-square flex-col items-center justify-between rounded-2xl bg-red-600 p-8 shadow-lg"
+                className="flex aspect-square flex-col items-center justify-between rounded-2xl bg-purple-600 p-8 shadow-lg"
               >
                 <div className="flex h-full flex-col items-center justify-center">
                   <h3 className="text-center text-xl font-medium text-white">
@@ -42,16 +42,16 @@ export default function ServicesGrid() {
 
               <motion.div
                 whileHover={{ scale: 1.05 }}
-                className="flex aspect-square flex-col items-center justify-between rounded-2xl bg-red-100 p-8 shadow-lg"
+                className="flex aspect-square flex-col items-center justify-between rounded-2xl bg-purple-100 p-8 shadow-lg"
               >
                 <div className="flex h-full flex-col items-center justify-center">
-                  <h3 className="text-center text-xl font-medium text-red-600">
+                  <h3 className="text-center text-xl font-medium text-purple-600">
                     Software
                     <br />
                     Solutions
                   </h3>
                 </div>
-                <Link href="#" className="text-xs text-red-600 hover:text-red-700 transition-colors duration-200">
+                <Link href="#" className="text-xs text-purple-600 hover:text-purple-700 transition-colors duration-200">
                   Learn More
                 </Link>
               </motion.div>
@@ -64,9 +64,9 @@ export default function ServicesGrid() {
                 className="flex aspect-square flex-col items-center justify-between rounded-2xl bg-white p-8 shadow-lg"
               >
                 <div className="flex h-full flex-col items-center justify-center">
-                  <h3 className="text-center text-xl font-medium text-red-600">Staffing</h3>
+                  <h3 className="text-center text-xl font-medium text-purple-600">Staffing</h3>
                 </div>
-                <Link href="#" className="text-xs text-red-600 hover:text-red-700 transition-colors duration-200">
+                <Link href="#" className="text-xs text-purple-600 hover:text-purple-700 transition-colors duration-200">
                   Learn More
                 </Link>
               </motion.div>
@@ -76,13 +76,13 @@ export default function ServicesGrid() {
                 className="flex aspect-square flex-col items-center justify-between rounded-2xl bg-white p-8 shadow-lg"
               >
                 <div className="flex h-full flex-col items-center justify-center">
-                  <h3 className="text-center text-xl font-medium text-red-600">
+                  <h3 className="text-center text-xl font-medium text-purple-600">
                     CRM
                     <br />
                     Solutions
                   </h3>
                 </div>
-                <Link href="#" className="text-xs text-red-600 hover:text-red-700 transition-colors duration-200">
+                <Link href="#" className="text-xs text-purple-600 hover:text-purple-700 transition-colors duration-200">
                   Learn More
                 </Link>
               </motion.div>
@@ -95,28 +95,28 @@ export default function ServicesGrid() {
                 className="flex aspect-square flex-col items-center justify-between rounded-2xl bg-white p-8 shadow-lg"
               >
                 <div className="flex h-full flex-col items-center justify-center">
-                  <h3 className="text-center text-xl font-medium text-red-600">
+                  <h3 className="text-center text-xl font-medium text-purple-600">
                     H R<br />
                     Solutions
                   </h3>
                 </div>
-                <Link href="#" className="text-xs text-red-600 hover:text-red-700 transition-colors duration-200">
+                <Link href="#" className="text-xs text-purple-600 hover:text-purple-700 transition-colors duration-200">
                   Learn More
                 </Link>
               </motion.div>
 
               <motion.div
                 whileHover={{ scale: 1.05 }}
-                className="flex aspect-square flex-col items-center justify-between rounded-2xl bg-red-100 p-8 shadow-lg"
+                className="flex aspect-square flex-col items-center justify-between rounded-2xl bg-purple-100 p-8 shadow-lg"
               >
                 <div className="flex h-full flex-col items-center justify-center">
-                  <h3 className="text-center text-xl font-medium text-red-600">
+                  <h3 className="text-center text-xl font-medium text-purple-600">
                     Digital
                     <br />
                     Marketing
                   </h3>
                 </div>
-                <Link href="#" className="text-xs text-red-600 hover:text-red-700 transition-colors duration-200">
+                <Link href="#" className="text-xs text-purple-600 hover:text-purple-700 transition-colors duration-200">
                   Learn More
                 </Link>
               </motion.div>
@@ -128,17 +128,17 @@ export default function ServicesGrid() {
         <div className="mx-auto grid max-w-2xl grid-cols-2 gap-6 sm:grid md:hidden">
           {[
             // Web Development
-            { bg: "bg-red-600", text: "text-white", title: "Web\nDevelopment" },
+            { bg: "bg-purple-600", text: "text-white", title: "Web\nDevelopment" },
             // HR Solutions
-            { bg: "bg-white", text: "text-red-600", title: "H R\nSolutions" },
+            { bg: "bg-white", text: "text-purple-600", title: "H R\nSolutions" },
             // Software Solutions
-            { bg: "bg-red-100", text: "text-red-600", title: "Software\nSolutions" },
+            { bg: "bg-purple-100", text: "text-purple-600", title: "Software\nSolutions" },
             // Staffing
-            { bg: "bg-white", text: "text-red-600", title: "Staffing" },
+            { bg: "bg-white", text: "text-purple-600", title: "Staffing" },
             // CRM Solutions
-            { bg: "bg-white", text: "text-red-600", title: "CRM\nSolutions" },
+            { bg: "bg-white", text: "text-purple-600", title: "CRM\nSolutions" },
             // Digital Marketing
-            { bg: "bg-red-100", text: "text-red-600", title: "Digital\nMarketing" },
+            { bg: "bg-purple-100", text: "text-purple-600", title: "Digital\nMarketing" },
           ].map((service, index) => (
             <motion.div
               key={index}

@@ -11,7 +11,7 @@ export default function WhyWorkWithUs() {
           transition={{ duration: 0.6 }}
           className="mb-16 text-center text-4xl font-bold text-black md:text-5xl"
         >
-          Why Work With <span className="bg-gradient-to-r from-red-600 to-red-600 bg-clip-text text-transparent">Us?</span>
+          Why Work With <span className="bg-gradient-to-r from-purple-600 to-purple-600 bg-clip-text text-transparent">Us?</span>
         </motion.h2>
 
         <div className="flex flex-col items-center justify-center gap-8 sm:flex-row sm:items-start">
@@ -21,7 +21,7 @@ export default function WhyWorkWithUs() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             whileHover={{ scale: 1.05 }}
-            className="flex h-[220px] w-[280px] flex-col items-center justify-center rounded-2xl bg-red-600 p-6 text-white shadow-lg"
+            className="flex h-[220px] w-[280px] flex-col items-center justify-center rounded-2xl bg-purple-600 p-6 text-white shadow-lg"
           >
             <h3 className="mb-4 text-center text-2xl font-bold">
               Innovation
@@ -41,7 +41,7 @@ export default function WhyWorkWithUs() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
             whileHover={{ scale: 1.05 }}
-            className="flex h-[220px] w-[280px] flex-col items-center justify-center rounded-2xl bg-white p-6 text-red-600 shadow-lg"
+            className="flex h-[220px] w-[280px] flex-col items-center justify-center rounded-2xl bg-white p-6 text-purple-600 shadow-lg"
           >
             <h3 className="mb-4 text-center text-2xl font-bold">
               Collaborative
@@ -61,7 +61,7 @@ export default function WhyWorkWithUs() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             whileHover={{ scale: 1.05 }}
-            className="flex h-[220px] w-[280px] flex-col items-center justify-center rounded-2xl bg-red-600 p-6 text-white shadow-lg"
+            className="flex h-[220px] w-[280px] flex-col items-center justify-center rounded-2xl bg-purple-600 p-6 text-white shadow-lg"
           >
             <h3 className="mb-4 text-center text-2xl font-bold">
               Impactful

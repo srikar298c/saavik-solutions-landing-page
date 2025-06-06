@@ -162,7 +162,7 @@ export default function TeamPage() {
       {/* Hero Section */}
       <section className="relative pt-24 pb-16 lg:pt-32 lg:pb-24 overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full">
-          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-red-900/20 z-10" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-purple-900/20 z-10" />
          
         </div>
         
@@ -175,7 +175,7 @@ export default function TeamPage() {
               className="max-w-3xl mb-8 md:mb-0"
             >
               <div className="mb-4">
-                <Link href="/about" className="text-gray-400 hover:text-red-400 transition-colors flex items-center">
+                <Link href="/about" className="text-gray-400 hover:text-purple-400 transition-colors flex items-center">
                   <ArrowRight className="h-4 w-4 rotate-180 mr-2" /> Back to About
                 </Link>
               </div>
@@ -193,7 +193,7 @@ export default function TeamPage() {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="bg-black/60 backdrop-blur-md p-6 rounded-xl border border-white/10"
             >
-              <p className="text-lg font-semibold text-red-400">Team Highlights</p>
+              <p className="text-lg font-semibold text-purple-400">Team Highlights</p>
               <div className="mt-4 space-y-3">
                 <div className="flex items-center">
                   <Globe className="h-5 w-5 text-gray-400 mr-3" />
@@ -266,7 +266,7 @@ export default function TeamPage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent" />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-2xl font-bold mb-1 group-hover:text-red-400 transition-colors">
+                  <h3 className="text-2xl font-bold mb-1 group-hover:text-purple-400 transition-colors">
                     {member.name}
                   </h3>
                   <p className="text-[#6A43E7] mb-4">{member.position}</p>

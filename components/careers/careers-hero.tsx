@@ -21,7 +21,7 @@ export default function CareersHero() {
               className="mb-6 text-4xl font-bold md:text-5xl lg:text-6xl"
             >
               Join the Future of <br />
-              <span className="bg-gradient-to-r from-red-600 to-red-600 bg-clip-text text-transparent">Innovation</span>
+              <span className="bg-gradient-to-r from-purple-600 to-purple-600 bg-clip-text text-transparent">Innovation</span>
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -38,7 +38,7 @@ export default function CareersHero() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              <Button className="rounded-full bg-gradient-to-r from-red-600 to-red-600 px-8 py-3 text-sm font-medium uppercase hover:shadow-xl transition-all duration-300 hover:scale-105">
+              <Button className="rounded-full bg-gradient-to-r from-purple-600 to-purple-600 px-8 py-3 text-sm font-medium uppercase hover:shadow-xl transition-all duration-300 hover:scale-105">
                 View Job Openings
               </Button>
             </motion.div>

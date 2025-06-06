@@ -160,7 +160,7 @@ const BlogCategories: NextPage<BlogCategoriesProps> = ({
       {/* Desktop Sidebar */}
       <aside className="hidden lg:block lg:w-[260px]">
         <div className="overflow-hidden rounded-t-lg">
-          <div className="bg-red-600 p-4">
+          <div className="bg-purple-600 p-4">
             <h3 className="text-lg font-bold text-white">All Categories</h3>
           </div>
           <div className="h-[500px] overflow-y-auto bg-gray-900 category-scrollbar">
@@ -193,7 +193,7 @@ const BlogCategories: NextPage<BlogCategoriesProps> = ({
         <div className="overflow-hidden rounded-md">
           <button
             onClick={() => setIsDropdownOpen((prev) => !prev)}
-            className="flex w-full items-center justify-between bg-red-600 p-4 text-white"
+            className="flex w-full items-center justify-between bg-purple-600 p-4 text-white"
           >
             <h3 className="text-lg font-bold">{selectedCategory}</h3>
             <motion.svg
@@ -247,7 +247,7 @@ const BlogCategories: NextPage<BlogCategoriesProps> = ({
       <section className="w-full lg:pl-6 lg:flex-1">
         <header className="flex items-center justify-between mb-4">
           <h2 className="text-xl font-bold">
-            <span className="text-red-600">{selectedCategory}</span> Articles
+            <span className="text-purple-600">{selectedCategory}</span> Articles
           </h2>
           <p className="text-sm text-gray-500">
             {filteredPosts.length}{' '}
@@ -265,7 +265,7 @@ const BlogCategories: NextPage<BlogCategoriesProps> = ({
                 exit={{ opacity: 0 }}
                 className="flex h-40 items-center justify-center"
               >
-                <div className="h-8 w-8 animate-spin rounded-full border-4 border-gray-300 border-t-red-600" />
+                <div className="h-8 w-8 animate-spin rounded-full border-4 border-gray-300 border-t-purple-600" />
               </motion.div>
             ) : filteredPosts.length === 0 ? (
               <motion.div
@@ -315,13 +315,13 @@ const BlogCategories: NextPage<BlogCategoriesProps> = ({
                           fill
                           className="object-cover transition-transform duration-500 group-hover:scale-105 md:rounded-l-xl"
                         />
-                        <span className="absolute bottom-0 left-0 bg-red-600 px-3 py-1 text-xs font-bold text-white">
+                        <span className="absolute bottom-0 left-0 bg-purple-600 px-3 py-1 text-xs font-bold text-white">
                           {post.category}
                         </span>
                       </div>
                       <div className="flex flex-1 flex-col justify-between p-5">
                         <div>
-                          <h3 className="mb-3 text-lg font-bold text-gray-900 transition-colors group-hover:text-red-600">
+                          <h3 className="mb-3 text-lg font-bold text-gray-900 transition-colors group-hover:text-purple-600">
                             {post.title}
                           </h3>
                           <p className="text-sm leading-relaxed text-gray-600 line-clamp-2">
@@ -346,7 +346,7 @@ const BlogCategories: NextPage<BlogCategoriesProps> = ({
                           </div>
                           <Link
                             href={`/blogs/${post.slug}`}
-                            className="rounded-full bg-red-600 px-4 py-1.5 text-xs font-medium text-white transition-all hover:bg-red-700 hover:shadow-md"
+                            className="rounded-full bg-purple-600 px-4 py-1.5 text-xs font-medium text-white transition-all hover:bg-purple-700 hover:shadow-md"
                           >
                             Read More
                           </Link>

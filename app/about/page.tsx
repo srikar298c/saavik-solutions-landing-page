@@ -152,7 +152,7 @@ export default function AboutPage() {
               {
                 icon: <Layers className="h-12 w-12 text-[#6A43E7]" />,
                 title: "Software Solutions",
-                description: "Custom software development tailored to address your unique business challenges."
+                description: "Custom software development tailopurple to address your unique business challenges."
               },
               {
                 icon: <Users className="h-12 w-12 text-[#6A43E7]" />,
@@ -180,7 +180,7 @@ export default function AboutPage() {
                 variants={fadeIn}
                 className="bg-gradient-to-br from-gray-900 to-black p-8 rounded-xl border border-gray-800 hover:border-[#6A43E7]/30 transition-all duration-300 group"
               >
-                <div className="p-4 bg-gradient-to-br from-red-900/20 to-transparent rounded-lg inline-block mb-6 group-hover:from-red-900/40 transition-all duration-300">
+                <div className="p-4 bg-gradient-to-br from-purple-900/20 to-transparent rounded-lg inline-block mb-6 group-hover:from-purple-900/40 transition-all duration-300">
                   {item.icon}
                 </div>
                 <h3 className="text-xl font-bold mb-4">{item.title}</h3>
@@ -236,7 +236,7 @@ export default function AboutPage() {
       </section> */}
       
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-red-900/20 to-black relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-r from-purple-900/20 to-black relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-pattern-light opacity-5" />
         <div className="container mx-auto px-6 relative z-10">
           <motion.div 

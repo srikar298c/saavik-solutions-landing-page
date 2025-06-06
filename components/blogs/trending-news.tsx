@@ -122,7 +122,7 @@ export default function TrendingNews({ trendingPosts }: {
     return (
       <div className="py-12 text-center">
         <h2 className="mb-6 text-2xl font-bold text-black">
-          Trending <span className="text-red-600">News</span>
+          Trending <span className="text-purple-600">News</span>
         </h2>
         <p className="text-gray-500">No trending articles available at the moment. Check back soon!</p>
       </div>
@@ -134,9 +134,9 @@ export default function TrendingNews({ trendingPosts }: {
       <div className="container mx-auto px-4">
         <div className="mb-8 flex items-center justify-between">
           <h2 className="text-2xl font-bold text-black">
-            Trending <span className="text-red-600">News</span>
+            Trending <span className="text-purple-600">News</span>
           </h2>
-          <Link href="/blogs/category/trending" className="rounded-full bg-red-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-red-700">
+          <Link href="/blogs/category/trending" className="rounded-full bg-purple-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-purple-700">
             View All
           </Link>
         </div>
@@ -175,7 +175,7 @@ export default function TrendingNews({ trendingPosts }: {
                         transform: hoveredId === post.id ? 'scale(1.05)' : 'scale(1)'
                       }}
                     />
-                    <div className="absolute left-4 top-4 rounded-full bg-red-600 px-3 py-1 text-xs font-medium text-white">
+                    <div className="absolute left-4 top-4 rounded-full bg-purple-600 px-3 py-1 text-xs font-medium text-white">
                       {post.category}
                     </div>
                   </div>
@@ -196,7 +196,7 @@ export default function TrendingNews({ trendingPosts }: {
                       </span>
                       
                       <motion.span 
-                        className="flex items-center text-sm font-medium text-red-600"
+                        className="flex items-center text-sm font-medium text-purple-600"
                         animate={{
                           x: hoveredId === post.id ? [0, 5, 0] : 0
                         }}
