@@ -76,10 +76,10 @@ export default function EnterpriseSolutions() {
   }
 
   return (
-    <section className="w-full bg-gradient-to-b from-gray-50 to-white py-20">
+    <section className="w-full bg-gradient-to-b from-gray-50 via-white to-gray-100 py-20">
       <div className="container mx-auto px-4 md:px-6">
         <motion.div
-          className="mb-16"
+          className="mb-16 text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -88,17 +88,23 @@ export default function EnterpriseSolutions() {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="mb-6 text-4xl font-bold tracking-tight text-black md:text-5xl lg:text-6xl"
+            className="mb-6 text-4xl font-extrabold tracking-tight text-gray-900 md:text-5xl lg:text-6xl"
           >
-            Our Unique, Trendy & <span className="bg-gradient-to-r from-[#FF0000] to-[#FF0000] bg-clip-text text-transparent">Profitable</span> Enterprise
+            Our Unique, Trendy &{" "}
+            <span className="bg-gradient-to-r from-[#6A43E7] via-[#7F38E8] to-[#E879F9] bg-clip-text text-transparent">
+              Profitable
+            </span>{" "}
+            Enterprise
             <br className="hidden md:block" />
-            <span className="bg-gradient-to-r from-[#FF0000] to-[#FF0000] bg-clip-text text-transparent">Solutions</span>
+            <span className="bg-gradient-to-r from-[#6A43E7] via-[#7F38E8] to-[#E879F9] bg-clip-text text-transparent">
+              Solutions
+            </span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="max-w-3xl text-lg text-gray-700"
+            className="max-w-3xl mx-auto text-lg text-gray-700"
           >
             We empower businesses with cutting-edge IT solutions, revolutionizing the way they operate, innovate, and grow.
           </motion.p>
@@ -127,7 +133,7 @@ export default function EnterpriseSolutions() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                     whileHover={{ scale: 1.03 }}
-                    className="group flex h-full flex-col overflow-hidden rounded-2xl shadow-lg bg-white/90 backdrop-blur-sm border border-white/20"
+                    className="group flex h-full flex-col overflow-hidden rounded-2xl shadow-xl bg-white backdrop-blur-lg border border-gray-200"
                   >
                     <div className="relative h-72 w-full overflow-hidden">
                       <Image
@@ -135,11 +141,11 @@ export default function EnterpriseSolutions() {
                         alt={solution.title}
                         fill
                         className="object-cover transition-transform duration-500 group-hover:scale-110"
-                        priority={index < visibleItems} // Prioritize loading visible images
+                        priority={index < visibleItems}
                       />
                     </div>
                     <div className="p-6 flex-1 flex flex-col justify-between">
-                      <h3 className="text-xl font-semibold text-black mb-3">{solution.title}</h3>
+                      <h3 className="text-xl font-bold text-gray-900 mb-3">{solution.title}</h3>
                       <motion.p
                         initial={{ opacity: 0, y: 10 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -164,7 +170,7 @@ export default function EnterpriseSolutions() {
               <Button
                 onClick={handlePrev}
                 size="icon"
-                className="h-12 w-12 rounded-full bg-gradient-to-r from-[#FF0000] to-[#FF0000] hover:shadow-xl transition-all duration-300 hover:scale-105"
+                className="h-12 w-12 rounded-full bg-gradient-to-r from-[#6A43E7] via-[#7F38E8] to-[#E879F9] hover:shadow-2xl transition-all duration-300 hover:scale-105"
                 disabled={currentIndex === 0}
               >
                 <ChevronLeft className="h-6 w-6 text-white" />
@@ -178,7 +184,7 @@ export default function EnterpriseSolutions() {
               <Button
                 onClick={handleNext}
                 size="icon"
-                className="h-12 w-12 rounded-full bg-gradient-to-r from-[#FF0000] to-[#FF0000] hover:shadow-xl transition-all duration-300 hover:scale-105"
+                className="h-12 w-12 rounded-full bg-gradient-to-r from-[#6A43E7] via-[#7F38E8] to-[#E879F9] hover:shadow-2xl transition-all duration-300 hover:scale-105"
                 disabled={currentIndex === maxIndex}
               >
                 <ChevronRight className="h-6 w-6 text-white" />

@@ -42,7 +42,7 @@ export default function Footer() {
         <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
           <button 
             onClick={scrollToTop}
-            className="p-3 bg-[#FF0000] hover:bg-[#e60000] rounded-full shadow-lg transition-all duration-300 group"
+            className="p-3 bg-[#6A43E7] hover:bg-[#e60000] rounded-full shadow-lg transition-all duration-300 group"
             aria-label="Scroll to top"
           >
             <ChevronUp className="h-6 w-6 group-hover:-translate-y-1 transition-transform duration-300" />
@@ -71,7 +71,7 @@ export default function Footer() {
             </p>
             <div className="flex space-x-4">
               {[Github, Twitter, Linkedin, Instagram].map((Icon, i) => (
-                <a key={i} href="#" target="_blank" rel="noopener noreferrer" className="p-2 bg-gray-800 hover:bg-[#FF0000] rounded-full transition-colors" aria-label="Social link">
+                <a key={i} href="#" target="_blank" rel="noopener noreferrer" className="p-2 bg-gray-800 hover:bg-[#6A43E7] rounded-full transition-colors" aria-label="Social link">
                   <Icon className="h-5 w-5" />
                 </a>
               ))}
@@ -90,7 +90,7 @@ export default function Footer() {
                 { path: "/blog", label: "Blog" }
               ].map((link, index) => (
                 <li key={index}>
-                  <Link href={link.path} className="text-gray-400 hover:text-[#FF0000] transition-colors flex items-center group">
+                  <Link href={link.path} className="text-gray-400 hover:text-[#6A43E7] transition-colors flex items-center group">
                     <ArrowRight className="h-4 w-0 group-hover:w-4 opacity-0 group-hover:opacity-100 transition-all duration-300 mr-0 group-hover:mr-2" />
                     {link.label}
                   </Link>
@@ -104,16 +104,16 @@ export default function Footer() {
             <h3 className="text-xl font-semibold">Contact Us</h3>
             <ul className="space-y-4">
               <li className="flex items-start">
-                <MapPin className="h-5 w-5 text-[#FF0000] mt-1 mr-3 flex-shrink-0" />
+                <MapPin className="h-5 w-5 text-[#6A43E7] mt-1 mr-3 flex-shrink-0" />
                 <span className="text-gray-400">16-2-701/d/2, Palton<br />Dayanand Nagar, Malakpet<br />Hyderabad, Telangana 500036</span>
               </li>
               <li className="flex items-center">
-                <Phone className="h-5 w-5 text-[#FF0000] mr-3 flex-shrink-0" />
-                <a href="tel:+14155551234" className="text-gray-400 hover:text-[#FF0000] transition-colors">+1 (415) 555-1234</a>
+                <Phone className="h-5 w-5 text-[#6A43E7] mr-3 flex-shrink-0" />
+                <a href="tel:+14155551234" className="text-gray-400 hover:text-[#6A43E7] transition-colors">+1 (415) 555-1234</a>
               </li>
               <li className="flex items-center">
-                <Mail className="h-5 w-5 text-[#FF0000] mr-3 flex-shrink-0" />
-                <a href="mailto:info@saavik.com" className="text-gray-400 hover:text-[#FF0000] transition-colors">info@saavik.com</a>
+                <Mail className="h-5 w-5 text-[#6A43E7] mr-3 flex-shrink-0" />
+                <a href="mailto:info@saavik.com" className="text-gray-400 hover:text-[#6A43E7] transition-colors">info@saavik.com</a>
               </li>
             </ul>
           </motion.div>
@@ -129,12 +129,12 @@ export default function Footer() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Your email address"
-                  className="w-full px-4 py-3 bg-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FF0000] text-gray-200 placeholder-gray-500"
+                  className="w-full px-4 py-3 bg-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#6A43E7] text-gray-200 placeholder-gray-500"
                   required
                 />
                 <button
                   type="submit"
-                  className="absolute right-2 top-1/2 transform -translate-y-1/2 p-2 bg-[#FF0000] hover:bg-[#e60000] rounded-md transition-colors"
+                  className="absolute right-2 top-1/2 transform -translate-y-1/2 p-2 bg-[#6A43E7] hover:bg-[#E879F9] rounded-md transition-colors"
                   aria-label="Subscribe"
                 >
                   <ArrowRight className="h-4 w-4" />
@@ -159,7 +159,7 @@ export default function Footer() {
             </p>
             <div className="flex space-x-6">
               {["/privacy-policy", "/terms", "/sitemap"].map((path, idx) => (
-                <Link key={idx} href={path} className="text-gray-500 hover:text-[#FF0000] text-sm transition-colors">
+                <Link key={idx} href={path} className="text-gray-500 hover:text-[#6A43E7] text-sm transition-colors">
                   {path.split("/")[1].replace("-", " ").replace(/\b\w/g, l => l.toUpperCase())}
                 </Link>
               ))}

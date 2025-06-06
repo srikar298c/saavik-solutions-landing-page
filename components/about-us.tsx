@@ -38,7 +38,7 @@ export default function AboutUs() {
             transition={{ duration: 0.6 }}
           >
             <div className="mb-4 inline-block">
-              <span className="bg-gradient-to-r from-[#6A43E7] via-[#7F38E8] to-[#E879F9] px-4 py-1 text-sm font-semibold uppercase tracking-wider text-white">
+              <span className="bg-[#6A43E7]  px-4 py-1 text-sm font-semibold uppercase tracking-wider text-white">
                 About Us
               </span>
             </div>

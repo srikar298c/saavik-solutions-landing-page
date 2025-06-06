@@ -1,7 +1,5 @@
 "use client"
 
-import type React from "react"
-
 import { useState, useEffect } from "react"
 import Image from "next/image"
 import { ChevronLeft, ChevronRight, Star } from "lucide-react"
@@ -46,50 +44,35 @@ export default function Testimonials() {
   const maxIndex = testimonials.length - 1
 
   useEffect(() => {
-    const checkIsMobile = () => {
+    const handleResize = () => {
       setIsMobile(window.innerWidth < 768)
     }
-    
-    checkIsMobile()
-    window.addEventListener('resize', checkIsMobile)
-    
-    return () => {
-      window.removeEventListener('resize', checkIsMobile)
-    }
+    handleResize()
+    window.addEventListener("resize", handleResize)
+    return () => window.removeEventListener("resize", handleResize)
   }, [])
 
   const handlePrev = () => {
-    setCurrentIndex((prevIndex) => (prevIndex === 0 ? maxIndex : prevIndex - 1))
+    setCurrentIndex((prev) => (prev === 0 ? maxIndex : prev - 1))
   }
 
   const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex === maxIndex ? 0 : prevIndex + 1))
+    setCurrentIndex((prev) => (prev === maxIndex ? 0 : prev + 1))
   }
 
-  // Touch handlers for mobile swipe
-  const handleTouchStart = (e: React.TouchEvent) => {
-    setTouchStart(e.targetTouches[0].clientX)
+  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+    setTouchStart(e.touches[0].clientX)
   }
 
-  const handleTouchMove = (e: React.TouchEvent) => {
-    setTouchEnd(e.targetTouches[0].clientX)
+  const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
+    setTouchEnd(e.touches[0].clientX)
   }
 
   const handleTouchEnd = () => {
-    if (!touchStart || !touchEnd) return
-
+    if (touchStart === null || touchEnd === null) return
     const distance = touchStart - touchEnd
-    const isLeftSwipe = distance > 50
-    const isRightSwipe = distance < -50
-
-    if (isLeftSwipe) {
-      handleNext()
-    }
-
-    if (isRightSwipe) {
-      handlePrev()
-    }
-
+    if (distance > 50) handleNext()
+    if (distance < -50) handlePrev()
     setTouchStart(null)
     setTouchEnd(null)
   }
@@ -106,7 +89,7 @@ export default function Testimonials() {
             viewport={{ once: true }}
           >
             Empowered by Our
-            <br className="hidden xs:inline sm:hidden" /> Client's <span className="bg-gradient-to-r from-[#FF0000] to-[#FF0000dc] bg-clip-text text-transparent">Stories</span>
+            <br className="hidden xs:inline sm:hidden" /> Client's <span className="bg-gradient-to-r from-[#6A43E7] via-[#7F38E8] to-[#E879F9] bg-clip-text text-transparent">Stories</span>
           </motion.h2>
           <motion.div
             initial={{ opacity: 0, x: 20 }}
@@ -115,7 +98,7 @@ export default function Testimonials() {
             viewport={{ once: true }}
             className="flex justify-center md:justify-end"
           >
-            <Button className="rounded-full bg-gradient-to-r from-[#FF0000] to-[#FF0000dc] px-6 py-2.5 text-sm font-medium uppercase text-white shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl sm:px-8 sm:py-3">
+            <Button className="rounded-full bg-gradient-to-r from-[#6A43E7] via-[#7F38E8] to-[#E879F9] px-6 py-2.5 text-sm font-medium uppercase text-white shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl sm:px-8 sm:py-3">
               VIEW ALL REVIEWS
             </Button>
           </motion.div>
@@ -126,9 +109,7 @@ export default function Testimonials() {
           {testimonials.map((_, i) => (
             <button
               key={i}
-              className={`h-2 w-2 rounded-full transition-all ${
-                i === currentIndex ? "bg-[#FF0000] w-6" : "bg-gray-300"
-              }`}
+              className={`h-2 w-2 rounded-full transition-all ${i === currentIndex ? "bg-[#6A43E7] w-6" : "bg-gray-300"}`}
               onClick={() => setCurrentIndex(i)}
               aria-label={`Go to testimonial ${i + 1}`}
             />
@@ -136,24 +117,23 @@ export default function Testimonials() {
         </div>
 
         <div className="relative mx-auto max-w-6xl">
-          {/* Navigation Buttons */}
+          {/* Desktop Navigation */}
           <button
             onClick={handlePrev}
-            className="absolute left-0 top-1/2 z-10 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-gradient-to-r from-[#FF0000] to-[#FF0000dc] text-white shadow-lg transition-all hover:scale-110 hover:shadow-xl focus:outline-none md:flex md:h-12 md:w-12 md:-left-6 lg:-left-10"
+            className="absolute left-0 top-1/2 z-10 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-gradient-to-r from-[#6A43E7] via-[#7F38E8] to-[#E879F9] text-white shadow-lg transition-all hover:scale-110 hover:shadow-xl focus:outline-none md:flex md:h-12 md:w-12 md:-left-6 lg:-left-10"
             aria-label="Previous testimonial"
           >
             <ChevronLeft className="h-5 w-5 md:h-6 md:w-6" />
           </button>
-
           <button
             onClick={handleNext}
-            className="absolute right-0 top-1/2 z-10 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-gradient-to-r from-[#FF0000] to-[#FF0000dc] text-white shadow-lg transition-all hover:scale-110 hover:shadow-xl focus:outline-none md:flex md:h-12 md:w-12 md:-right-6 lg:-right-10"
+            className="absolute right-0 top-1/2 z-10 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-gradient-to-r from-[#6A43E7] via-[#7F38E8] to-[#E879F9] text-white shadow-lg transition-all hover:scale-110 hover:shadow-xl focus:outline-none md:flex md:h-12 md:w-12 md:-right-6 lg:-right-10"
             aria-label="Next testimonial"
           >
             <ChevronRight className="h-5 w-5 md:h-6 md:w-6" />
           </button>
 
-          {/* Testimonial Slider */}
+          {/* Testimonial Cards */}
           <div
             className="overflow-hidden rounded-xl"
             onTouchStart={handleTouchStart}
@@ -165,8 +145,8 @@ export default function Testimonials() {
               style={{ transform: `translateX(-${currentIndex * 100}%)` }}
             >
               {testimonials.map((testimonial) => (
-                <motion.div 
-                  key={testimonial.id} 
+                <motion.div
+                  key={testimonial.id}
                   className="w-full flex-shrink-0 px-0 sm:px-4"
                   initial={{ opacity: 0, scale: 0.95 }}
                   whileInView={{ opacity: 1, scale: 1 }}
@@ -175,7 +155,6 @@ export default function Testimonials() {
                 >
                   <div className="overflow-hidden rounded-xl shadow-2xl">
                     <div className="flex flex-col sm:flex-row">
-                      {/* Image Container */}
                       <div className="relative h-64 w-full sm:h-auto sm:w-2/5">
                         <Image
                           src={testimonial.image}
@@ -186,7 +165,7 @@ export default function Testimonials() {
                           priority={testimonial.id === 1}
                           quality={85}
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                         <div className="absolute bottom-4 left-4 flex items-center sm:hidden">
                           <span className="mr-1 text-lg font-bold text-white">{testimonial.rating}</span>
                           <div className="flex text-yellow-400">
@@ -196,9 +175,8 @@ export default function Testimonials() {
                           </div>
                         </div>
                       </div>
-                      
-                      {/* Content Container */}
-                      <div className="flex flex-1 flex-col justify-center bg-gradient-to-br from-[#FF0000]/10 to-white p-6 sm:p-8">
+
+                      <div className="flex flex-1 flex-col justify-center bg-gradient-to-br from-[#6A43E7]/10 via-[#7F38E8]/10 to-[#E879F9]/10 p-6 sm:p-8">
                         <div className="mb-4 hidden items-center sm:flex">
                           <span className="mr-2 text-xl font-bold text-black sm:text-2xl">{testimonial.rating}</span>
                           <div className="flex text-yellow-400">
@@ -207,7 +185,7 @@ export default function Testimonials() {
                             ))}
                           </div>
                         </div>
-                        <h3 className="mb-4 text-xl font-bold bg-gradient-to-r from-[#FF0000] to-[#FF0000dc] bg-clip-text text-transparent sm:mb-6 sm:text-2xl">
+                        <h3 className="mb-4 text-xl font-bold bg-gradient-to-r from-[#6A43E7] to-[#E879F9] bg-clip-text text-transparent sm:mb-6 sm:text-2xl">
                           {testimonial.review}
                         </h3>
                         <p className="mb-6 text-base text-gray-600 leading-relaxed sm:mb-8 sm:text-lg">
@@ -225,19 +203,19 @@ export default function Testimonials() {
             </div>
           </div>
         </div>
-        
-        {/* Mobile Navigation Buttons */}
+
+        {/* Mobile Buttons */}
         <div className="mt-6 flex justify-center space-x-4 md:hidden">
           <button
             onClick={handlePrev}
-            className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-[#FF0000] to-[#FF0000dc] text-white shadow-md transition-all hover:scale-105"
+            className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-[#6A43E7] via-[#7F38E8] to-[#E879F9] text-white shadow-md transition-all hover:scale-105"
             aria-label="Previous testimonial"
           >
             <ChevronLeft className="h-5 w-5" />
           </button>
           <button
             onClick={handleNext}
-            className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-[#FF0000] to-[#FF0000dc] text-white shadow-md transition-all hover:scale-105"
+            className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-[#6A43E7] via-[#7F38E8] to-[#E879F9] text-white shadow-md transition-all hover:scale-105"
             aria-label="Next testimonial"
           >
             <ChevronRight className="h-5 w-5" />

@@ -82,7 +82,7 @@ export default function Services() {
             >
               Our IT Solutions Drive Your
               <br className="hidden sm:block" />
-              Business <span className="bg-gradient-to-r from-[#FF0000] to-[#FF4D4D] bg-clip-text text-transparent">Forward</span>
+              Business <span className="bg-gradient-to-tr from-[#6A43E7] via-[#7F38E8] to-[#E879F9] bg-clip-text text-transparent">Forward</span>
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 10 }}
@@ -103,7 +103,7 @@ export default function Services() {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <Button className="rounded-full bg-gradient-to-r from-[#FF0000] to-[#FF4D4D] px-6 py-2 text-sm font-medium uppercase transition-all duration-300 hover:scale-105 hover:shadow-xl sm:px-10 sm:py-2.5">
+            <Button className="rounded-full bg-gradient-to-tr from-[#6A43E7] via-[#7F38E8] to-[#E879F9] px-6 py-2 text-sm font-medium uppercase transition-all duration-300 hover:scale-105 hover:shadow-xl sm:px-10 sm:py-2.5">
               EXPLORE MORE
             </Button>
           </motion.div>
@@ -129,7 +129,7 @@ export default function Services() {
                 >
                   {service.icon}
                 </motion.div>
-                <h3 className="text-base font-semibold text-white transition-colors duration-300 group-hover:text-gradient-to-r group-hover:from-[#FF0000] group-hover:to-[#FF4D4D] sm:ml-4 sm:text-lg">
+                <h3 className="text-base font-semibold text-white transition-colors duration-300 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-tr group-hover:from-[#6A43E7] group-hover:via-[#7F38E8] group-hover:to-[#E879F9] sm:ml-4 sm:text-lg">
                   {service.title}
                 </h3>
               </div>
