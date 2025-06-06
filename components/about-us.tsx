@@ -38,13 +38,13 @@ export default function AboutUs() {
             transition={{ duration: 0.6 }}
           >
             <div className="mb-4 inline-block">
-              <span className="bg-[#FF0000] px-4 py-1 text-sm font-semibold uppercase tracking-wider text-white">
+              <span className="bg-gradient-to-r from-[#6A43E7] via-[#7F38E8] to-[#E879F9] px-4 py-1 text-sm font-semibold uppercase tracking-wider text-white">
                 About Us
               </span>
             </div>
             
             <h2 className="mb-8 text-4xl font-bold tracking-tight text-gray-900 md:text-5xl lg:text-6xl">
-              We are <span className="text-[#FF0000]">Saavik Solutions</span>
+              We are <span className="text-[#6A43E7]">Saavik Solutions</span>
             </h2>
             
             <motion.p
@@ -68,7 +68,7 @@ export default function AboutUs() {
               className="flex flex-wrap gap-6 items-center"
             >
               <Link href="/about">
-                <Button className="rounded-md bg-[#FF0000] px-8 py-3 text-sm font-medium uppercase tracking-wide text-white shadow-lg transition-all duration-300 hover:bg-[#cc0000] hover:shadow-xl">
+                <Button className="rounded-md bg-gradient-to-r from-[#6A43E7] via-[#7F38E8] to-[#E879F9] px-8 py-3 text-sm font-medium uppercase tracking-wide text-white shadow-lg transition-all duration-300 hover:shadow-xl">
                   LEARN MORE
                 </Button>
               </Link>
@@ -112,7 +112,7 @@ export default function AboutUs() {
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                   transition={{ type: "spring", stiffness: 300 }}
-                  className="rounded-full bg-[#FF0000]/30 p-3 backdrop-blur-sm cursor-pointer"
+                  className="rounded-full bg-[#6A43E7]/30 p-3 backdrop-blur-sm cursor-pointer"
                 >
                   {isPlaying ? (
                     <PauseCircle className="h-16 w-16 text-white drop-shadow-lg" />
@@ -124,7 +124,7 @@ export default function AboutUs() {
               
               <div className="absolute bottom-4 left-4 right-4 flex justify-between items-center">
                 <div className="text-white text-sm font-medium">
-                  <span className="bg-[#FF0000] px-2 py-1 rounded">Saavik</span> Solutions
+                  <span className="bg-gradient-to-r from-[#6A43E7] via-[#7F38E8] to-[#E879F9] px-2 py-1 rounded">Saavik</span> Solutions
                 </div>
                 <div className="text-white/80 text-xs">
                   Transforming businesses through technology
