@@ -180,7 +180,7 @@ export default function TeamPage() {
                 </Link>
               </div>
               <h1 className="text-5xl md:text-6xl font-bold mb-6">
-                Our <span className="text-[#FF0000]">Team</span>
+                Our <span className="text-[#6A43E7]">Team</span>
               </h1>
               <p className="text-xl text-gray-300 leading-relaxed">
                 Meet the talented professionals behind Saavik Solutions. Our diverse team combines deep technical expertise with creative problem-solving to deliver exceptional results.
@@ -230,7 +230,7 @@ export default function TeamPage() {
                   onClick={() => setActiveTab(tab)}
                   className={`px-6 py-3 rounded-full text-lg transition-all duration-300 ${
                     activeTab === tab 
-                      ? 'bg-[#FF0000] text-white' 
+                      ? 'bg-[#6A43E7] text-white' 
                       : 'bg-gray-900 text-gray-300 hover:bg-gray-800'
                   }`}
                 >
@@ -251,7 +251,7 @@ export default function TeamPage() {
               <motion.div
                 key={index}
                 variants={fadeIn}
-                className="bg-gradient-to-br from-gray-900 to-black rounded-xl overflow-hidden border border-gray-800 hover:border-[#FF0000]/30 transition-all duration-300 group"
+                className="bg-gradient-to-br from-gray-900 to-black rounded-xl overflow-hidden border border-gray-800 hover:border-[#6A43E7]/30 transition-all duration-300 group"
               >
                 <div className="relative h-80">
                   <Image
@@ -269,7 +269,7 @@ export default function TeamPage() {
                   <h3 className="text-2xl font-bold mb-1 group-hover:text-red-400 transition-colors">
                     {member.name}
                   </h3>
-                  <p className="text-[#FF0000] mb-4">{member.position}</p>
+                  <p className="text-[#6A43E7] mb-4">{member.position}</p>
                   <p className="text-gray-400 mb-6">{member.bio}</p>
                   <div className="flex gap-3">
                     {Object.entries(member.social).map(([platform, url]) => {
@@ -297,7 +297,7 @@ export default function TeamPage() {
                           href={url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="p-2 bg-gray-800 hover:bg-[#FF0000] rounded-full transition-colors"
+                          className="p-2 bg-gray-800 hover:bg-[#6A43E7] rounded-full transition-colors"
                           aria-label={`${platform} profile`}
                         >
                           {icon}
@@ -346,7 +346,7 @@ export default function TeamPage() {
                 variants={fadeIn}
                 className="bg-gray-900 p-6 rounded-xl border border-gray-800"
               >
-                <div className="flex items-center text-[#FF0000] mb-3">
+                <div className="flex items-center text-[#6A43E7] mb-3">
                   {location.icon}
                   <span className="ml-2 text-lg font-medium">{location.city}</span>
                 </div>
@@ -403,7 +403,7 @@ export default function TeamPage() {
                   "Global, diverse team culture"
                 ].map((benefit, i) => (
                   <motion.div key={i} variants={fadeIn} className="flex items-center">
-                    <div className="h-2 w-2 rounded-full bg-[#FF0000] mr-3" />
+                    <div className="h-2 w-2 rounded-full bg-[#6A43E7] mr-3" />
                     <p>{benefit}</p>
                   </motion.div>
                 ))}
@@ -411,7 +411,7 @@ export default function TeamPage() {
               
               <motion.div variants={fadeIn} className="flex gap-4">
                 <Link href="/careers">
-                  <button className="px-6 py-3 bg-[#FF0000] hover:bg-[#ff0000bb] transition-colors rounded-lg flex items-center">
+                  <button className="px-6 py-3 bg-[#6A43E7] hover:bg-[#6A43E7bb] transition-colors rounded-lg flex items-center">
                     View Open Positions <ArrowRight className="ml-2 h-5 w-5" />
                   </button>
                 </Link>
