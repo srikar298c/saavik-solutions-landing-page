@@ -7,6 +7,7 @@ import Image from "next/image";
 
 // Define your image imports
 import heroBgLg from '../public/home-hero-bg-lg.png'; // Import only the largest, Next.js will handle the rest
+import Link from "next/link";
 
 export default function Hero() {
   const carouselRef = useRef(null);
@@ -116,14 +117,13 @@ export default function Hero() {
               variants={fadeIn}
               className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight sm:leading-snug mb-6 ${isDesktop ? 'text-left' : ''}`}
             >
-              Empowering{" "}
-              <span className="bg-gradient-to-r from-[#FF0000] to-[#FF4D4D] bg-clip-text text-transparent">
-                Businesses
+              Pioneering the{" "}
+              <span className="bg-gradient-to-r from-[#6A43E7] via-[#7F38E8] to-[#E879F9] bg-clip-text text-transparent">
+                Future
               </span>{" "}
-              {!isDesktop && <br />}
               with{" "}
-              <span className="bg-gradient-to-r from-[#FF0000] to-[#FF4D4D] bg-clip-text text-transparent">
-                Cutting-Edge IT Solutions
+              <span className="bg-gradient-to-r from-[#6A43E7] via-[#7F38E8] to-[#E879F9] bg-clip-text text-transparent">
+                Intelligent AI Solutions
               </span>
             </motion.h1>
 
@@ -141,9 +141,12 @@ export default function Hero() {
               custom={2}
               transition={{ delay: 0.4 }}
             >
-              <button className="px-8 py-4 bg-gradient-to-r from-[#FF0000] to-[#FF4D4D] text-white font-semibold rounded-md hover:shadow-lg hover:shadow-red-500/30 transition-all duration-300 transform hover:scale-105">
+              <Link
+                href="/about"
+                className="inline-block px-8 py-4 bg-gradient-to-r from-[#6A43E7] via-[#7F38E8] to-[#E879F9] text-white font-semibold rounded-md hover:shadow-lg hover:shadow-purple-500/30 transition-all duration-300 transform hover:scale-105"
+              >
                 Explore Our Solutions
-              </button>
+              </Link>
             </motion.div>
           </motion.div>
         </div>
@@ -155,13 +158,13 @@ export default function Hero() {
               initial={{ opacity: 0, y: 50, rotate: 25 }}
               animate={{ opacity: 0.4, y: 0, rotate: 25 }}
               transition={{ duration: 1, delay: 0.5 }}
-              className="absolute top-1/4 right-10 lg:right-32 w-16 h-16 lg:w-24 lg:h-24 bg-red-500/20 rounded-full blur-lg z-10"
+              className="absolute top-1/4 right-10 lg:right-32 w-16 h-16 lg:w-24 lg:h-24 bg-purple-500/20 rounded-full blur-lg z-10"
             />
             <motion.div
               initial={{ opacity: 0, y: -50, rotate: -15 }}
               animate={{ opacity: 0.3, y: 0, rotate: -15 }}
               transition={{ duration: 1, delay: 0.7 }}
-              className="absolute bottom-1/3 left-16 lg:left-40 w-12 h-12 lg:w-20 lg:h-20 bg-red-600/20 rounded-full blur-lg z-10"
+              className="absolute bottom-1/3 left-16 lg:left-40 w-12 h-12 lg:w-20 lg:h-20 bg-purple-600/20 rounded-full blur-lg z-10"
             />
           </>
         )}
@@ -175,15 +178,15 @@ export default function Hero() {
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={slideIn}
-                className="mb-6 md:mb-0 relative bg-gradient-to-r from-gray-900 to-black px-6 py-3 rounded-lg border-l-4 border-red-500"
+                className="mb-6 md:mb-0 relative bg-gradient-to-r from-gray-900 to-black px-6 py-3 rounded-lg border-l-4 border-[#6A43E7]"
               >
                 <h2 className="text-xl md:text-2xl font-bold text-white">
-                  TRUSTED <span className="text-red-500">BY</span>
+                  TRUSTED <span className="text-[#E879F9]">BY</span>
                 </h2>
 
                 {/* Accent elements */}
-                <div className="absolute -bottom-1 -right-1 w-3 h-3 bg-red-500 rounded-full"></div>
-                <div className="absolute -top-1 -left-1 w-2 h-2 bg-red-500 rounded-full"></div>
+                <div className="absolute -bottom-1 -right-1 w-3 h-3 bg-[#E879F9] rounded-full"></div>
+                <div className="absolute -top-1 -left-1 w-2 h-2 bg-[#6A43E7] rounded-full"></div>
               </motion.div>
 
               <div className="overflow-hidden w-full md:w-2/3">
