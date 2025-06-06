@@ -54,25 +54,25 @@ export default function Navbar() {
             {/* Mobile */}
             <div className="block md:hidden relative overflow-hidden rounded-full">
               <Image
-                src="https://placehold.co/45x45"
+                src="/saavik-logo-sm.png"
                 alt="Logo"
                 width={40}
                 height={40}
                 className="transition-transform duration-300 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-[#FF0000]/0 to-[#FF0000]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#6A43E7]/0 to-[#E879F9]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>
             
             {/* Desktop */}
             <div className="hidden md:block relative overflow-hidden">
               <Image
-                src="https://placehold.co/120x40"
+                src="/saavik-logo-lg.png"
                 alt="Logo"
-                width={120}
-                height={40}
+                width={160}
+                height={50}
                 className="transition-transform duration-300 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-[#FF0000]/0 to-[#FF0000]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#6A43E7]/0 to-[#E879F9]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>
           </motion.div>
         </Link>
@@ -89,7 +89,7 @@ export default function Navbar() {
             >
               <Link
                 href={link.href}
-                className={`flex items-center text-sm font-medium uppercase transition-colors duration-300 ${activeLink === link.href ? 'text-[#FF0000]' : 'text-white group-hover:text-red-400'}`}
+                className={`flex items-center text-sm font-medium uppercase transition-colors duration-300 ${activeLink === link.href ? 'text-[#7F38E8]' : 'text-white group-hover:text-purple-300'}`}
               >
                 {link.text}
                 {link.hasDropdown && (
@@ -98,7 +98,7 @@ export default function Navbar() {
               </Link>
               
               {/* Highlight underline animation */}
-              <div className="absolute -bottom-1 left-0 h-0.5 w-0 bg-gradient-to-r from-[#FF0000] to-[#FF0000] transition-all duration-300 group-hover:w-full" />
+              <div className="absolute -bottom-1 left-0 h-0.5 w-0 bg-gradient-to-r from-[#6A43E7] to-[#E879F9] transition-all duration-300 group-hover:w-full" />
               
               {/* Dropdown menu */}
               {link.hasDropdown && (
@@ -107,7 +107,7 @@ export default function Navbar() {
                     <Link
                       key={item.href}
                       href={item.href}
-                      className="block px-4 py-2 text-sm text-gray-200 hover:bg-[#FF0000]/20 hover:text-white transition-colors duration-200"
+                      className="block px-4 py-2 text-sm text-gray-200 hover:bg-[#6A43E7]/20 hover:text-white transition-colors duration-200"
                     >
                       {item.text}
                     </Link>
@@ -122,9 +122,9 @@ export default function Navbar() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <Link href="/contact-us">
-              <Button className="relative overflow-hidden rounded-full bg-gradient-to-r from-[#FF0000] to-[#FF0000] px-8 py-2 text-sm font-medium uppercase text-white transition-all duration-300 hover:shadow-lg hover:shadow-[#FF0000]/30">
+              <Button className="relative overflow-hidden rounded-full bg-gradient-to-r from-[#6A43E7] to-[#E879F9] px-8 py-2 text-sm font-medium uppercase text-white transition-all duration-300 hover:shadow-lg hover:shadow-[#7F38E8]/30">
                 <span className="relative z-10">GET A QUOTE</span>
-                <span className="absolute inset-0 bg-gradient-to-r from-[#FF0000] to-red-800 opacity-0 transition-opacity duration-300 hover:opacity-100" />
+                <span className="absolute inset-0 bg-gradient-to-r from-[#6A43E7] to-[#7F38E8] opacity-0 transition-opacity duration-300 hover:opacity-100" />
               </Button>
             </Link>
           </motion.div>
@@ -138,9 +138,9 @@ export default function Navbar() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <Link href="/contact-us">
-              <Button className="relative overflow-hidden rounded-full bg-gradient-to-r from-[#FF0000] to-[#FF0000] px-4 py-2 text-xs font-medium uppercase text-white transition-all duration-300">
+              <Button className="relative overflow-hidden rounded-full bg-gradient-to-r from-[#6A43E7] to-[#E879F9] px-4 py-2 text-xs font-medium uppercase text-white transition-all duration-300">
                 <span className="relative z-10">GET A QUOTE</span>
-                <span className="absolute inset-0 bg-gradient-to-r from-[#FF0000] to-red-800 opacity-0 transition-opacity duration-300 hover:opacity-100" />
+                <span className="absolute inset-0 bg-gradient-to-r from-[#6A43E7] to-[#7F38E8] opacity-0 transition-opacity duration-300 hover:opacity-100" />
               </Button>
             </Link>
           </motion.div>
@@ -155,7 +155,7 @@ export default function Navbar() {
                 <span className="relative z-10">
                   {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
                 </span>
-                <span className="absolute inset-0 bg-[#FF0000]/20 rounded-full scale-0 group-hover:scale-100 transition-transform duration-300" />
+                <span className="absolute inset-0 bg-[#7F38E8]/20 rounded-full scale-0 group-hover:scale-100 transition-transform duration-300" />
                 <span className="sr-only">Toggle menu</span>
               </Button>
             </SheetTrigger>
@@ -181,7 +181,7 @@ export default function Navbar() {
                         <span className="relative z-10">
                           <X className="h-6 w-6" />
                         </span>
-                        <span className="absolute inset-0 bg-[#FF0000]/20 rounded-full scale-0 group-hover:scale-100 transition-transform duration-300" />
+                        <span className="absolute inset-0 bg-[#7F38E8]/20 rounded-full scale-0 group-hover:scale-100 transition-transform duration-300" />
                         <span className="sr-only">Close menu</span>
                       </Button>
                     </div>
@@ -189,7 +189,7 @@ export default function Navbar() {
                     {/* Mobile Logo */}
                     <div className="mt-4 flex justify-center">
                       <Image
-                        src="https://placehold.co/120x40"
+                        src="/saavik-logo-lg.png"
                         alt="Logo"
                         width={120}
                         height={40}
@@ -205,7 +205,7 @@ export default function Navbar() {
                             onClick={() => !link.hasDropdown && setOpen(false)}
                             className={`flex items-center justify-between p-3 rounded-lg text-base font-medium uppercase transition-all duration-200 ${
                               activeLink === link.href 
-                                ? 'bg-[#FF0000]/20 text-red-400' 
+                                ? 'bg-[#7F38E8]/20 text-purple-300' 
                                 : 'hover:bg-white/5 text-gray-100'
                             }`}
                           >
@@ -214,7 +214,7 @@ export default function Navbar() {
                           </Link>
                           
                           {link.hasDropdown && (
-                            <div className="pl-4 mt-1 border-l-2 border-[#FF0000]/30 ml-4 space-y-1">
+                            <div className="pl-4 mt-1 border-l-2 border-[#7F38E8]/30 ml-4 space-y-1">
                               {link.dropdownItems.map((item) => (
                                 <Link
                                   key={item.href}
@@ -233,7 +233,7 @@ export default function Navbar() {
                         <Link
                           href="/contact-us"
                           onClick={() => setOpen(false)}
-                          className="flex w-full justify-center rounded-lg bg-gradient-to-r from-[#FF0000] to-[#FF0000] p-3 text-sm font-medium uppercase text-white hover:from-[#FF0000] hover:to-red-800 transition-all duration-300"
+                          className="flex w-full justify-center rounded-lg bg-gradient-to-r from-[#6A43E7] to-[#E879F9] p-3 text-sm font-medium uppercase text-white hover:from-[#6A43E7] hover:to-[#7F38E8] transition-all duration-300"
                         >
                           GET A QUOTE
                         </Link>
@@ -244,16 +244,16 @@ export default function Navbar() {
                     <div className="mt-auto pt-8 border-t border-white/10">
                       <p className="text-sm text-center text-gray-400 mb-4">Connect With Us</p>
                       <div className="flex justify-around">
-                        <a href="#" className="p-2 rounded-full bg-white/5 text-white hover:bg-[#FF0000]/20 hover:text-red-400 transition-colors duration-300">
+                        <a href="#" className="p-2 rounded-full bg-white/5 text-white hover:bg-[#7F38E8]/20 hover:text-purple-300 transition-colors duration-300">
                           <Linkedin className="h-5 w-5" />
                         </a>
-                        <a href="#" className="p-2 rounded-full bg-white/5 text-white hover:bg-[#FF0000]/20 hover:text-red-400 transition-colors duration-300">
+                        <a href="#" className="p-2 rounded-full bg-white/5 text-white hover:bg-[#7F38E8]/20 hover:text-purple-300 transition-colors duration-300">
                           <Twitter className="h-5 w-5" />
                         </a>
-                        <a href="#" className="p-2 rounded-full bg-white/5 text-white hover:bg-[#FF0000]/20 hover:text-red-400 transition-colors duration-300">
+                        <a href="#" className="p-2 rounded-full bg-white/5 text-white hover:bg-[#7F38E8]/20 hover:text-purple-300 transition-colors duration-300">
                           <Facebook className="h-5 w-5" />
                         </a>
-                        <a href="#" className="p-2 rounded-full bg-white/5 text-white hover:bg-[#FF0000]/20 hover:text-red-400 transition-colors duration-300">
+                        <a href="#" className="p-2 rounded-full bg-white/5 text-white hover:bg-[#7F38E8]/20 hover:text-purple-300 transition-colors duration-300">
                           <Instagram className="h-5 w-5" />
                         </a>
                       </div>
