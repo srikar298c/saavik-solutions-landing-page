@@ -42,7 +42,7 @@ export default function Footer() {
         <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
           <button 
             onClick={scrollToTop}
-            className="p-3 bg-[#6A43E7] hover:bg-[#e60000] rounded-full shadow-lg transition-all duration-300 group"
+            className="p-3 bg-[#6A43E7] hover:bg-[#E879F9] rounded-full shadow-lg transition-all duration-300 group"
             aria-label="Scroll to top"
           >
             <ChevronUp className="h-6 w-6 group-hover:-translate-y-1 transition-transform duration-300" />
