@@ -48,7 +48,7 @@ export default function AboutPage() {
             className="max-w-4xl"
           >
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
-              About <span className="text-[#6A43E7]">Saavik</span>
+              About <span className="bg-gradient-to-r from-[#6A43E7] via-[#7F38E8] to-[#E879F9] bg-clip-text text-transparent">Saavik</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
               A premier IT services company, delivering cutting-edge technology solutions across the globe.

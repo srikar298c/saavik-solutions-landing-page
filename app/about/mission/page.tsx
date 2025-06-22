@@ -78,28 +78,28 @@ export default function MissionPage() {
     }
   ]
 
-  const milestones = [
-    {
-      year: "2025",
-      title: "Future Vision",
-      description: "Expanding our global reach and impact through innovative solutions."
-    },
-    {
-      year: "2023",
-      title: "Market Leadership",
-      description: "Established as a leading provider in our industry with award-winning solutions."
-    },
-    {
-      year: "2020",
-      title: "Expansion Phase",
-      description: "Grew our team to 250+ experts across 18 countries, serving global clients."
-    },
-    {
-      year: "2017",
-      title: "Foundation",
-      description: "Founded with a vision to transform industries through innovative technology."
-    }
-  ]
+  // const milestones = [
+  //   {
+  //     year: "2025",
+  //     title: "Future Vision",
+  //     description: "Expanding our global reach and impact through innovative solutions."
+  //   },
+  //   {
+  //     year: "2023",
+  //     title: "Market Leadership",
+  //     description: "Established as a leading provider in our industry with award-winning solutions."
+  //   },
+  //   {
+  //     year: "2020",
+  //     title: "Expansion Phase",
+  //     description: "Grew our team to 250+ experts across 18 countries, serving global clients."
+  //   },
+  //   {
+  //     year: "2017",
+  //     title: "Foundation",
+  //     description: "Founded with a vision to transform industries through innovative technology."
+  //   }
+  // ]
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -141,7 +141,7 @@ export default function MissionPage() {
                 </Link>
               </div>
               <h1 className="text-5xl md:text-6xl font-bold mb-6">
-                Our <span className="text-[#6A43E7]">Mission</span> & <span className="text-[#6A43E7]">Vision</span>
+                Our <span className="bg-gradient-to-r from-[#6A43E7] via-[#7F38E8] to-[#E879F9] bg-clip-text text-transparent">Mission</span> & <span className="bg-gradient-to-r from-[#6A43E7] via-[#7F38E8] to-[#E879F9] bg-clip-text text-transparent">Vision</span>
               </h1>
               <p className="text-xl text-gray-300 leading-relaxed">
                 Driving innovation and creating value through technology solutions that empower businesses and improve lives around the world.
@@ -332,7 +332,7 @@ export default function MissionPage() {
       </section>
 
       {/* Milestones */}
-      <section className="py-16 bg-black">
+      {/* <section className="py-16 bg-black">
         <div className="container mx-auto px-6">
           <motion.div
             initial="hidden"
@@ -379,7 +379,7 @@ export default function MissionPage() {
             </div>
           </motion.div>
         </div>
-      </section>
+      </section> */}
 
       {/* Impact */}
       <section className="py-16 bg-gradient-to-b from-gray-900 to-black">

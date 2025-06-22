@@ -180,14 +180,14 @@ export default function TeamPage() {
                 </Link>
               </div>
               <h1 className="text-5xl md:text-6xl font-bold mb-6">
-                Our <span className="text-[#6A43E7]">Team</span>
+                Our <span className="bg-gradient-to-r from-[#6A43E7] via-[#7F38E8] to-[#E879F9] bg-clip-text text-transparent">Team</span>
               </h1>
               <p className="text-xl text-gray-300 leading-relaxed">
                 Meet the talented professionals behind Saavik Solutions. Our diverse team combines deep technical expertise with creative problem-solving to deliver exceptional results.
               </p>
             </motion.div>
             
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: 0.3 }}
@@ -208,7 +208,7 @@ export default function TeamPage() {
                   <p>15+ Years Average Experience</p>
                 </div>
               </div>
-            </motion.div>
+            </motion.div> */}
           </div>
         </div>
       </section>
@@ -263,7 +263,7 @@ export default function TeamPage() {
                     priority={index < 3}
                     quality={90}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent" />
+                  {/* <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent" /> */}
                 </div>
                 <div className="p-6">
                   <h3 className="text-2xl font-bold mb-1 group-hover:text-purple-400 transition-colors">
