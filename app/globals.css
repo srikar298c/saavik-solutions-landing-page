@@ -117,3 +117,13 @@ section {
   border: 2px solid #111827;
 }
 
+@keyframes blink {
+  0% { opacity: 0.2; }
+  50% { opacity: 1; }
+  100% { opacity: 0.2; }
+}
+
+.animate-blink {
+  animation: blink 1.5s infinite;
+}
+
