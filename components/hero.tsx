@@ -107,7 +107,7 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-br from-black/90 via-black/80 to-black/70 z-10" />
 
         {/* Hero Content - Adjusted for spacing */}
-        <div className="relative z-20 flex-grow flex flex-col items-center justify-center text-white px-6 text-center pt-10 pb-10 sm:pt-24 sm:pb-12 md:pt-28 md:pb-16 lg:pt-32 lg:pb-20">
+        <div className="relative z-20 flex-grow flex flex-col items-center justify-center text-white px-6 text-center pt-5 pb-10 sm:pt-24 sm:pb-12 md:pt-28 md:pb-16 lg:pt-32 lg:pb-20">
           <motion.div
             initial="hidden"
             animate="visible"

@@ -98,7 +98,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark" style={{ colorScheme: "dark" }}>
       <head>
-        <meta name="theme-color" content="#FF0000" />
+        <meta name="theme-color" content="#000000" />
         <link rel="canonical" href="https://saaviksolutions.com" />
       </head>
       <body className={`${inter.className} overflow-x-hidden`}>

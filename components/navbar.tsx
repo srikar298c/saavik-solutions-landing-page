@@ -73,9 +73,9 @@ export default function Navbar() {
             {/* Mobile and Tablet (sm and md) */}
             <div className="block lg:hidden relative overflow-hidden rounded-full"> {/* Changed md:hidden to lg:hidden */}
               <Image
-                src="/saavik-logo-sm.png"
+                src="/saavik-logo-lg.png"
                 alt="Logo"
-                width={40}
+                width={120}
                 height={40}
                 className="transition-transform duration-300 group-hover:scale-110"
               />
@@ -155,7 +155,7 @@ export default function Navbar() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
-            className="flex items-center"
+            className="hidden md:flex items-center" // Added hidden md:flex to hide on mobile and show on medium screens and up
           >
             <Link href="/contact-us">
               <Button className="relative overflow-hidden rounded-full bg-gradient-to-r from-[#6A43E7] to-[#E879F9] px-4 py-2 text-xs font-medium uppercase text-white transition-all duration-300">
