@@ -106,7 +106,7 @@ export default function TeamPage() {
       {
         name: "Srikar Kudurmalla",
         position: "Founding Full Stack Developer",
-        image: "/images/team/srikar.jpg",
+        image: "/images/team/srikar.webp",
         bio: "Srikar excels in developing end-to-end solutions, leveraging his comprehensive knowledge of modern web technologies to build scalable and efficient applications.",
         social: {
           linkedin: "https://linkedin.com/in/srikar",
