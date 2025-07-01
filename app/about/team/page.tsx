@@ -62,8 +62,8 @@ export default function TeamPage() {
       {
         name: "Santhosh Kattaa",
         position: "Director",
-        image: '/images/team/santhosh_kattaa.png',
-        bio: "Santhosh Kattaa specializes in working around corporate strategy and business development.",
+        image: '/images/team/Santhosh_Kattaa.png',
+        bio: "As Director at Saavik Solutions, Santhosh Kattaa plays a key role in shaping organizational strategy and driving operational excellence. His leadership and insight help propel the company toward scalable growth and long-term success. ",
         social: { 
           linkedin: "#",
           twitter: "#",
@@ -106,7 +106,7 @@ export default function TeamPage() {
       {
         name: "Srikar Kudurmalla",
         position: "Founding Full Stack Developer",
-        image: "/images/team/srikar.webp",
+        image: "/images/team/srikar.jpg",
         bio: "Srikar excels in developing end-to-end solutions, leveraging his comprehensive knowledge of modern web technologies to build scalable and efficient applications.",
         social: {
           linkedin: "https://linkedin.com/in/srikar",
