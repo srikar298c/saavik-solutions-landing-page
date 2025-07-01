@@ -43,10 +43,10 @@ export default function TeamPage() {
         name: "Bhargava Raj",
         position: "CEO and Founder",
         image: "/images/team/bhargavaraj.png",
-        bio: "As the visionary founder and CEO of Saavik Solutions, Bhargavarai leads the company's strategic direction and innovation initiatives, driving our mission to deliver cutting-edge technology solutions.",
+        bio: "As the visionary founder and CEO of Saavik Solutions, Bhargava Raj leads the company's strategic direction and innovation initiatives, driving our mission to deliver cutting-edge technology solutions.",
         social: {
-          linkedin: "https://linkedin.com/in/bhargavarai",
-          twitter: "https://twitter.com/bhargavarai"
+          linkedin: "https://linkedin.com/in/bhargava-raj",
+          twitter: "https://twitter.com/bhargava-raj"
         }
       },
       // {
@@ -59,6 +59,17 @@ export default function TeamPage() {
       //     twitter: "https://twitter.com/ravi"
       //   }
       // },
+      {
+        name: "Santhosh Kattaa",
+        position: "Director",
+        image: '/images/team/santhosh_kattaa.png',
+        bio: "Santhosh Kattaa specializes in working around corporate strategy and business development.",
+        social: { 
+          linkedin: "#",
+          twitter: "#",
+          instagram: "#"
+        }
+      },
       {
         name: "Laya Sri",
         position: "Co-Founder and Head of Operations",
@@ -81,40 +92,20 @@ export default function TeamPage() {
         }
       }
     ],
-    development: [
+    technical: [
       {
         name: "Sampad Dutta",
-        position: "Senior Creative Designer",
+        position: "Head of Creative Design",
         image: "/images/team/sampad_dutta.png",
-        bio: "As our Senior Creative Designer, Sampath brings creative excellence to every project, crafting intuitive and engaging user experiences that perfectly blend aesthetics with functionality.",
+        bio: "As our Head of Creative Design, Sampath brings creative excellence to every project, crafting intuitive and engaging user experiences that perfectly blend aesthetics with functionality.",
         social: {
           linkedin: "https://linkedin.com/in/sampath",
           github: "https://github.com/sampath"
         }
       },
       {
-        name: "Soumyadeep Batyacharya",
-        position: "Video Editor",
-        image: "/images/team/soumyadeep_batyacharya.png",
-        bio: "As our Video Editor, Soumyadeep brings creative excellence to every project, crafting intuitive and engaging user experiences that perfectly blend aesthetics with functionality.",
-        social: {
-          linkedin: "https://linkedin.com/in/sampath",
-          github: "https://github.com/sampath"
-        }
-      },
-      {
-        name: "Mohan",
-        position: "Lead Full Stack Developer",
-        image: "/images/team/mohan.png",
-        bio: "Mohan leads our development team with expertise in both frontend and backend technologies, architecting robust solutions and mentoring team members to deliver exceptional results.",
-        social: {
-          linkedin: "https://linkedin.com/in/mohan",
-          github: "https://github.com/mohan"
-        }
-      },
-      {
-        name: "Srikar",
-        position: "Full Stack Developer",
+        name: "Srikar Kudurmalla",
+        position: "Founding Full Stack Developer",
         image: "/images/team/srikar.jpg",
         bio: "Srikar excels in developing end-to-end solutions, leveraging his comprehensive knowledge of modern web technologies to build scalable and efficient applications.",
         social: {
@@ -123,13 +114,33 @@ export default function TeamPage() {
         }
       },
       {
+        name: "Mohan",
+        position: " Full Stack Developer Consultant",
+        image: "/images/team/mohan.png",
+        bio: "Mohan leads our development team with expertise in both frontend and backend technologies, architecting robust solutions and mentoring team members to deliver exceptional results.",
+        social: {
+          linkedin: "https://linkedin.com/in/mohan",
+          github: "https://github.com/mohan"
+        }
+      },
+      {
         name: "Lohita Elizabeth",
-        position: "Frontend Developer",
+        position: "Frontend Development Intern",
         image: "/images/team/lohita.png",
         bio: "Lohita Elizabeth specializes in creating responsive and dynamic user interfaces, ensuring seamless user experiences across all platforms with modern frontend technologies.",
         social: {
           linkedin: "https://linkedin.com/in/lohita",
           github: "https://github.com/lohita"
+        }
+      },
+      {
+        name: "Soumyadeep Batyacharya",
+        position: "Video Editing Intern",
+        image: "/images/team/soumyadeep_batyacharya.png",
+        bio: "As our Video Editing Intern, Soumyadeep brings creative excellence to every project, crafting intuitive and engaging user experiences that perfectly blend aesthetics with functionality.",
+        social: {
+          linkedin: "https://linkedin.com/in/soumyadeep",
+          github: "https://github.com/soumyadeep"
         }
       }
     ],
@@ -141,17 +152,6 @@ export default function TeamPage() {
         bio: "Sridhar Goud leads our marketing efforts, driving brand awareness and driving traffic to our website.",
         social: { linkedin: "#", twitter: "#" }
       },
-      {
-        name: "Santhosh Kattaa",
-        position: "Digital Marketing Specialist",
-        image: '/images/team/santhosh_kattaa.png',
-        bio: "Santhosh Kattaa specializes in digital marketing strategies, focusing on social media management and content creation to enhance our brand presence.",
-        social: { 
-          linkedin: "#",
-          twitter: "#",
-          instagram: "#"
-        }
-      }
     ]
   }
 
