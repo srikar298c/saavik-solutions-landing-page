@@ -105,15 +105,18 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start">
                 <MapPin className="h-5 w-5 text-[#6A43E7] mt-1 mr-3 flex-shrink-0" />
-                <span className="text-gray-400">16-2-701/d/2, Palton<br />Dayanand Nagar, Malakpet<br />Hyderabad, Telangana 500036</span>
+                <span className="text-gray-400">6250 West Park Dr Ste 319,<br />Houston, TX 77057<br />United States</span>
               </li>
               <li className="flex items-center">
                 <Phone className="h-5 w-5 text-[#6A43E7] mr-3 flex-shrink-0" />
-                <a href="tel:+14155551234" className="text-gray-400 hover:text-[#6A43E7] transition-colors">+1 (415) 555-1234</a>
+                <div className="flex flex-col">
+                  <a href="tel:+14087416969" className="text-gray-400 hover:text-[#6A43E7] transition-colors">+1 (408) 741 6969</a>
+                  <a href="tel:+919701563362" className="text-gray-400 hover:text-[#6A43E7] transition-colors">+91 97015 63362</a>
+                </div>
               </li>
               <li className="flex items-center">
                 <Mail className="h-5 w-5 text-[#6A43E7] mr-3 flex-shrink-0" />
-                <a href="mailto:info@saavik.com" className="text-gray-400 hover:text-[#6A43E7] transition-colors">info@saavik.com</a>
+                <a href="mailto:info@saaviksolutions.com" className="text-gray-400 hover:text-[#6A43E7] transition-colors">info@saaviksolutions.com</a>
               </li>
             </ul>
           </motion.div>
