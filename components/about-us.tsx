@@ -4,21 +4,9 @@ import { Button } from "@/components/ui/button"
 import { PlayCircle, PauseCircle } from "lucide-react"
 import { motion } from "framer-motion"
 import Link from "next/link"
+import Image from "next/image"
 
 export default function AboutUs() {
-  const [isPlaying, setIsPlaying] = useState(false)
-  const videoRef = useRef<HTMLVideoElement>(null)
-
-  const togglePlayPause = () => {
-    if (videoRef.current) {
-      if (isPlaying) {
-        videoRef.current.pause()
-      } else {
-        videoRef.current.play()
-      }
-      setIsPlaying(!isPlaying)
-    }
-  }
 
   return (
     <section className="w-full bg-gradient-to-b from-gray-50 to-white py-24 relative overflow-hidden">
@@ -91,36 +79,21 @@ export default function AboutUs() {
             transition={{ duration: 0.6 }}
           >
             <div className="relative h-[400px] w-full overflow-hidden rounded-xl shadow-2xl border border-white/10">
-              <video
-                ref={videoRef}
-                className="h-full w-full object-cover"
-                poster="/images/video-poster.jpg"
-                preload="metadata"
-                playsInline
-                muted
-                loop
-              >
-                <source src="/videos/tech-meeting-large.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+              <Image
+                src="/images/video-poster.jpg"
+                alt="Saavik Solutions Tech Meeting"
+                fill
+                className="object-cover"
+                priority
+              />
               
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
               
-              <div className="absolute inset-0 flex items-center justify-center">
-                <motion.button
-                  onClick={togglePlayPause}
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                  className="rounded-full bg-[#6A43E7]/30 p-3 backdrop-blur-sm cursor-pointer"
-                >
-                  {isPlaying ? (
-                    <PauseCircle className="h-16 w-16 text-white drop-shadow-lg" />
-                  ) : (
-                    <PlayCircle className="h-16 w-16 text-white drop-shadow-lg" />
-                  )}
-                </motion.button>
-              </div>
+              {/* <div className="absolute inset-0 flex items-center justify-center">
+                <div className="rounded-full bg-[#6A43E7]/30 p-3 backdrop-blur-sm">
+                  <PlayCircle className="h-16 w-16 text-white drop-shadow-lg" />
+                </div>
+              </div> */}
               
               <div className="absolute bottom-4 left-4 right-4 flex justify-between items-center">
                 <div className="text-white text-sm font-medium">
