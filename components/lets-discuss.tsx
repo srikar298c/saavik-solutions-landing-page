@@ -35,7 +35,7 @@ export default function LetsDiscuss() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.8157242243697!2d78.50099637462667!3d17.3725980032321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb992036a67bb5%3A0xe6dc8a7e9cab3dae!2sSaavik%20Solutions%20Pvt.%20Ltd.!5e0!3m2!1sen!2sin!4v1745321255689!5m2!1sen!2sin"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3464.8513224695403!2d-95.49698342466797!3d29.724065675086454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640c3cb76c7e067%3A0x7d366f36e70be664!2s6250%20Westpark%20Dr%20%23319%2C%20Houston%2C%20TX%2077057%2C%20USA!5e0!3m2!1sen!2sin!4v1751463952208!5m2!1sen!2sin"
               width="100%"
               height="400"
               style={{ border: 0 }}
