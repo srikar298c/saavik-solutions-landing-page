@@ -45,8 +45,8 @@ export default function TeamPage() {
         image: "/images/team/bhargavaraj.png",
         bio: "As the visionary founder and CEO of Saavik Solutions, Bhargava Raj leads the company's strategic direction and innovation initiatives, driving our mission to deliver cutting-edge technology solutions.",
         social: {
-          linkedin: "https://linkedin.com/in/bhargava-raj",
-          twitter: "https://twitter.com/bhargava-raj"
+          linkedin: "https://www.linkedin.com/in/raj-valaboju-a17086192/",
+          //twitter: "https://twitter.com/bhargava-raj"
         }
       },
       // {
@@ -76,8 +76,8 @@ export default function TeamPage() {
         image: "/images/team/layasri.png",
         bio: "As Co-Founder and Head of Operations, Laya Sri orchestrates our operational excellence, ensuring seamless delivery of services while maintaining the highest standards of quality and efficiency.",
         social: {
-          linkedin: "https://linkedin.com/in/layasri",
-          twitter: "https://twitter.com/layasri"
+          linkedin: "https://www.linkedin.com/in/layasri96/",
+          //twitter: "https://twitter.com/layasri"
         }
       }
     ],
@@ -99,7 +99,7 @@ export default function TeamPage() {
         image: "/images/team/sampad_dutta.png",
         bio: "As our Head of Creative Design, Sampath brings creative excellence to every project, crafting intuitive and engaging user experiences that perfectly blend aesthetics with functionality.",
         social: {
-          linkedin: "https://linkedin.com/in/sampath",
+          linkedin: "https://www.linkedin.com/in/sampad-dutta-28b1732ba/",
           github: "https://github.com/sampath"
         }
       },
@@ -109,8 +109,8 @@ export default function TeamPage() {
         image: "/images/team/srikar.jpg",
         bio: "Srikar excels in developing end-to-end solutions, leveraging his comprehensive knowledge of modern web technologies to build scalable and efficient applications.",
         social: {
-          linkedin: "https://linkedin.com/in/srikar",
-          github: "https://github.com/srikar"
+          linkedin: "https://linkedin.com/in/kudurmallasrikar",
+          github: "https://x.com/mesrikar29859"
         }
       },
       {
@@ -129,8 +129,8 @@ export default function TeamPage() {
         image: "/images/team/lohita.png",
         bio: "Lohita Elizabeth specializes in creating responsive and dynamic user interfaces, ensuring seamless user experiences across all platforms with modern frontend technologies.",
         social: {
-          linkedin: "https://linkedin.com/in/lohita",
-          github: "https://github.com/lohita"
+          linkedin: "https://www.linkedin.com/in/rayapu-lohita-elizabeth/",
+          //github: "https://github.com/lohita"
         }
       },
       {
