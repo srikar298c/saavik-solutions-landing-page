@@ -8,7 +8,7 @@ const teamMembers = [
     name: "Bhargava Raj",
     position: "CEO & Founder",
     image: "https://placehold.co/300x400",
-    linkedin: "https://linkedin.com/in/johnsmith"
+    linkedin: "https://www.linkedin.com/in/raj-valaboju-a17086192"
   },
   {
     id: 2,
@@ -36,14 +36,14 @@ const teamMembers = [
     name: "Srikar",
     position: "Software Engineer",
     image: "https://placehold.co/300x400",
-    linkedin: "https://linkedin.com/in/johnsmith"
+    linkedin: "https://www.linkedin.com/in/k-srikar298c/"
   },
   {
     id: 6,
     name: "Sampad",
     position: "Cheif Design",
     image: "https://placehold.co/300x400",
-    linkedin: "https://linkedin.com/in/johnsmith"
+    linkedin: "https://www.linkedin.com/in/sampad-dutta-28b1732ba/"
   },
   {
     id: 7,
@@ -108,7 +108,7 @@ export default function TeamSection() {
                     <h3 className="text-sm font-bold text-white sm:text-base">{member.name}</h3>
                     <p className="text-xs text-gray-300 mb-1">{member.position}</p>
                     {member.linkedin && (
-                      <a 
+                      <a
                         href={member.linkedin} 
                         target="_blank" 
                         rel="noopener noreferrer"
