@@ -51,7 +51,7 @@ export default function Navbar() {
         ${scrolled ? "backdrop-blur-md bg-black/80" : ""}`}>
       <div
         className={`container mx-auto flex items-center justify-between rounded-full bg-white transition-all duration-300
-          ${scrolled ? "py-1 lg:py-1 px-4 lg:px-6" : "py-2 lg:py-2 px-4 lg:px-6"} shadow-xl border border-white/10`}>
+          ${scrolled ? "py-1 lg:py-1 px-8 lg:px-6" : "py-2 lg:py-2 px-8 lg:px-6"} shadow-xl border border-white/10`}>
         {/* Logo */}
         <Link href="/" className="flex items-center group">
           <AnimatedDiv initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}>

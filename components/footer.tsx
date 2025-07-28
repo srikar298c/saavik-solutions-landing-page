@@ -56,10 +56,10 @@ export default function Footer() {
           {/* Company Info */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUpItem} className="space-y-6">
           <Link href="/" className="inline-block">
-    <div className="flex items-center">
+    <div className="flex items-center  bg-white rounded-md px-4 py-2">
       {/* Footer Logo */}
       <Image
-        src="/saavik-logo-lg.png"        // your footer‑optimized logo
+        src="/saavik-logo-lgn.svg"        // your footer‑optimized logo
         alt="Saavik Solutions Logo"
         width={120} height={48}
         className="mr-3"
