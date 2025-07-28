@@ -171,39 +171,32 @@ export default function Hero() {
         )}
 
         {/* Trusted By Section */}
-        <div className="relative w-full bg-gray-950/70 backdrop-blur-md z-20">
+        {/* <div className="relative w-full bg-gray-950/70 backdrop-blur-md z-20">
           <div className="container mx-auto px-4 sm:px-6 py-6 sm:py-8">
-            {/* Removed md: prefix from flex-row and w-2/3 to apply them to all sizes */}
             <div className="flex flex-row items-center justify-between">
               <AnimatedDiv
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={slideIn}
-                // Removed md:mb-0 to keep desktop margin-bottom
                 className="mb-0 relative bg-gradient-to-r from-gray-900 to-black px-6 py-3 rounded-lg border-l-4 border-[#6A43E7]"
               >
-                {/* Removed md:mb-0 from this div to remove bottom margin on mobile */}
                 <h2 className="text-lg md:text-2xl font-bold text-white whitespace-nowrap">
                   TRUSTED <span className="text-[#E879F9]">BY</span>
                 </h2>
 
-                {/* Accent elements */}
                 <div className="absolute -bottom-1 -right-1 w-3 h-3 bg-[#E879F9] rounded-full animate-blink"></div>
                 <div className="absolute -top-1 -left-1 w-2 h-2 bg-[#6A43E7] rounded-full animate-blink"></div>
               </AnimatedDiv>
 
-              {/* Removed md:w-2/3 to make it w-2/3 on all sizes if that's the desired desktop width */}
-              <div className="overflow-hidden w-2/3"> {/* Adjusted width directly */}
+              <div className="overflow-hidden w-2/3">
                 <div
                   ref={carouselRef}
-                  // Keep space-x-12 for all screen sizes if that's the desktop equivalent
                   className="flex items-center space-x-12"
                   style={{ width: "fit-content" }}
                 >
-                  {/* Logos will now have consistent sizes and spacing across all views */}
-                  <div className="flex items-center space-x-12 mx-6"> {/* Removed sm:space-x-12 and sm:mx-8 */}
-                    <div className="relative w-28 h-10"> {/* Removed md:w-28 md:h-10 to use these on all sizes */}
+                  <div className="flex items-center space-x-12 mx-6">
+                    <div className="relative w-28 h-10">
                       <Image
                         src="/logosipsum-1.png"
                         alt="Client Logo 1"
@@ -223,7 +216,6 @@ export default function Hero() {
                     </div>
                   </div>
 
-                  {/* Second set of logos */}
                   <div className="flex items-center space-x-12 mx-6">
                     <div className="relative w-28 h-10">
                       <Image
@@ -245,7 +237,6 @@ export default function Hero() {
                     </div>
                   </div>
 
-                  {/* Third set of logos for extra buffer */}
                   <div className="flex items-center space-x-12 mx-6">
                     <div className="relative w-28 h-10">
                       <Image
@@ -270,7 +261,7 @@ export default function Hero() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </>
   );
