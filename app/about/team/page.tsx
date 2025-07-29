@@ -105,9 +105,9 @@ export default function TeamPage() {
       },
       {
         name: "Srikar Kudurmalla",
-        position: "Founding Full Stack Developer",
+        position: "Head of Engineering",
         image: "/images/team/srikar.jpg",
-        bio: "Srikar excels in developing end-to-end solutions, leveraging his comprehensive knowledge of modern web technologies to build scalable and efficient applications.",
+        bio: "Srikar is a founding engineer turned Head of Engineering who builds scalable platforms and mentors high-performing teams. With a background in real-time systems, distributed architecture, and global product strategy, he leads with clarity, precision, and a deep commitment to growth",
         social: {
           linkedin: "https://linkedin.com/in/srikar",
           github: "https://github.com/srikar"
