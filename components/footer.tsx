@@ -69,13 +69,13 @@ export default function Footer() {
             <p className="text-gray-400">
               Transforming businesses through innovative technology solutions that drive growth and efficiency.
             </p>
-            <div className="flex space-x-4">
+            {/* <div className="flex space-x-4">
               {[Github, Twitter, Linkedin, Instagram].map((Icon, i) => (
                 <a key={i} href="#" target="_blank" rel="noopener noreferrer" className="p-2 bg-gray-800 hover:bg-[#6A43E7] rounded-full transition-colors" aria-label="Social link">
                   <Icon className="h-5 w-5" />
                 </a>
               ))}
-            </div>
+            </div> */}
           </motion.div>
 
           {/* Quick Links */}
