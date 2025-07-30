@@ -11,7 +11,7 @@ import { FaGithub, FaLinkedin, FaXTwitter, FaInstagram } from "react-icons/fa6"
 
 export default function TeamPage() {
   const [isVisible, setIsVisible] = useState(false)
-  const [activeTab, setActiveTab] = useState("leadership")
+  const [activeTab, setActiveTab] = useState("Visionaries at the Helm")
 
   useEffect(() => {
     setIsVisible(true)
@@ -36,124 +36,186 @@ export default function TeamPage() {
     }
   }
 
+  const teamTabs = {
+  "Visionaries at the Helm": "Guiding Saavik Solutions toward a smarter digital future.",
+  "Builders & Innovators": "Engineering scalable solutions with precision and creativity.",
+  "Creative & Design Team": "Transforming ideas into delightful user experiences.",
+  "Strategy & Growth": "Driving digital growth through data, design, and direction.",
+  "Technical Consultants": "Empowering clients with tailored technology solutions and strategic guidance.",
+};
+
   // Sample team data - would normally come from API or CMS
-  const teamMembers = {
-    leadership: [
-      {
-        name: "Bhargava Raj",
-        position: "CEO and Founder",
-        image: "/images/team/bhargavaraj.png",
-        bio: "As the visionary founder and CEO of Saavik Solutions, Bhargava Raj leads the company's strategic direction and innovation initiatives, driving our mission to deliver cutting-edge technology solutions.",
-        social: {
-          linkedin: "https://linkedin.com/in/bhargava-raj",
-          twitter: "https://twitter.com/bhargava-raj"
-        }
-      },
-      // {
-      //   name: "Ravi",
-      //   position: "Chief Technical Officer",
-      //   image: "/images/team/ravi.png",
-      //   bio: "Ravi spearheads our technical strategy and innovation, ensuring Saavik Solutions remains at the forefront of technological advancement and delivers exceptional solutions to our clients.",
-      //   social: {
-      //     linkedin: "https://linkedin.com/in/ravi",
-      //     twitter: "https://twitter.com/ravi"
-      //   }
-      // },
-      {
-        name: "Santhosh Kattaa",
-        position: "Director",
-        image: '/images/team/Santhosh_Kattaa.png',
-        bio: "As Director at Saavik Solutions, Santhosh Kattaa plays a key role in shaping organizational strategy and driving operational excellence. His leadership and insight help propel the company toward scalable growth and long-term success. ",
-        social: { 
-          linkedin: "#",
-          twitter: "#",
-          instagram: "#"
-        }
-      },
-      {
-        name: "Laya Sri",
-        position: "Co-Founder and Head of Operations",
-        image: "/images/team/layasri.png",
-        bio: "As Co-Founder and Head of Operations, Laya Sri orchestrates our operational excellence, ensuring seamless delivery of services while maintaining the highest standards of quality and efficiency.",
-        social: {
-          linkedin: "https://linkedin.com/in/layasri",
-          twitter: "https://twitter.com/layasri"
-        }
+const teamMembers = {
+  "Visionaries at the Helm": [
+    {
+      name: "Bhargava Raj",
+      position: "Managing Director",
+      image: "/images/team/bhargavaraj.png",
+      bio: "As the visionary founder and Managing Director of Saavik Solutions, Bhargava Raj leads the company's strategic direction and innovation initiatives.",
+      social: {
+        linkedin: "https://linkedin.com/in/bhargava-raj",
+        twitter: "https://twitter.com/bhargava-raj"
       }
-    ],
-    management: [
-      {
-        name: "Sonali",
-        position: "Human Resources Manager",
-        image: "/images/team/sonali.png",
-        bio: "As our HR Manager, Sonali leads our talent acquisition and employee development initiatives, fostering a positive work culture and ensuring the growth and well-being of our team members.",
-        social: {
-          linkedin: "https://linkedin.com/in/sonali"
-        }
+    },
+    {
+      name: "Santhosh Kattaa",
+      position: "Director",
+      image: "/images/team/Santhosh_Kattaa.png",
+      bio: "Santhosh Kattaa plays a key role in shaping organizational strategy and driving operational excellence.",
+      social: { 
+        linkedin: "#",
+        twitter: "#",
+        instagram: "#"
       }
-    ],
-    technical: [
-      {
-        name: "Sampad Dutta",
-        position: "Head of Creative Design",
-        image: "/images/team/sampad_dutta.png",
-        bio: "As our Head of Creative Design, Sampath brings creative excellence to every project, crafting intuitive and engaging user experiences that perfectly blend aesthetics with functionality.",
-        social: {
-          linkedin: "https://linkedin.com/in/sampath",
-          github: "https://github.com/sampath"
-        }
-      },
-      {
-        name: "Srikar Kudurmalla",
-        position: "Head of Engineering",
-        image: "/images/team/srikar.jpg",
-        bio: "Srikar is a founding engineer turned Head of Engineering who builds scalable platforms and mentors high-performing teams. With a background in real-time systems, distributed architecture, and global product strategy, he leads with clarity, precision, and a deep commitment to growth",
-        social: {
-          linkedin: "https://linkedin.com/in/srikar",
-          github: "https://github.com/srikar"
-        }
-      },
-      {
-        name: "Mohan",
-        position: " Full Stack Developer Consultant",
-        image: "/images/team/mohan.png",
-        bio: "Mohan leads our development team with expertise in both frontend and backend technologies, architecting robust solutions and mentoring team members to deliver exceptional results.",
-        social: {
-          linkedin: "https://linkedin.com/in/mohan",
-          github: "https://github.com/mohan"
-        }
-      },
-      {
-        name: "Lohita Elizabeth",
-        position: "Frontend Development Intern",
-        image: "/images/team/lohita.png",
-        bio: "Lohita Elizabeth specializes in creating responsive and dynamic user interfaces, ensuring seamless user experiences across all platforms with modern frontend technologies.",
-        social: {
-          linkedin: "https://linkedin.com/in/lohita",
-          github: "https://github.com/lohita"
-        }
-      },
-      {
-        name: "Soumyadeep Batyacharya",
-        position: "Video Editing Intern",
-        image: "/images/team/soumyadeep_batyacharya.png",
-        bio: "As our Video Editing Intern, Soumyadeep brings creative excellence to every project, crafting intuitive and engaging user experiences that perfectly blend aesthetics with functionality.",
-        social: {
-          linkedin: "https://linkedin.com/in/soumyadeep",
-          github: "https://github.com/soumyadeep"
-        }
+    },
+    {
+      name: "Laya Sri",
+      position: "Head of Operations",
+      image: "/images/team/layasri.png",
+      bio: "Laya Sri orchestrates our operational excellence, ensuring seamless service delivery and quality.",
+      social: {
+        linkedin: "https://linkedin.com/in/layasri",
+        twitter: "https://twitter.com/layasri"
       }
-    ],
-    marketing: [
-      {
-        name: "Sridhar Goud",
-        position: "Marketing Director",
-        image: '/images/team/sridhar_goud.png',
-        bio: "Sridhar Goud leads our marketing efforts, driving brand awareness and driving traffic to our website.",
-        social: { linkedin: "#", twitter: "#" }
-      },
-    ]
-  }
+    }
+  ],
+
+  "Strategy & Growth": [
+    {
+      name: "Sonali",
+      position: "Human Resources Manager",
+      image: "/images/team/sonali.png",
+      bio: "Leads talent acquisition and employee development initiatives, fostering a healthy culture at Saavik.",
+      social: {
+        linkedin: "https://linkedin.com/in/sonali"
+      }
+    },
+    {
+      name: "Sridhar Goud",
+      position: "Business Development Director",
+      image: "/images/team/sridhar_goud.png",
+      bio: "Sridhar Goud leads business partnerships, sales enablement, and client expansion strategies at Saavik.",
+      social: { linkedin: "#", twitter: "#" }
+    }
+  ],
+
+  "Builders & Innovators": [
+    {
+      name: "Srikar Kudurmalla",
+      position: "Head of Engineering",
+      image: "/images/team/srikar.jpg",
+      bio: "Leads engineering teams and product architecture with a focus on scalability and high performance.",
+      social: {
+        linkedin: "https://linkedin.com/in/srikar",
+        github: "https://github.com/srikar"
+      }
+    },
+    {
+      name: "Mounika",
+      position: "Software Development Engineer",
+      image: "/images/team/mounika.png",
+      bio: "Mounika contributes to core development projects, specializing in scalable and modular frontend/backend systems.",
+      social: {
+        linkedin: "https://linkedin.com/in/mounika",
+        github: "https://github.com/mounika"
+      }
+    },
+    {
+      name: "Lohita Elizabeth",
+      position: "Frontend Developer - Intern",
+      image: "/images/team/lohita.png",
+      bio: "Lohita crafts seamless UIs using modern frontend technologies, ensuring responsive experiences.",
+      social: {
+        linkedin: "https://linkedin.com/in/lohita",
+        github: "https://github.com/lohita"
+      }
+    },
+    {
+      name: "Shiva Santosh",
+      position: "Software Development - Intern",
+      image: "/images/team/shiva_santosh.png",
+      bio: "Bio will be added soon.",
+      social: {
+        linkedin: "#"
+      }
+    },
+    {
+      name: "Deeksha",
+      position: "Software Development - Intern",
+      image: "/images/team/deeksha.png",
+      bio: "Bio will be added soon.",
+      social: {
+        linkedin: "#"
+      }
+    },
+    {
+      name: "Dhanush",
+      position: "Software Development - Intern",
+      image: "/images/team/dhanush.png",
+      bio: "Bio will be added soon.",
+      social: {
+        linkedin: "#"
+      }
+    }
+  ],
+
+  "Creative & Design Team": [
+    {
+      name: "Sampad Dutta",
+      position: "Lead Manager - Digizinc",
+      image: "/images/team/sampad_dutta.png",
+      bio: "Sampad brings creative excellence, blending aesthetics and functionality into world-class UI/UX designs.",
+      social: {
+        linkedin: "https://linkedin.com/in/sampad-dutta",
+        // github: "https://github.com/sampath"
+      }
+    }
+  ],
+
+  "Technical Consultants": [
+    {
+      name: "Ravi",
+      position: "Tech Lead - Consultant",
+      image: "/images/team/ravi.png",
+      bio: "Ravi spearheads technical strategy and client solutions. (More details pending)",
+      social: {
+        linkedin: "https://linkedin.com/in/ravi",
+        twitter: "https://twitter.com/ravi"
+      }
+    },
+    {
+      name: "Maheshwar Reddy",
+      position: "Senior Software Development Engineer   - Consultant",
+      image: "/images/team/maheshwar.png",
+      bio: "Bio will be added soon.",
+      social: {
+        linkedin: "#"
+      }
+    },
+    {
+      name: "Mohan",
+      position: "Full Stack Developer - Consultant",
+      image: "/images/team/mohan.png",
+      bio: "Architects robust solutions, mentors devs, and leads complex builds across the stack.",
+      social: {
+        linkedin: "https://linkedin.com/in/mohan",
+        github: "https://github.com/mohan"
+      }
+    },
+    {
+      name: "Salma",
+      position: "DevOps Engineer - Consultant",
+      image: "/images/team/salma.png",
+      bio: "Bio will be added soon.",
+      social: {
+        linkedin: "#"
+      }
+    }
+  ]
+};
+
+
+
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -214,103 +276,111 @@ export default function TeamPage() {
       </section>
       
       {/* Team Tabs */}
-      <section className="py-16 bg-gradient-to-b from-black to-gray-900">
-        <div className="container mx-auto px-6">
-          <motion.div 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeIn}
-            className="mb-12"
+   <section className="py-16 bg-gradient-to-b from-black to-gray-900">
+  <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <motion.div 
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      variants={fadeIn}
+      className="mb-12 text-center"
+    >
+      {/* Tab Buttons */}
+      <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-8">
+        {Object.keys(teamTabs).map((tab) => (
+          <button
+            key={tab}
+            onClick={() => setActiveTab(tab)}
+            className={`px-5 py-2 sm:px-6 sm:py-3 rounded-full text-sm sm:text-base transition-all duration-300 font-medium ${
+              activeTab === tab
+                ? 'bg-[#6A43E7] text-white shadow-lg'
+                : 'bg-gray-900 text-gray-300 hover:bg-gray-800'
+            }`}
           >
-            <div className="flex flex-wrap gap-4 justify-center">
-              {Object.keys(teamMembers).map((tab) => (
-                <button
-                  key={tab}
-                  onClick={() => setActiveTab(tab)}
-                  className={`px-6 py-3 rounded-full text-lg transition-all duration-300 ${
-                    activeTab === tab 
-                      ? 'bg-[#6A43E7] text-white' 
-                      : 'bg-gray-900 text-gray-300 hover:bg-gray-800'
-                  }`}
-                >
-                  {tab.charAt(0).toUpperCase() + tab.slice(1)} Team
-                </button>
-              ))}
+            {tab}
+          </button>
+        ))}
+      </div>
+
+      {/* Subtitle */}
+      <p className="text-gray-400 text-sm sm:text-lg max-w-2xl mx-auto px-4">
+        {teamTabs[activeTab as keyof typeof teamTabs]}
+      </p>
+    </motion.div>
+
+    {/* Team Members Grid */}
+    <motion.div 
+      key={activeTab}
+      initial="hidden"
+      animate="visible"
+      variants={staggerContainer}
+      className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+    >
+      {teamMembers[activeTab as keyof typeof teamMembers]?.map((member, index) => (
+        <motion.div
+          key={index}
+          variants={fadeIn}
+          className="bg-gradient-to-br from-gray-900 to-black rounded-xl overflow-hidden border border-gray-800 hover:border-[#6A43E7]/30 transition-all duration-300 group"
+        >
+          {/* Image Section */}
+          <div className="relative h-72 sm:h-80">
+            <Image
+              src={member.image}
+              alt={member.name}
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
+              priority={index < 3}
+              quality={90}
+            />
+          </div>
+
+          {/* Info Section */}
+          <div className="p-5 sm:p-6">
+            <h3 className="text-xl sm:text-2xl font-bold mb-1 group-hover:text-purple-400 transition-colors">
+              {member.name}
+            </h3>
+            <p className="text-[#6A43E7] text-sm sm:text-base mb-3">{member.position}</p>
+            <p className="text-gray-400 text-sm sm:text-base mb-4">{member.bio}</p>
+
+            {/* Social Icons */}
+            <div className="flex gap-3">
+              {Object.entries(member.social).map(([platform, url]) => {
+                const getSocialIcon = (platform: string) => {
+                  switch (platform.toLowerCase()) {
+                    case 'github': return <FaGithub className="h-5 w-5" />;
+                    case 'linkedin': return <FaLinkedin className="h-5 w-5" />;
+                    case 'twitter': return <FaXTwitter className="h-5 w-5" />;
+                    case 'instagram': return <FaInstagram className="h-5 w-5" />;
+                    default: return null;
+                  }
+                };
+
+                const icon = getSocialIcon(platform);
+                if (!icon) return null;
+
+                return (
+                  <a
+                    key={platform}
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 bg-gray-800 hover:bg-[#6A43E7] rounded-full transition-colors"
+                    aria-label={`${platform} profile`}
+                  >
+                    {icon}
+                  </a>
+                );
+              })}
             </div>
-          </motion.div>
-          
-          <motion.div 
-            key={activeTab}
-            initial="hidden"
-            animate="visible"
-            variants={staggerContainer}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-          >
-            {teamMembers[activeTab as keyof typeof teamMembers].map((member, index) => (
-              <motion.div
-                key={index}
-                variants={fadeIn}
-                className="bg-gradient-to-br from-gray-900 to-black rounded-xl overflow-hidden border border-gray-800 hover:border-[#6A43E7]/30 transition-all duration-300 group"
-              >
-                <div className="relative h-80">
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    priority={index < 3}
-                    quality={90}
-                  />
-                  {/* <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent" /> */}
-                </div>
-                <div className="p-6">
-                  <h3 className="text-2xl font-bold mb-1 group-hover:text-purple-400 transition-colors">
-                    {member.name}
-                  </h3>
-                  <p className="text-[#6A43E7] mb-4">{member.position}</p>
-                  <p className="text-gray-400 mb-6">{member.bio}</p>
-                  <div className="flex gap-3">
-                    {Object.entries(member.social).map(([platform, url]) => {
-                      const getSocialIcon = (platform: string) => {
-                        switch (platform.toLowerCase()) {
-                          case 'github':
-                            return <FaGithub className="h-5 w-5" />;
-                          case 'linkedin':
-                            return <FaLinkedin className="h-5 w-5" />;
-                          case 'twitter':
-                            return <FaXTwitter className="h-5 w-5" />;
-                          case 'instagram':
-                            return <FaInstagram className="h-5 w-5" />;
-                          default:
-                            return null;
-                        }
-                      };
+          </div>
+        </motion.div>
+      ))}
+    </motion.div>
+  </div>
+</section>
 
-                      const icon = getSocialIcon(platform);
-                      if (!icon) return null;
 
-                      return (
-                        <a
-                          key={platform}
-                          href={url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="p-2 bg-gray-800 hover:bg-[#6A43E7] rounded-full transition-colors"
-                          aria-label={`${platform} profile`}
-                        >
-                          {icon}
-                        </a>
-                      );
-                    })}
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
       
       {/* Locations */}
       {/* <section className="py-16 bg-black">
