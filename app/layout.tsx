@@ -100,6 +100,26 @@ export default function RootLayout({
       <head>
         <meta name="theme-color" content="#000000" />
         <link rel="canonical" href="https://saaviksolutions.com" />
+        {/* Google Analytics 4 (GA4) Tracking Code */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-K9592N0DQT"></script>
+        <script>
+          {
+            `window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-K9592N0DQT');`
+          }
+        </script>
+        {/* Microsoft Clarity Tracking Code */}
+        <script type="text/javascript">
+          {
+            `(function(c,l,a,r,i,t,y){` +
+            `c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};` +
+            `t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;` +
+            `y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);` +
+            `})(window, document, "clarity", "script", "sn458hp0e8");`
+          }
+        </script>
       </head>
       <body className={`${inter.className} overflow-x-hidden`}>
         <ThemeProvider
