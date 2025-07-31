@@ -2,52 +2,53 @@
 
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import { Globe, Code, Users, Database, UserCheck, BarChart3 } from "lucide-react"
+import {  Brain, Cloud, ShieldCheck, Settings2, LayoutDashboard, BarChart } from "lucide-react"
 
 const services = [
   {
-    icon: <Globe className="h-6 w-6 text-indigo-600" />,
-    title: "Web Development",
+    icon: <Brain className="h-6 w-6 text-indigo-600" />, // For AI
+    title: "AI & Machine Learning",
     description:
-      "Craft responsive, SEO-friendly websites and SPAs tailored for performance, scalability, and business conversion.",
+      "Deploy production-ready models for personalization, predictions, and automated decision-making at scale.",
     bg: "bg-indigo-100",
   },
   {
-    icon: <Code className="h-6 w-6 text-indigo-600" />,
-    title: "Software Development",
+    icon: <Cloud className="h-6 w-6 text-blue-600" />, // For cloud infra
+    title: "Cloud Solutions & Migration",
     description:
-      "From ideation to deployment, build powerful desktop and cloud-native apps that automate your workflow.",
-    bg: "bg-indigo-100",
-  },
-  {
-    icon: <Users className="h-6 w-6 text-purple-600" />,
-    title: "Staffing Solutions",
-    description:
-      "Bridge talent gaps with our expert staffing solutions—contractual, permanent, and project-based hiring.",
-    bg: "bg-purple-100",
-  },
-  {
-    icon: <Database className="h-6 w-6 text-blue-600" />,
-    title: "ERP Solutions",
-    description:
-      "Optimize core business processes with custom ERP systems built to scale with your enterprise operations.",
+      "Modernize legacy systems with scalable, cloud-native architectures built for resilience and performance.",
     bg: "bg-blue-100",
   },
   {
-    icon: <UserCheck className="h-6 w-6 text-pink-600" />,
-    title: "CRM Solutions",
+    icon: <ShieldCheck className="h-6 w-6 text-red-600" />, // For security
+    title: "Cybersecurity Services",
     description:
-      "Enhance customer relationships and sales pipelines with smart, intuitive CRM platforms tailored to your team.",
-    bg: "bg-pink-100",
+      "Protect digital assets with enterprise-grade security, real-time threat detection, and compliance frameworks.",
+    bg: "bg-red-100",
   },
   {
-    icon: <BarChart3 className="h-6 w-6 text-green-600" />,
-    title: "Digital Marketing",
+    icon: <Settings2 className="h-6 w-6 text-gray-600" />, // For automation/infra
+    title: "DevOps & Automation",
     description:
-      "Drive ROI through data-driven SEO, PPC, content, and social strategies backed by real-time analytics.",
+      "Accelerate releases with CI/CD pipelines, infrastructure-as-code, and GitOps workflows that scale.",
+    bg: "bg-gray-100",
+  },
+  {
+    icon: <LayoutDashboard className="h-6 w-6 text-yellow-600" />, // ERP/CRM visual
+    title: "Custom ERP & CRM",
+    description:
+      "Design tailor-made ERP and CRM systems aligned with your business DNA—built for flexibility and growth.",
+    bg: "bg-yellow-100",
+  },
+  {
+    icon: <BarChart className="h-6 w-6 text-green-600" />, // BI/data visual
+    title: "Data Analytics & BI",
+    description:
+      "Turn complex data into actionable insights with predictive analytics, BI dashboards, and interactive reports.",
     bg: "bg-green-100",
   },
-]
+];
+
 
 export default function Services() {
   return (
