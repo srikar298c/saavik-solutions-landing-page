@@ -1,8 +1,15 @@
-import { MDXRemote } from "next-mdx-remote/rsc";
-import BlogLayout from "@/components/blogs/BlogLayout";
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
+import fs from 'fs'
+import path from 'path'
+import matter from 'gray-matter'
+import { MDXRemote } from 'next-mdx-remote/rsc'
+import BlogLayout from '@/components/blogs/BlogLayout'
+
+//'use client'
+import Navbar from "@/components/navbar"
+import Footer from "@/components/footer"
+//import BlogHeader from "@/components/blogs/blog-header"
+import BlogContent from "@/components/blogs/blog-content"
+import RelatedPosts from "@/components/blogs/related-posts"
 
 export async function generateStaticParams() {
   const files = fs.readdirSync(path.join(process.cwd(), 'posts'))
@@ -11,7 +18,6 @@ export async function generateStaticParams() {
     slug: file.replace(/\.mdx$/, ''),
   }))
 }
-
 
 // 'use client'
 // import Navbar from "@/components/navbar"
