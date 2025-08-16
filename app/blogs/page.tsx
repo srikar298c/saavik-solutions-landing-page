@@ -1,27 +1,23 @@
-'use client'
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
-import FeaturedBlogs from "@/components/blogs/featured-blogs"
-import TrendingNews from "@/components/blogs/trending-news"
-import BlogCategories from "@/components/blogs/blog-categories"
 import LetsDiscuss from "@/components/lets-discuss"
+import { getAllPosts } from "@/lib/getPosts"
+import BlogClient from "./BlogClient"
 
-export default function BlogsPage() {
-  return (
-    <main className="min-h-screen">
-      <div className="bg-black text-black">
+export default function BlogPage() {
+  const posts = getAllPosts()
+
+  return ( 
+    <main className="min-h-screen bg-black">
+      <div className="text-black">
         <Navbar />
       </div>
-      <div className="bg-white py-8">
-        <div className="container mx-auto px-4">
-          <FeaturedBlogs />
-          <TrendingNews trendingPosts={[]} />
-          <BlogCategories categories={[]} blogPosts={[]} />
-        </div>
+      <div className="bg-white">
+        {/* ✅ safe JSON props only */}
+        <BlogClient posts={posts} />
       </div>
       <LetsDiscuss />
       <Footer />
     </main>
   )
 }
-
