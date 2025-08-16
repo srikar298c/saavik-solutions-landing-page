@@ -2,53 +2,52 @@
 
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import {  Brain, Cloud, ShieldCheck, Settings2, LayoutDashboard, BarChart } from "lucide-react"
+import { Brain, Cloud, ShieldCheck, Settings2, LayoutDashboard, BarChart } from "lucide-react"
 
 const services = [
   {
-    icon: <Brain className="h-6 w-6 text-indigo-600" />, // For AI
+    icon: <Brain className="h-6 w-6 text-indigo-600" />,
     title: "AI & Machine Learning",
     description:
       "Deploy production-ready models for personalization, predictions, and automated decision-making at scale.",
     bg: "bg-indigo-100",
   },
   {
-    icon: <Cloud className="h-6 w-6 text-blue-600" />, // For cloud infra
+    icon: <Cloud className="h-6 w-6 text-blue-600" />,
     title: "Cloud Solutions & Migration",
     description:
       "Modernize legacy systems with scalable, cloud-native architectures built for resilience and performance.",
     bg: "bg-blue-100",
   },
   {
-    icon: <ShieldCheck className="h-6 w-6 text-red-600" />, // For security
+    icon: <ShieldCheck className="h-6 w-6 text-red-600" />,
     title: "Cybersecurity Services",
     description:
       "Protect digital assets with enterprise-grade security, real-time threat detection, and compliance frameworks.",
     bg: "bg-red-100",
   },
   {
-    icon: <Settings2 className="h-6 w-6 text-gray-600" />, // For automation/infra
+    icon: <Settings2 className="h-6 w-6 text-gray-600" />,
     title: "DevOps & Automation",
     description:
       "Accelerate releases with CI/CD pipelines, infrastructure-as-code, and GitOps workflows that scale.",
     bg: "bg-gray-100",
   },
   {
-    icon: <LayoutDashboard className="h-6 w-6 text-yellow-600" />, // ERP/CRM visual
+    icon: <LayoutDashboard className="h-6 w-6 text-yellow-600" />,
     title: "Custom ERP & CRM",
     description:
       "Design tailor-made ERP and CRM systems aligned with your business DNA—built for flexibility and growth.",
     bg: "bg-yellow-100",
   },
   {
-    icon: <BarChart className="h-6 w-6 text-green-600" />, // BI/data visual
+    icon: <BarChart className="h-6 w-6 text-green-600" />,
     title: "Data Analytics & BI",
     description:
       "Turn complex data into actionable insights with predictive analytics, BI dashboards, and interactive reports.",
     bg: "bg-green-100",
   },
 ];
-
 
 export default function Services() {
   return (
@@ -81,9 +80,9 @@ export default function Services() {
               viewport={{ once: true }}
               className="text-2xl font-bold tracking-tight text-white sm:text-3xl md:text-4xl lg:text-5xl"
             >
-              Our IT Solutions Drive Your
+              Engineered for You.
               <br className="hidden sm:block" />
-              Business <span className="bg-gradient-to-tr from-[#6A43E7] via-[#7F38E8] to-[#E879F9] bg-clip-text text-transparent">Forward</span>
+              <span className="bg-gradient-to-tr from-[#6A43E7] via-[#7F38E8] to-[#E879F9] bg-clip-text text-transparent">Scaled by Us.</span>
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 10 }}
@@ -92,8 +91,7 @@ export default function Services() {
               viewport={{ once: true }}
               className="mt-4 max-w-md text-sm text-gray-300 sm:text-base lg:text-lg"
             >
-              Our expert-driven, technology-focused services help businesses streamline operations, enhance digital
-              presence, and achieve long-term success.
+              Whether you're modernizing or scaling, we build the digital core that powers your next chapter.
             </motion.p>
           </div>
 
