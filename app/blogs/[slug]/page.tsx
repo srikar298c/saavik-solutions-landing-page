@@ -1,23 +1,47 @@
-import fs from 'fs'
-import path from 'path'
-import matter from 'gray-matter'
-import { MDXRemote } from 'next-mdx-remote/rsc'
-import BlogLayout from '@/components/blogs/BlogLayout'
+// app/blog/[slug]/page.tsx
+import fs from "fs/promises";   // ✅ use promises version
+import path from "path";
+import matter from "gray-matter";
+import { compileMDX, MDXRemote } from "next-mdx-remote/rsc";
 
-//'use client'
-import Navbar from "@/components/navbar"
-import Footer from "@/components/footer"
-//import BlogHeader from "@/components/blogs/blog-header"
-import BlogContent from "@/components/blogs/blog-content"
-import RelatedPosts from "@/components/blogs/related-posts"
+import BlogLayout from "@/components/blogs/BlogLayout";
+import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
+import BlogContent from "@/components/blogs/blog-content";
+import RelatedPosts from "@/components/blogs/related-posts";
 
 export async function generateStaticParams() {
-  const files = fs.readdirSync(path.join(process.cwd(), 'posts'))
+  const files = await fs.readdir(path.join(process.cwd(), "posts"));
 
   return files.map((file) => ({
-    slug: file.replace(/\.mdx$/, ''),
-  }))
+    slug: file.replace(/\.mdx$/, ""),
+  }));
 }
+
+export default async function BlogPage({ params }: { params: { slug: string } }) {
+  const safeSlug = decodeURIComponent(params.slug);
+
+  const filePath = path.join(process.cwd(), "posts", `${safeSlug}.mdx`);
+
+  // ✅ now works because we imported fs/promises
+  const source = await fs.readFile(filePath, "utf8");
+
+  const { content, data } = matter(source);
+  return (
+    <main className="min-h-screen bg-black">
+      <div className="bg-black text-white">
+        <Navbar />
+      </div>
+
+      <BlogLayout frontMatter={data}>
+        <MDXRemote source={content} />
+      </BlogLayout>
+
+      <Footer />
+    </main>
+  );
+}
+
 
 // 'use client'
 // import Navbar from "@/components/navbar"
@@ -139,23 +163,23 @@ export async function generateStaticParams() {
 //   const post = getBlogPost(params.slug)
 //   const relatedPosts = getRelatedPosts()
 
-//   return (
-//     <main className="min-h-screen">
-//       <div className="bg-black text-white">
-//         <Navbar />
-//       </div>
-//       <BlogHeader post={post} />
-//       <div className="bg-white py-12">
-//         <div className="container mx-auto px-4 md:px-6">
-//           <div className="mx-auto max-w-4xl">
-//             <BlogContent content={post.content} />
-//             <div className="my-16 h-px w-full bg-gray-200"></div>
-//             <RelatedPosts posts={relatedPosts} />
-//           </div>
-//         </div>
-//       </div>
-//       <Footer />
-//     </main>
-//   )
+  // return (
+  //   <main className="min-h-screen">
+  //     <div className="bg-black text-white">
+  //       <Navbar />
+  //     </div>
+  //     <BlogHeader post={post} />
+  //     <div className="bg-white py-12">
+  //       <div className="container mx-auto px-4 md:px-6">
+  //         <div className="mx-auto max-w-4xl">
+  //           <BlogContent content={post.content} />
+  //           <div className="my-16 h-px w-full bg-gray-200"></div>
+  //           <RelatedPosts posts={relatedPosts} />
+  //         </div>
+  //       </div>
+  //     </div>
+  //     <Footer />
+  //   </main>
+  // )
 // }
 

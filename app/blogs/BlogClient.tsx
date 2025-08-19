@@ -8,9 +8,8 @@ import { Button } from "@/components/ui/button"
 //import { Card, CardContent } from "@/components/ui/card"
 import { motion, AnimatePresence } from "framer-motion"
 import { Search, MessageCircle, Clock } from "lucide-react"
-import loading from "./loading"
-import { cn } from "@/lib/utils"
-import FeaturedBlogs from "@/components/blogs/featured-blogs"
+import Link from "next/link"
+
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -293,67 +292,68 @@ useEffect(() => {
 > 
   <div className="grid grid-cols-2 ml-3 mr-3 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
     {paginatedPosts.map((post) => (
-      <motion.article
-        key={post.id}
-        variants={itemVariants}
-        className="group flex flex-col h-[450px] w-full overflow-hidden rounded-xl bg-gradient-to-r from-[#160d32] via-[#23113e] to-[#23113e] sm:inline shadow-md transition-transform duration-300 hover:scale-[1.02] text-white"
-        whileHover={{ y: -5, transition: { duration: 0.2 } }}
-      >
-        {/* Image */}
-        <div className="relative h-56 w-full">
-          {post.image ? (
-            <Image
-              src={post.image}
-              alt={post.title}
-              fill
-              className="object-cover object-center"
-            />
-          ) : (
-            <div className="bg-gray-300 h-full w-full" />
+  <motion.article
+    key={post.id || post.slug}
+    variants={itemVariants}
+    className="group flex flex-col h-[450px] w-full overflow-hidden rounded-xl bg-gradient-to-r from-[#160d32] via-[#23113e] to-[#23113e] sm:inline shadow-md transition-transform duration-300 hover:scale-[1.02] text-white"
+    whileHover={{ y: -5, transition: { duration: 0.2 } }}
+  >
+    <Link href={`/blogs/${post.slug}`} className="flex flex-col h-full w-full">
+      {/* Image */}
+      <div className="relative h-56 w-full">
+        {post.image ? (
+          <Image
+            src={post.image}
+            alt={post.title}
+            fill
+            className="object-cover object-center"
+          />
+        ) : (
+          <div className="bg-gray-300 h-full w-full" />
+        )}
+      </div>
+
+      {/* Content */}
+      <div className="flex flex-col justify-between gap-1 flex-grow p-6 text-white">
+        <h3 className="text-xl font-extrabold leading-tight line-clamp-2 group-hover:text-white-800 transition-colors">
+          {post.title}
+        </h3>
+        <p className="text-sm text-white-200 line-clamp-2">{post.excerpt}</p>
+        <div className="flex justify-between text-sm text-white-900">
+          <span>{post.author}</span>
+          {post.date && (
+            <time>
+              {new Date(post.date).toLocaleDateString("en-US", {
+                month: "short",
+                day: "numeric",
+                year: "numeric",
+              })}
+            </time>
           )}
         </div>
 
-        {/* Content */}
-
-        <div className="flex flex-col justify-between gap-1 flex-grow p-6 text-white">
-            <h3 className="text-xl font-extrabold leading-tight line-clamp-2 group-hover:text-white-800 transition-colors">
-              {post.title}
-            </h3>
-            <p className="text-sm text-white-200 line-clamp-2">
-              {post.excerpt}
-            </p>
-          <div className="flex justify-between text-sm text-white-900">
-            <span>{post.author}</span>
-            {post.date && (
-              <time>
-                {new Date(post.date).toLocaleDateString("en-US", {
-                  month: "short",
-                  day: "numeric",
-                  year: "numeric",
-                })}
-              </time>
-            )}
+        {Array.isArray(post.tags) && post.tags.length > 0 && (
+          <div className="flex flex-wrap gap-3 mt-2 mb-3">
+            {post.tags.map((tag: string, index: number) => (
+              <span
+                key={index}
+                className="text-xs font-semibold bg-white text-purple-800 px-2 py-0.5 rounded"
+              >
+                #{tag}
+              </span>
+            ))}
           </div>
+        )}
+        {post.readTime && (
+          <p className="mt-2 text-xs italic text-right text-purple-300">
+            {post.readTime} min read
+          </p>
+        )}
+      </div>
+    </Link>
+  </motion.article>
+))}
 
-          {Array.isArray(post.tags) && post.tags.length > 0 && (
-  <div className="flex flex-wrap gap-3 mt-2 mb-3">
-    {post.tags.map((tag: string, index: number) => (
-      <span
-        key={index}
-        className="text-xs font-semibold bg-white text-purple-800 px-2 py-0.5 rounded"
-      >
-        #{tag}
-      </span>
-    ))}
-  </div>
-)}      {post.readTime && (
-            <p className="mt-2 text-xs italic text-right text-purple-300">
-              {post.readTime} min read
-            </p>
-          )}
-        </div>
-      </motion.article>
-    ))}
   </div> 
 </motion.div>
 
