@@ -101,7 +101,7 @@ export default function Products() {
               >
                 <motion.div
                   className="absolute inset-0 h-full w-full overflow-hidden rounded-lg border border-[#6A43E7]/30 shadow-lg shadow-purple-800/30"
-                  style={{ backfaceVisibility: "hidden" }}
+                  style={{ backfaceVisibility: "hidden" , transform: "rotateY(180deg)" }}
                 >
                   {isClient && (
                     <div className="relative h-full w-full">
@@ -136,7 +136,7 @@ export default function Products() {
 
                 <motion.div
                   className="absolute inset-0 flex h-full w-full flex-col items-center justify-center rounded-lg border border-purple-900/30 bg-gradient-to-br from-[#1a102a] to-[#140D2A] p-6 text-center shadow-lg"
-                  style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}
+                  style={{ backfaceVisibility: "hidden"}}
                 >
                   <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-purple-600 to-transparent"></div>
                   <h3 className="mb-3 text-xl font-bold text-white sm:text-2xl">{product.title}</h3>
@@ -154,7 +154,7 @@ export default function Products() {
           ))}
         </div>
 
-        <motion.div className="mb-8 sm:mb-10" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
+        {/* <motion.div className="mb-8 sm:mb-10" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
           <h2 className="mb-4 text-center text-2xl font-bold text-white sm:mb-6 sm:text-3xl md:text-4xl">
             Visit Our Creative Wing - <span className="bg-gradient-to-r from-[#6A43E7] to-[#E879F9] bg-clip-text text-transparent">DigiZinc</span>
           </h2>
@@ -178,7 +178,7 @@ export default function Products() {
               Explore Creativity at DigiZinc
             </Button>
           </motion.div>
-        </div>
+        </div> */}
       </div>
     </section>
   )

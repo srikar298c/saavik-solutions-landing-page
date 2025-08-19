@@ -36,4 +36,3 @@ export default function RelatedPosts({ posts }: { posts: any[] }) {
     </div>
   )
 }
-

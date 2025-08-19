@@ -1,10 +1,15 @@
+'use client'
 import Image from "next/image"
 import Link from "next/link"
-import { fetchFeaturedPosts } from "@/lib/api"
+//import { fetchFeaturedPosts } from "@/lib/api"
+import { getAllPosts } from "@/lib/getPosts"
 
 // This is for static generation with data
 export async function getStaticProps() {
-  const { featuredPost, sidebarPosts } = await fetchFeaturedPosts();
+  // If getAllPosts returns an array, assign featuredPost and sidebarPosts accordingly
+  const posts = getAllPosts();
+  const featuredPost = posts[0];
+  const sidebarPosts = posts.slice(1, 4);
   
   return {
     props: {
@@ -50,14 +55,14 @@ export default function FeaturedBlogs({
     : [];
 
   return (
-    <div className="mb-12">
+    <div className="container mb-12 mt-12">
       <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
         {/* Main Featured Post */}
         <div className="md:col-span-2">
           <Link href={`/blogs/${mainPost.slug}`} className="block">
             <div className="relative h-[300px] w-full overflow-hidden rounded-md bg-gray-200 md:h-[400px]">
               <Image
-                src={mainPost.image || "/placeholder.svg"}
+                src="/bms-300X400.png"
                 alt={mainPost.title}
                 fill
                 className="object-cover"
